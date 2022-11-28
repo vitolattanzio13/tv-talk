@@ -66,8 +66,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_134516) do
     t.bigint "chat_room_id", null: false
     t.text "content"
     t.bigint "user_id", null: false
-    t.integer "likes"
-    t.integer "dislikes"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_posts_on_chat_room_id"
@@ -78,8 +78,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_134516) do
     t.bigint "post_id", null: false
     t.text "content"
     t.bigint "user_id", null: false
-    t.integer "likes"
-    t.integer "dislikes"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_replies_on_post_id"
