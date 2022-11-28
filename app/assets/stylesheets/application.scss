@@ -10,3 +10,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.our-container {
+  background-color: lightgray;
+  margin-left: 15vw;
+  margin-right: 25vw;
+
+  width: 60vw;
+}
