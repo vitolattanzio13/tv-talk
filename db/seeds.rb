@@ -27,6 +27,7 @@ m3 = Movie.new(title: "The Matrix",
 m3.save
 c3 = ChatRoom.create(movie_id: m3.id)
 
+
 p1 = Post.new(content: "This is the first post of the first chat room",chat_room_id: c1.id, user_id: user1.id)
 p1.save
 p2 = Post.new(content: "This is the second post of the first chat room",chat_room_id: c1.id, user_id: user2.id)
