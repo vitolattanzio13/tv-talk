@@ -10,7 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import 'https://fonts.googleapis.com/css2?family=Montserrat&display=swap';
+
 
 .our-container {
   background-color: lightgray;
@@ -18,7 +18,4 @@
   margin-right: 25vw;
 
   width: 60vw;
-}
-body{
-  font-family: Montserrat, sans-serif;
 }
