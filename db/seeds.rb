@@ -1,7 +1,7 @@
 Reply.destroy_all
 Post.destroy_all
-Movie.destroy_all
 ChatRoom.destroy_all
+Movie.destroy_all
 User.destroy_all
 
 
