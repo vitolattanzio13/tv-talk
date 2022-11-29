@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_134516) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_130558) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,13 +44,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_134516) do
     t.string "poster_url"
     t.string "trailer_url"
     t.string "imdb_id"
-    t.string "type"
     t.string "plot_short"
     t.text "plot_long"
-    t.integer "year"
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "media_type"
+    t.string "year"
+    t.string "genre"
+    t.string "director"
+    t.string "actors"
   end
 
   create_table "post_votes", force: :cascade do |t|

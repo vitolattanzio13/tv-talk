@@ -1,4 +1,42 @@
 <div class="our-container">
-  <h1>Movies#show</h1>
-  <p>Find me in app/views/movies/show.html.erb</p>
+  <div class="movie-show-details-container">
+    <div class="movie-show-details">
+      <div class="movie-show-poster" style="background-image:url('<%= @movie.poster_url unless @movie.poster_url.empty? %>');">
+      </div>
+      <div class="movie-details">
+        <p class="movie-details-title"><%= @movie.title %></p>
+        <div class="d-flex">
+          <p class="movie-details-red">Year: </p>
+          <p class="movie-details-white ms-3"><%= @movie.year %></p>
+        </div>
+        <div class="d-flex">
+          <p class="movie-details-red">Genre: </p>
+          <p class="movie-details-white ms-3"><%= @movie.genre %></p>
+        </div>
+        <div class="d-flex">
+          <p class="movie-details-red">Director:</p>
+          <p class="movie-details-white ms-3"><%= @movie.director %></p>
+        </div>
+        <div class="d-flex">
+          <p class="movie-details-red">Actors:</p>
+          <p class="movie-details-white ms-3"><%= @movie.actors %></p>
+        </div>
+        <div class="d-flex">
+          <p class="movie-details-red">Plot:</p>
+          <p class="movie-details-white ms-3"><%= @movie.plot_long %></p>
+        </div>
+        <div class="movie-show-link">
+          <%= link_to '#' do %>
+            <button class="movie-show-button">Join discussion</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="movie-show-trailer-container">
+  <% if !@movie.trailer_url.empty? %>
+    <iframe class="movie-show-trailer" src=<%= @movie.trailer_url %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <% end %>
+  </div>
 </div>
+<%=  %>
