@@ -1,31 +1,64 @@
+require "json"
+require "open-uri"
+
 Reply.destroy_all
 Post.destroy_all
 ChatRoom.destroy_all
 Movie.destroy_all
 User.destroy_all
 
+def get_movie(title)
+  result = {}
+  result[:title] = title
+  title = title.gsub(" ", "+")
+  title = title.gsub(":", "%3A")
+  url = "http://www.omdbapi.com/?t=#{title}&plot=full&apikey=#{ENV.fetch('OMDB_API_KEY')}"
+  movie_serialized = URI.open(url).read
+  movie = JSON.parse(movie_serialized)
+  result[:poster_url] = movie["Poster"]
+  result[:imdb_id] = movie["imdbID"]
+  result[:media_type] = movie["Type"]
+  result[:plot_long] = movie["Plot"]
+  result[:year] = movie["Year"]
+  result[:rating] = movie["imdbRating"]
+  result[:genre] = movie["Genre"]
+  result[:director] = movie["Director"]
+  result[:actors] = movie["Actors"]
+  result
+end
 
 # Create users
 user1 = User.create!(email: "user1@gmail.com", password: "123456", nickname: "user1")
 user2 = User.create!(email: "user2@gmail.com", password: "123456", nickname: "user2")
 user3 = User.create!(email: "user3@gmail.com", password: "123456", nickname: "user3")
 
-
-m1 = Movie.new(title: "Star wars IV",
-              rating: 8.7,
-              year: 1977)
-m1.save
+title = "Star wars: Episode IV"
+movie = get_movie(title)
+m1 = Movie.new(movie)
+m1.trailer_url = "https://www.youtube.com/embed/vZ734NWnAHA"
+m1.save!
 c1 = ChatRoom.create(movie_id: m1.id)
-m2 = Movie.new(title: "Back to the future",
-              rating: 8.5,
-              year: 1985)
-m2.save
+
+title = "Back to the future"
+movie = get_movie(title)
+m2 = Movie.new(movie)
+m2.trailer_url = "https://www.youtube.com/embed/qvsgGtivCgs"
+m2.save!
 c2 = ChatRoom.create(movie_id: m2.id)
-m3 = Movie.new(title: "The Matrix",
-              rating: 8.7,
-              year: 1999)
-m3.save
+
+title = "The Godfather"
+movie = get_movie(title)
+m3 = Movie.new(movie)
+m3.trailer_url = "https://www.youtube.com/embed/sY1S34973zA"
+m3.save!
 c3 = ChatRoom.create(movie_id: m3.id)
+
+title = "Game of thrones"
+movie = get_movie(title)
+movie = Movie.new(movie)
+movie.trailer_url = "https://www.youtube.com/embed/gcTkNV5Vg1E"
+movie.save!
+ChatRoom.create(movie_id: movie.id)
 
 
 p1 = Post.new(content: "This is the first post of the first chat room",chat_room_id: c1.id, user_id: user1.id)
