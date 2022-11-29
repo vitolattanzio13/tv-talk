@@ -1,27 +1,37 @@
 <div class="our-container">
-  <div class="d-flex justify-content-center" id="new-post">
-    <h2>New Post Form</h2>
+  <div class="d-flex justify-content-start container-new-post">
+    <div id="new-post" class="m-3 p-3" >
+      <img class="tweetPost-avatar rounded-circle" src="http://placekitten.com/200/200">
+      <div class="form-post-new ml-3 mr-3">
+        <%= render 'shared/new_post_form' %>
+      </div>
+    </div>
   </div>
   <% @posts.each do |post| %>
-    <div class="post">
-      <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="card">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img class="" src="http://via.placeholder.com/300x180" alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title"><%= post.user.nickname %></h4>
-                            <%= post.content %>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
+    <div class="post p-3">
+      <div class="tweetEntry rounded">
+        <div class="tweetEntry-content">
+          <a class="tweetEntry-account-group" href="[accountURL]">
+            <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
+            <strong class="tweetEntry-fullname">
+              <%= post.user.nickname %>
+            </strong>
+            <span class="tweetEntry-username">
+              @<b><%= post.user.nickname %></b>
+            </span>
+            <span class="tweetEntry-timestamp">- [timestamp]</span>
+          </a>
+          <div class="tweetEntry-text-container">
+            <%= post.content %>
+          </div>
+        </div>
+        <div class="optionalMedia">
+          <img class="optionalMedia-img" src="http://placekitten.com/500/400">
+        </div>
+        <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+          <i class="fa fa-reply" style="width: 80px;"></i>
+          <i class="fa fa-retweet" style="width: 80px"></i>
+          <i class="fa fa-heart" style="width: 80px"></i>
         </div>
       </div>
     </div>
