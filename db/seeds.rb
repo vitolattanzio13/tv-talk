@@ -1,5 +1,6 @@
 require "json"
 require "open-uri"
+require "nokogiri"
 
 Reply.destroy_all
 Post.destroy_all
@@ -61,6 +62,7 @@ movie.save!
 ChatRoom.create(movie_id: movie.id)
 
 
+
 p1 = Post.new(content: "This is the first post of the first chat room",chat_room_id: c1.id, user_id: user1.id)
 p1.save
 p2 = Post.new(content: "This is the second post of the first chat room",chat_room_id: c1.id, user_id: user2.id)
@@ -85,3 +87,33 @@ r3 = Reply.new(content: "This is the first reply of the first post of the second
 r3.save
 r4 = Reply.new(content: "This is the second reply of the first post of the second chat room",post_id: p3.id, user_id: user1.id)
 r4.save
+
+
+url = "https://www.empireonline.com/movies/news/"
+
+html_file = URI.open(url).read
+html_doc = Nokogiri::HTML(html_file)
+titles = []
+links = []
+html_doc.search("a.jsx-2519753491.title").each do |element|
+  #title
+  titles << element.text.strip
+  #link
+  links << element.attribute("href").value
+end
+descriptions = []
+html_doc.search("a.description").each do |element|
+  # description
+  descriptions << element.text.strip
+end
+imgs = []
+html_doc.search("img.jsx-952983560.loading").each do |element|
+#   img_url
+  imgs << element.attribute("data-src").value
+end
+
+link_url = "https://www.empireonline.com"
+
+titles.each_with_index do |title, index|
+  Newspaper.create(title: title, content: descriptions[index], url: link_url + links[index], image_url: imgs[index])
+end
