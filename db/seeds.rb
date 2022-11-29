@@ -1,7 +1,7 @@
 require "json"
 require "open-uri"
 require "nokogiri"
-
+Newspaper.destroy_all
 Reply.destroy_all
 Post.destroy_all
 ChatRoom.destroy_all
@@ -109,11 +109,13 @@ end
 imgs = []
 html_doc.search("img.jsx-952983560.loading").each do |element|
 #   img_url
-  imgs << element.attribute("data-src").value
+  link = element.attribute("data-src").value
+  img_links = link.split("?")
+  imgs << img_links[0]
 end
 
 link_url = "https://www.empireonline.com"
 
 titles.each_with_index do |title, index|
-  Newspaper.create(title: title, content: descriptions[index], url: link_url + links[index], image_url: imgs[index])
+  Newspaper.create(title: title, content: descriptions[index], url: link_url + links[index], image_url: "https:#{imgs[index]}")
 end

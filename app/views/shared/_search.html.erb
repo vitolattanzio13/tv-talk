@@ -5,7 +5,7 @@
     <% Newspaper.all.each do |n| %>
       <%= link_to n.url ,class:"text-decoration-none" do %>
         <div class="news-container">
-          <div class="news-img" style="background-image:url('https:<%= n.image_url %>');">
+          <div class="news-img" style="background-image:url('<%= n.image_url %>');">
           </div>
           <div class="news-title">
             <p class="news-title"><%= n.title %></p>
