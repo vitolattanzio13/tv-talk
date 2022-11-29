@@ -22,8 +22,11 @@ end
 #   puts element.text.strip
 # end
 
-# imgs = []
-# html_doc.search("img.jsx-952983560.loading").each do |element|
-#   # img_url
-#   imgs << element.attribute("data-src").value
-# end
+imgs = []
+html_doc.search("img.jsx-952983560.loading").each do |element|
+  # img_url
+  link = element.attribute("data-src").value
+  links = link.split("?")
+  imgs << links[0]
+end
+p imgs
