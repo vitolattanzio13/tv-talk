@@ -1,9 +1,29 @@
 <div class="our-container">
-  <h1>Posts#index</h1>
+  <div class="d-flex justify-content-center" id="new-post">
+    <h2>New Post Form</h2>
+  </div>
   <% @posts.each do |post| %>
     <div class="post">
-      <h2><%= post.user.nickname %></h2>
-      <p><%= post.content %></p>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="card">
+                    <div class="card-horizontal">
+                        <div class="img-square-wrapper">
+                            <img class="" src="http://via.placeholder.com/300x180" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><%= post.user.nickname %></h4>
+                            <%= post.content %>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
