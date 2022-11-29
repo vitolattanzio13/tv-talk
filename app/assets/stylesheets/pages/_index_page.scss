@@ -1,8 +1,124 @@
+$black: #010000;
+$white: #FFFFFF;
+$red1: #F73800;
+$red2: #9A0600;
+$grey: #CCCCCC;
+
 #new-post {
-  background-color: #fff;
+  display: flex;
   height: 20vh;
+  width: 60vw;
+  border: 3px solid $red2;
+  border-radius: 5px;
+  background-color: $white;
+  margin-left: 15vw;
+}
+.tweetPost-avatar{
+  height: 48px;
+  width: 48px;
+}
+.container-new-post {
+  background-color: $black;
+  height: 20vh;
+  margin-bottom: 1rem;
+}
+.post {
+  background-color: $black;
+}
+.form-post-new
+{
+  flex-grow: 1;
+  background-color: $white;
+  color: $black;
 }
 .card-horizontal {
   display: flex;
   flex: 1 1 auto;
+}
+.tweetEntry-tweetHolder {
+  border-left: 3px solid $red2;
+  border-right: 3px solid $red2;
+  border-top: 3px solid $red2;
+  width: 588px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+/* The action list is optional. */
+.tweetEntry-action-list {
+  display: block;
+  line-height: 18px;
+  margin-left: 58px;
+  margin-top: 10px;
+  color: #292f33;
+}
+.fa-reply:hover {
+  color: #292f33;
+}
+.fa-retweet:hover {
+  color: #5cd65c;
+}
+.fa-heart:hover {
+  color: #ff3333;
+}
+/************************/
+
+.tweetEntry {
+  border: 3px solid $red2;
+  cursor: pointer;
+  min-height: 51px;
+  padding: 9px 12px;
+  background-color: $white;
+}
+.tweetEntry-content {
+  display: block;
+  font-size: 14px;
+  margin-left: 58px;
+  font-size: 14px;
+}
+.tweetEntry-account-group {
+  color: #8899a6;
+  padding: 0px;
+  text-decoration: none;
+  line-height: 20px;
+}
+.tweetEntry-avatar {
+  float: left;
+  height: 48px;
+  width: 48px;
+  margin-left: -58px;
+  border-radius: 5px;
+}
+.tweetEntry-fullname {
+  font-weight: bold;
+  font-size: 14px;
+  color: #292f33;
+  padding: 0px;
+}
+.tweetEntry-username {
+  font-weight: bold;
+  font-size: 14px;
+  color: #b1bbc3;
+  padding: 0px;
+}
+.tweetEntry-timestamp {
+  font-size: 14px;
+  color: #b1bbc3;
+  padding: 0px;
+}
+.tweetEntry-text-container {
+  font-size: 14px;
+  color: #292f33;
+  line-height: 18px;
+}
+
+.optionalMedia {
+  margin-left: 58px;
+  margin-top: 10px;
+}
+.optionalMedia-img {
+  border-radius: 5px;
+  max-width: 506px;
+  max-height: 506px;
+
 }
