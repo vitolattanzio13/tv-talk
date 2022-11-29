@@ -1,50 +1,56 @@
 #new-nav-bar{
   height: 100vh;
   width: 15vw;
-  background-color: #010000;
+  background-color:#010000;
   position: absolute;
   top: 0;
   left: 0;
-  color: white;
-}
-
-.sidebar {
-  height: 100vh;
-  width: 15vw;
-  position: absolute;
-  top: 0;
-  left: 0;
+  z-index: 1;
 }
 
 .navbar-brand {
   width: 15vw;
-  text-decoration: none;
-}
-
-.text-brand {
-  color: white;
-  text-decoration: none;
-  justify-content: center;
   align-items: center;
   display: flex;
-  height: 100%;
-  width: 100%;
-  font-weight: bold;
-}
-
-.nav-link {
-  width: 15vw;
-  font-size: 20px;
-  line-height: 52px;
-  text-align: center;
-  display: block;
-}
-
-.nav-link:hover {
-  background-color: #9A0600;
-  color: white;
+  justify-content: center;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .navbar-brand img {
-  width: 40px;
+  width: 50%;
 }
+
+a.text-brand {
+  color: white;
+  font-weight: 700;
+  font-size: 2.5vw;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  padding-top: 20px;
+  color: white;
+}
+
+.nav-item {
+  margin: 10px;
+  font-size: 2vw;
+  text-decoration: none;
+  width: 100%;
+  color: white;
+}
+
+// .nav-link {
+//   width: 100%;
+//   text-decoration: none;
+//   color: white;
+//   padding: 10px;
+// }
