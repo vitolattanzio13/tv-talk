@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_130558) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_165918) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_130558) do
     t.string "genre"
     t.string "director"
     t.string "actors"
+  end
+
+  create_table "newspapers", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "url"
   end
 
   create_table "post_votes", force: :cascade do |t|

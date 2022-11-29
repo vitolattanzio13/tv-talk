@@ -1,8 +1,14 @@
 #search-div{
   height: 100vh;
   width: 25vw;
-  background-color: lightgray;
+  background-color: $black;
   position: absolute;
   right: 0;
   top: 0;
+  z-index: 2;
+}
+#search{
+  height: 10%;
+  width: 100%;
+  background-color: $grey;
 }
