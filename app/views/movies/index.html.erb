@@ -1,3 +1,19 @@
 <div class="our-container">
   <h1>Movies#index</h1>
+  <div class="row row-cols-2 d-inline-flex m-4 g-4">
+      <% @movies.each do |movie| %>
+        <div class="card col">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= movie.title %></h5>
+            <p class="card-text"><%= movie.year %></p>
+            <div class="movie-show-link">
+              <%= link_to "movies/#{movie.id}" do %>
+                <button class="movie-show-button btn-post-tweet">About</button>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
 </div>
