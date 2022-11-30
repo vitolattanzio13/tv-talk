@@ -19,9 +19,9 @@
             <span class="tweetEntry-username">
               @<b><%= post.user.nickname %></b>
             </span>
-            <span class="tweetEntry-timestamp">- [timestamp]</span>
+            <span class="tweetEntry-timestamp"><%= post.chat_room.movie.title %></span>
           </a>
-          <div class="tweetEntry-text-container">
+          <div class="tweetEntry-text-container" link_to >
             <%= post.content %>
           </div>
         </div>
