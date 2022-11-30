@@ -1,0 +1,4 @@
+<%= simple_form_for([@post, @reply], html: { class: "nice-class"}) do |f| %>
+  <%= f.input :content, label: false, placeholder: "Reply post...", class: "content-input" %>
+  <%= f.button :submit, "Post", class: "btn-post-tweet" %>
+<% end %>
