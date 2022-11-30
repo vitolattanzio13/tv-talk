@@ -9,6 +9,3 @@ application.register("hello", HelloController)
 
 import SearchController from "./search_controller"
 application.register("search", SearchController)
-
-import TomSelectController from "./tom_select_controller"
-application.register("tom-select", TomSelectController)
