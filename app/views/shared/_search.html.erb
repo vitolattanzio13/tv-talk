@@ -3,7 +3,7 @@
   </div>
   <div id="news" class=" news-all-cont" >
     <% Newspaper.all.each do |n| %>
-      <%= link_to n.url ,class:"text-decoration-none" do %>
+      <%= link_to n.url, target: :_blank ,class:"text-decoration-none" do %>
         <div class="news-container">
           <div class="news-img" style="background-image:url('<%= n.image_url %>');">
           </div>
