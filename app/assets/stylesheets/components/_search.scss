@@ -1,8 +1,50 @@
 #search-div{
   height: 100vh;
   width: 25vw;
-  background-color: lightgray;
+  background-color: $black;
   position: absolute;
   right: 0;
   top: 0;
+  z-index: 2;
+}
+#search{
+  height: 10%;
+  width: 100%;
+  background-color: $grey;
+}
+.news-container{
+  height: 20vh;
+  width: 100%;
+  z-index: 4;
+  margin-bottom: 1vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.news-all-cont{
+  height: 90vh;
+  width: 100%;
+  z-index: 4;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  color: $white;
+  font-size: 1.5vw;
+}
+.news-all-cont::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+}
+.news-img{
+  height: 20vw;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 4;
+}
+.news-title{
+  text-decoration: none;
+  color: $white;
+  font-size: 0.8vw;
 }

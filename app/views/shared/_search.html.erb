@@ -1,1 +1,17 @@
-<div id="search-div"></div>
+<div id="search-div">
+  <div id="search">
+  </div>
+  <div id="news" class=" news-all-cont" >
+    <% Newspaper.all.each do |n| %>
+      <%= link_to n.url, target: :_blank ,class:"text-decoration-none" do %>
+        <div class="news-container">
+          <div class="news-img" style="background-image:url('<%= n.image_url %>');">
+          </div>
+          <div class="news-title">
+            <p class="news-title"><%= n.title %></p>
+          </div>
+        </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>
