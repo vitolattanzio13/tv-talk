@@ -1,4 +1,4 @@
-<div id="new-nav-bar">
+<div class="side-nav-bar">
   <div class="navbar-brand">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png"/>
       <span class="text-brand">tvtalk</span>
@@ -13,20 +13,24 @@
   </div>
   <div class="navbar-menu d-flex flex-column mb-3">
     <div class="nav-item p-2 d-flex align-items-center">
-      <i class="fas fa-home d-flex align-items-center"></i>
-      <%= link_to "Home", root_path, class: "nav-link" %>
+      <%= link_to root_path, class:"nav-link d-flex align-items-center" do %>
+        <p class="fas fa-home d-flex align-items-center"></p>
+        <p class="ms-2 nav">Home</p>
+      <% end %>
     </div>
     <div class="nav-item p-2 d-flex align-items-center">
-      <%# <i class="fa-solid fa-clapperboard d-flex align-items-center"></i> %>
-      <%= link_to movies_path,class:"nav-link d-flex align-items-center" do %>
+      <%= link_to movies_path, class:"nav-link d-flex align-items-center" do %>
         <p class= "fa-solid fa-clapperboard"></p>
         <p class="ms-2 nav">Movies</p>
       <% end %>
     </div>
     <div class="nav-item p-2 d-flex align-items-center">
-      <i class="fa-solid fa-user d-flex align-items-center"></i>
-      <%= link_to "Profile", "#", class: "nav-link" %>
+      <%= link_to "#", class:"nav-link d-flex align-items-center" do %>
+        <p class= "fa-solid fa-user d-flex align-items-center"></p>
+        <p class="ms-2 nav">Profile</p>
+      <% end %>
     </div>
+
   <% if user_signed_in? %>
     <div class="nav-item p-2 d-flex align-items-center">
       <i class="fa-solid fa-right-from-bracket d-flex align-items-center"></i>
@@ -36,9 +40,12 @@
       <%= link_to "Login", new_user_session_path, class: "log-link" %>
   <% end  %>
     </div>
+
     <div class="nav-item p-2 d-flex align-items-center">
-      <i class="fa-solid fa-info d-flex align-items-center"></i>
-      <%= link_to "About", "#", class: "nav-link" %>
+      <%= link_to "#", class:"nav-link d-flex align-items-center" do %>
+        <p class= "fa-solid fa-info d-flex align-items-center"></p>
+        <p class="ms-2 nav">About</p>
+      <% end %>
     </div>
   </div>
 </div>
