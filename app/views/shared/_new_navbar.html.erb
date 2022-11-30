@@ -10,8 +10,11 @@
       <%= link_to "Home", root_path, class: "nav-link" %>
     </div>
     <div class="nav-item p-2 d-flex align-items-center">
-      <i class="fa-solid fa-clapperboard d-flex align-items-center"></i>
-      <%= link_to "Movies", movies_path, class: "nav-link" %>
+      <%# <i class="fa-solid fa-clapperboard d-flex align-items-center"></i> %>
+      <%= link_to movies_path,class:"nav-link d-flex align-items-center" do %>
+        <p class= "fa-solid fa-clapperboard"></p>
+        <p class="ms-2 nav">Movies</p>
+      <% end %>
     </div>
     <div class="nav-item p-2 d-flex align-items-center">
       <i class="fa-solid fa-newspaper d-flex align-items-center"></i>
