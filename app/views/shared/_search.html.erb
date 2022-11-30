@@ -1,8 +1,17 @@
 <div id="search-div">
-  <div id="search">
-    <%= form_with do  %>
-      <%# <%= f.input :states, collection: [Movie.all + User.all], input_html: {data: {controller: "tom_select"}} %> %>
+  <div id="search-div-title">Jump to</div>
+  <div id="search" data-controller="search">
+    <%= form_with data: {search_target: "form"},id:"search-form" do |f| %>
+      <% movies = Movie.all.map{ |e| e.title} %>
+      <% users = User.all.map{ |e| e.nickname} %>
+      <%= f.text_field :query, class: "form-control form-font-size", id:"search-field", placeholder:
+                     "Go to a movie or a user profile", value: params[:query],
+                      data: {
+                        search_target: "input",
+                        action: "keyup->search#queryDb"} %>
     <% end %>
+    <div id="search-results" class="d-none form-control" data-search-target="links">
+    </div>
   </div>
   <div id="news" class=" news-all-cont" >
     <% Newspaper.all.each do |n| %>
