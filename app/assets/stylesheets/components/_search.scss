@@ -1,6 +1,6 @@
 #search-div{
   height: 100vh;
-  width: 23.6vw;
+  width: 25vw;
   background-color: $black;
   position: absolute;
   right: 0;
@@ -23,14 +23,18 @@
   align-items: center;
 }
 .news-all-cont{
-  height: 90%;
-  width: 25vw;
+  height: 90vh;
+  width: 100%;
   z-index: 4;
   overflow-y: auto;
   scroll-behavior: smooth;
   text-decoration: none;
   color: $white;
   font-size: 1.5vw;
+}
+.news-all-cont::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
 }
 .news-img{
   height: 20vw;
