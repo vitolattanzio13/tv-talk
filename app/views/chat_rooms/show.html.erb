@@ -1,0 +1,32 @@
+<div class="our-container">
+  <h1><%= @movie.title %></h1>
+  <% @chat_room.posts.each do |post| %>
+    <div class="post p-3">
+      <div class="tweetEntry rounded">
+        <div class="tweetEntry-content">
+          <a class="tweetEntry-account-group" href="[accountURL]">
+            <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
+            <strong class="tweetEntry-fullname">
+              <%= post.user.nickname %>
+            </strong>
+            <span class="tweetEntry-username">
+              @<b><%= post.user.nickname %></b>
+            </span>
+            <span class="tweetEntry-timestamp"><%= @movie.title %></span>
+          </a>
+          <div class="tweetEntry-text-container">
+            <%= post.content %>
+          </div>
+        </div>
+        <div class="optionalMedia">
+          <img class="optionalMedia-img" src="http://placekitten.com/500/400">
+        </div>
+        <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+          <i class="fa fa-reply" style="width: 80px;"></i>
+          <i class="fa fa-retweet" style="width: 80px"></i>
+          <i class="fa fa-heart" style="width: 80px"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
