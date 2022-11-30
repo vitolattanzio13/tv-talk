@@ -7,33 +7,40 @@
       </div>
     </div>
   </div>
-  <% @posts.each do |post| %>
-    <div class="post p-3">
-      <div class="tweetEntry rounded">
-        <div class="tweetEntry-content">
-          <a class="tweetEntry-account-group" href="[accountURL]">
-            <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
-            <strong class="tweetEntry-fullname">
-              <%= post.user.nickname %>
-            </strong>
-            <span class="tweetEntry-username">
-              @<b><%= post.user.nickname %></b>
-            </span>
-            <span class="tweetEntry-timestamp"><%= post.chat_room.movie.title %></span>
-          </a>
-          <div class="tweetEntry-text-container" link_to >
-            <%= post.content %>
+  <div class="posts-all-container">
+    <% @posts.each do |post| %>
+      <div class="post pt-3 px-3">
+        <div class="tweetEntry rounded">
+          <div class="tweetEntry-content">
+            <a class="tweetEntry-account-group" href="[accountURL]">
+              <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
+              <strong class="tweetEntry-fullname">
+                <%= post.user.nickname %>
+              </strong>
+              <span class="tweetEntry-username">
+                @<b><%= post.user.nickname %></b>
+              </span>
+              <span class="tweetEntry-timestamp"><%= post.chat_room.movie.title %></span>
+            </a>
+            <div class="tweetEntry-text-container" >
+              <%= post.content %>
+            </div>
+          </div>
+          <%# <div class="optionalMedia">
+                  <img class="optionalMedia-img" src="http://placekitten.com/500/400">
+                </div> %>
+          <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+            <%= link_to post_path(post), class:"text-decoration-none reply-btn" do %>
+              <i class="fa fa-reply mr-3" ></i>
+            <% end %>
+            <i class="fa fa-heart" ></i>
+            <%= link_to "See Post", post_path(post), class:"btn-post-tweet text-decoration-none" %>
+            <% unless post.user == current_user %>
+              <%= link_to "Follow", post_path(post), class:"btn-post-tweet text-decoration-none" %>
+            <% end %>
           </div>
         </div>
-        <div class="optionalMedia">
-          <img class="optionalMedia-img" src="http://placekitten.com/500/400">
-        </div>
-        <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-          <i class="fa fa-reply" style="width: 80px;"></i>
-          <i class="fa fa-retweet" style="width: 80px"></i>
-          <i class="fa fa-heart" style="width: 80px"></i>
-        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

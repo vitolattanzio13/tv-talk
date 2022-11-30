@@ -52,20 +52,23 @@ $grey: #CCCCCC;
   margin-top: 10px;
   color: #292f33;
 }
-.fa-reply:hover {
-  color: #292f33;
+.fa-reply{
+  margin-right: 1rem;
 }
-.fa-retweet:hover {
-  color: #5cd65c;
+.fa-heart{
+  margin-right: 1rem;
+}
+.fa-reply:hover {
+  color: $red2;
 }
 .fa-heart:hover {
-  color: #ff3333;
+  color: $red1;
 }
 /************************/
 
 .tweetEntry {
   border: 3px solid $red2;
-  cursor: pointer;
+  // cursor: pointer;
   min-height: 51px;
   padding: 9px 12px;
   background-color: $white;
@@ -121,4 +124,25 @@ $grey: #CCCCCC;
   max-width: 506px;
   max-height: 506px;
 
+}
+.posts-all-container{
+  height: 78.22vh;
+  width: 100%;
+  // z-index: 4;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  // font-size: 1.5vw;
+}
+.reply-btn  {
+  color: $grey;
+}
+.reply-btn:hover {
+  color: $red2;
+}
+.like-btn  {
+  color: $grey;
+}
+.like-btn:hover {
+  color: $red2;
 }

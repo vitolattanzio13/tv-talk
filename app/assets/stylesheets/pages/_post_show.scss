@@ -1,0 +1,15 @@
+.replies-all-container{
+  height: 76.22vh;
+  width: 100%;
+  // z-index: 4;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  // font-size: 1.5vw;
+}
+ #new-reply {
+  display: flex;
+  border: 3px solid $red2;
+  border-radius: 5px;
+  background-color: $white;
+ }

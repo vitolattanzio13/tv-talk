@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "movies/:id/chatrooms/:id", to: "chat_rooms#show"
   get "profile/:id", to: "pages#profile"
+  # get "numbers", to: "pages#follow"
   get "pages/", to: "pages#search_query"
 
   resources :movies, only: %i[index show]
