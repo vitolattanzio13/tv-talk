@@ -3,7 +3,15 @@ import TomSelect from "tom-select";
 
 // Connects to data-controller="tom-select"
 export default class extends Controller {
+  static values = { options: Object }
   connect() {
-    new TomSelect(this.element)
+    console.log("TomSelect controller connected")
+    console.log(this.optionsValue)
+    new TomSelect(this.element,
+                  this.optionsValue,{
+                  allowEmptyOption: false,
+                  create: true,
+                  sortField: {field: "text"}
+  });
   }
 }
