@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["form", "input", "links"]
   connect() {
-    console.log("Search controller connected")
+    // console.log("Search controller connected")
   }
   queryDb(event) {
     // console.log(this.inputTarget.value)
@@ -19,7 +19,7 @@ export default class extends Controller {
     .then((response) => response.json())
     .then((data) => {
       if (query != "") {
-        console.log(data)
+        // console.log(data)
         this.linksTarget.classList.remove("d-none")
         this.linksTarget.innerHTML = ""
         data.forEach((result) => {
