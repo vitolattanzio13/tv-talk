@@ -31,6 +31,13 @@
       <% end %>
     </div>
 
+    <div class="nav-item p-2 d-flex align-items-center">
+      <%= link_to "#", class:"nav-link d-flex align-items-center" do %>
+        <p class= "fa-solid fa-info d-flex align-items-center"></p>
+        <p class="ms-2 nav">About</p>
+      <% end %>
+    </div>
+
   <% if user_signed_in? %>
     <div class="nav-item p-2 d-flex align-items-center">
       <i class="fa-solid fa-right-from-bracket d-flex align-items-center"></i>
@@ -39,13 +46,6 @@
       <i class="fa-solid fa-right-from-bracket d-flex align-items-center"></i>
       <%= link_to "Login", new_user_session_path, class: "log-link" %>
   <% end  %>
-    </div>
-
-    <div class="nav-item p-2 d-flex align-items-center">
-      <%= link_to "#", class:"nav-link d-flex align-items-center" do %>
-        <p class= "fa-solid fa-info d-flex align-items-center"></p>
-        <p class="ms-2 nav">About</p>
-      <% end %>
     </div>
   </div>
 </div>

@@ -1,13 +1,13 @@
 <div class="our-container">
-  <%= form_with url: movies_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a movie"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
+  <div class="index-search-div">
+    <%= form_with url: movies_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :mquery, params[:mquery],
+      class: "form-control",
+      placeholder: "Type a Title or a Year"
+      %>
+      <%= submit_tag "Find a movie", class: "btn-post-tweet" %>
+    <% end %>
+  </div>
   <div class="index__cards mx-3">
     <% @movies.each do |movie| %>
       <div class="index__cards-card">
@@ -16,13 +16,13 @@
         <div class="index__cards-card-body">
           <p class="index__cards-card-body-title m-0 mt-3"><%= movie.title %></p>
           <p class="index__cards-card-body-text">(<%= movie.year %>)</p>
-          <div class="index__cards-card-body-btn d-flex justify-content-center">
+          <div class="index__cards-card-body-btn">
             <div class="movie-show-link">
               <%= link_to "movies/#{movie.id}" do %>
                 <button class="movie-show-button btn-post-tweet">About</button>
               <% end %>
             </div>
-            <div class="movie-show-link d-flex justify-content-between">
+            <div class="movie-show-link">
               <%= link_to "movies/#{movie.id}/chatrooms/#{movie.id}" do %>
                 <button class="movie-show-button btn-post-tweet">Chat</button>
               <% end %>

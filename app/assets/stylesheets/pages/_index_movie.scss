@@ -53,3 +53,18 @@
   justify-content: center;
   align-items: center;
 }
+
+.index__cards-card-body-btn {
+width: 100%;
+display: flex;
+justify-content: space-around;
+}
+
+.index-search-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #010000;
+  padding-top: 1vw;
+}
