@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   get "profile/:id", to: "pages#profile"
   # get "numbers", to: "pages#follow"
   get "pages/", to: "pages#search_query"
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      get '/search/:query', to: 'pages#search_query'
+    end
+  end
 
   resources :movies, only: %i[index show]
   resources :posts, only: %i[index show new create edit update] do
