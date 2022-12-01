@@ -137,6 +137,10 @@ $grey: #CCCCCC;
   text-decoration: none;
   // font-size: 1.5vw;
 }
+.posts-all-container::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+}
 .reply-btn  {
   color: $grey;
 }
