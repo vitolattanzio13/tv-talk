@@ -8,27 +8,36 @@ export default class extends Controller {
   }
   queryDb(event) {
     // console.log(this.inputTarget.value)
-    if (this.inputTarget.value === "") {
-      this.linksTarget.classList.add("d-none")
+    const query = this.inputTarget.value;
+    const resultsContainer= this.linksTarget;
+    if (query === "") {
+      resultsContainer.classList.add("d-none");
     }
-    this.linksTarget.innerHTML = ""
-    const url = `/pages/?query=${this.inputTarget.value}`
+    resultsContainer.innerHTML = ""
+    const url = this.#generateLink(query)
     fetch(url,{headers: {'Accept': 'application/json'}})
     .then((response) => response.json())
     .then((data) => {
-      if (this.inputTarget.value != "") {
+      if (query != "") {
         console.log(data)
         this.linksTarget.classList.remove("d-none")
         this.linksTarget.innerHTML = ""
         data.forEach((result) => {
-          if (result.type === "user") {
-            this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/${result.url}">${result.title}</a>`)
-          } else {
-            this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/movies/${result.url}">${result.title}</a>`)
-            this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/movies/${result.url}/chatrooms/${result.url}">${result.title} discussion</a>`)
-          }
+          this.#insertResult(result)
         })
       }
     });
   }
+  #generateLink = (query) =>{
+    return `/api/v1/search/${query}`
+  }
+
+  #insertResult = (result) =>{
+    if (result.type === "user") {
+      this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/${result.url}">${result.title}</a>`)
+    } else {
+      this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/movies/${result.url}">${result.title}</a>`)
+      this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/movies/${result.url}/chatrooms/${result.url}">${result.title} discussion</a>`)
+    }
+  };
 }
