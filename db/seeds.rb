@@ -1,6 +1,7 @@
 require "json"
 require "open-uri"
 require "nokogiri"
+PostVote.destroy_all
 Newspaper.destroy_all
 Reply.destroy_all
 Post.destroy_all

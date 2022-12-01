@@ -39,9 +39,11 @@
           <div class="tweetEntry-action-list d-flex">
             <i class="fa fa-reply"></i>
             <div class="post-likes d-flex">
-              <i class="fa fa-heart" data-action="click->votes-handler#like"
-                                   data-votes-handler-target="button" ></i>
-              <p data-votes-handler-target="count"><%= post.likes %>(likes)</p>
+              <% hasliked = !PostVote.find_by(user_id: current_user.id, post_id: post.id).nil? %>
+              <i class="fa fa-heart <%= 'liked-button-red' if hasliked%> "
+                                    data-action="click->votes-handler#like"
+                                    data-votes-handler-target="button" ></i>
+              <p data-votes-handler-target="count"><%= post.likes %><%= " (likes)" %></p>
             </div>
           </div>
         </div>
