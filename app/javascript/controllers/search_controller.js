@@ -12,21 +12,22 @@ export default class extends Controller {
     const resultsContainer= this.linksTarget;
     if (query === "") {
       resultsContainer.classList.add("d-none");
+    } else {
+      resultsContainer.innerHTML = ""
+      const url = this.#generateLink(query)
+      fetch(url,{headers: {'Accept': 'application/json'}})
+      .then((response) => response.json())
+      .then((data) => {
+        if (query != "") {
+          // console.log(data)
+          this.linksTarget.classList.remove("d-none")
+          this.linksTarget.innerHTML = ""
+          data.forEach((result) => {
+            this.#insertResult(result)
+          })
+        }
+      });
     }
-    resultsContainer.innerHTML = ""
-    const url = this.#generateLink(query)
-    fetch(url,{headers: {'Accept': 'application/json'}})
-    .then((response) => response.json())
-    .then((data) => {
-      if (query != "") {
-        // console.log(data)
-        this.linksTarget.classList.remove("d-none")
-        this.linksTarget.innerHTML = ""
-        data.forEach((result) => {
-          this.#insertResult(result)
-        })
-      }
-    });
   }
   #generateLink = (query) =>{
     return `/api/v1/search/${query}`

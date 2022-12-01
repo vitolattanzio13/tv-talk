@@ -9,14 +9,16 @@
   border-radius: 5px;
 }
 .btn-post-tweet:hover{
-  border: 3px solid #9A0600;
+  border: 3px solid #010000;
   border-radius: 5px;
   background-color: #9A0600;
-  color: $black;
+  transition: 0.7s;
 }
 .wrapper-input{
   border: 3px solid #9A0600;
   border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #010000;
 }
 .label-input{
   color: $black;

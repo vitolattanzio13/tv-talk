@@ -68,15 +68,10 @@ span.text-brand {
   text-decoration: none;
 }
 
-/* Active/current link */
-.side-nav-bar a.active {
-  background-color: #04AA6D;
-  color: white;
-}
 
 /* Links on mouse-over */
-.side-nav-bar a:hover:not(.active) {
-  color: #9a0600;
+.side-nav-bar a:hover {
+  color: #9A0600;
 }
 
 // .nav-item:hover {
@@ -95,7 +90,6 @@ span.text-brand {
 //   margin-left: 10%;
 //   font-size: 1.5vw;
 // }
-
 
 
 // a.log-link:hover {
