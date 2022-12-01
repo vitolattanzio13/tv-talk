@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!, only: %i[index]
 
   def index
     @posts = Post.all.order(updated_at: :desc)
@@ -19,12 +19,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    @chat_room = ChatRoom.first
-    @post.chat_room = @chat_room
-    # line 22 and 23 its for testing
-    # @post.chat_room = ChatRoom.find(params[:chat_room_id])
+    @chat_room = ChatRoom.first if @post.chat_room_id.nil?
+    @post.chat_room_id = @chat_room.id
     if @post.save
-      redirect_to posts_path
+      # redirect_to posts_path
+      redirect_back(fallback_location: root_path)
     else
       render :new, alert: "Post could not be created"
     end

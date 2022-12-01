@@ -1,39 +1,51 @@
 <div class="our-container">
-  <h1><%= @movie.title %></h1>
-  <% @chat_room.posts.each do |post| %>
-    <div class="post p-3" data-controller="votes-handler"
+  <div class="container">
+    <h1 class="replies-title"><%= @movie.title %></h1>
+    <div class="d-flex justify-content-start container-new-post">
+      <div id="new-post" class="m-3 p-3" >
+      <img class="tweetPost-avatar rounded-circle" src="http://placekitten.com/200/200">
+        <div class="form-post-new ml-3 mr-3">
+          <%= render 'shared/new_post_chatroom_form' %>
+        </div>
+      </div>
+    </div>
+    <% @chat_room.posts.each do |post| %>
+      <div class="post p-3" data-controller="votes-handler"
                           data-votes-handler-target="likes"
                           data-votes-handler-poster-value=<%= post.user.id%>
                           data-votes-handler-post-value=<%= post.id %>
                           data-votes-handler-user-value=<%= current_user.id %> >
-      <div class="tweetEntry rounded">
-        <div class="tweetEntry-content">
-          <a class="tweetEntry-account-group" href="[accountURL]">
-            <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
-            <strong class="tweetEntry-fullname">
-              <%= post.user.nickname %>
-            </strong>
-            <span class="tweetEntry-username">
-              <b><%= post.user.nickname %></b>
-            </span>
-            <span class="tweetEntry-timestamp"><%= @movie.title %></span>
-          </a>
-          <div class="tweetEntry-text-container">
-            <%= post.content %>
+        <div class="tweetEntry rounded">
+          <div class="tweetEntry-content">
+            <a class="tweetEntry-account-group" href="[accountURL]">
+              <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
+              <strong class="tweetEntry-fullname">
+                <%= post.user.nickname %>
+              </strong>
+              <span class="tweetEntry-username">
+                <b><%= post.user.nickname %></b>
+              </span>
+              <span class="tweetEntry-timestamp"><%= @movie.title %></span>
+            </a>
+            <div class="tweetEntry-text-container">
+              <%= post.content %>
+            </div>
           </div>
-        </div>
-        <div class="optionalMedia">
-          <img class="optionalMedia-img" src="http://placekitten.com/500/400">
-        </div>
-        <div class="tweetEntry-action-list d-flex">
-          <i class="fa fa-reply"></i>
-          <div class="post-likes d-flex">
-            <i class="fa fa-heart" data-action="click->votes-handler#like"
+          <% if post.photo.attached? %>
+            <div class="optionalMedia">
+              <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+            </div>
+          <% end %>
+          <div class="tweetEntry-action-list d-flex">
+            <i class="fa fa-reply"></i>
+            <div class="post-likes d-flex">
+              <i class="fa fa-heart" data-action="click->votes-handler#like"
                                    data-votes-handler-target="button" ></i>
-            <p data-votes-handler-target="count"><%= post.likes %>(likes)</p>
+              <p data-votes-handler-target="count"><%= post.likes %>(likes)</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
