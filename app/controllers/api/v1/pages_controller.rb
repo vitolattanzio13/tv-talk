@@ -11,7 +11,35 @@ class Api::V1::PagesController < ApplicationController
     end
   end
 
+  def like
+    post = like_params[:post]
+    user = like_params[:user]
+    action = {}
+    post_instance = Post.find(post)
+    all_user_post_votes = PostVote.where(user_id: user)
+
+    if all_user_post_votes.empty? || all_user_post_votes.where(post_id: post).empty?
+      register = PostVote.new(user_id: user, post_id: post)
+      post_instance.likes += 1
+      post_instance.save
+      action[:status] = register.save
+    else
+      register = PostVote.find_by(post_id: post)
+      post_instance.likes -= 1
+      post_instance.save
+      action[:status] = register.destroy
+    end
+    action[:new_count] = post_instance.likes
+    respond_to do |format|
+      format.json { render json: action.to_json }
+    end
+  end
+
   private
+
+  def like_params
+    params.require(:like).permit(:user, :poster, :post)
+  end
 
   def format_response(results)
     results.map do |result|
