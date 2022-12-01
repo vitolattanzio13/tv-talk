@@ -14,9 +14,15 @@
   background-color: #9A0600;
   transition: 0.7s;
 }
-.content-input{
+.wrapper-input{
   border: 3px solid #9A0600;
   border-radius: 5px;
   background-color: #FFFFFF;
   color: #010000;
+}
+.label-input{
+  color: $black;
+}
+.bg-input{
+  background-color: $white;
 }
