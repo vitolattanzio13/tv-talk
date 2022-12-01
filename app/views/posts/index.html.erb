@@ -1,46 +1,50 @@
 <div class="our-container">
-  <div class="d-flex justify-content-start container-new-post">
-    <div id="new-post" class="m-3 p-3" >
-      <img class="tweetPost-avatar rounded-circle" src="http://placekitten.com/200/200">
-      <div class="form-post-new ml-3 mr-3">
-        <%= render 'shared/new_post_form' %>
-      </div>
-    </div>
-  </div>
-  <div class="posts-all-container">
-    <% @posts.each do |post| %>
-      <div class="post pt-3 px-3">
-        <div class="tweetEntry rounded">
-          <div class="tweetEntry-content">
-            <a class="tweetEntry-account-group" href="[accountURL]">
-              <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
-              <strong class="tweetEntry-fullname">
-                <%= post.user.nickname %>
-              </strong>
-              <span class="tweetEntry-username">
-                @<b><%= post.user.nickname %></b>
-              </span>
-              <span class="tweetEntry-timestamp"><%= post.chat_room.movie.title %></span>
-            </a>
-            <div class="tweetEntry-text-container" >
-              <%= post.content %>
-            </div>
-          </div>
-          <%# <div class="optionalMedia">
-                  <img class="optionalMedia-img" src="http://placekitten.com/500/400">
-                </div> %>
-          <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-            <%= link_to post_path(post), class:"text-decoration-none reply-btn" do %>
-              <i class="fa fa-reply mr-3" ></i>
-            <% end %>
-            <i class="fa fa-heart" ></i>
-            <%= link_to "See Post", post_path(post), class:"btn-post-tweet text-decoration-none" %>
-            <% unless post.user == current_user %>
-              <%= link_to "Follow", post_path(post), class:"btn-post-tweet text-decoration-none" %>
-            <% end %>
-          </div>
+  <div class="container">
+    <div class="d-flex justify-content-start container-new-post">
+      <div id="new-post" class="m-3 p-3" >
+        <img class="tweetPost-avatar rounded-circle" src="http://placekitten.com/200/200">
+        <div class="form-post-new ml-3 mr-3">
+          <%= render 'shared/new_post_form' %>
         </div>
       </div>
-    <% end %>
+    </div>
+    <div class="posts-all-container">
+      <% @posts.each do |post| %>
+        <div class="post pt-3 px-3">
+          <div class="tweetEntry rounded">
+            <div class="tweetEntry-content">
+              <a class="tweetEntry-account-group" href="[accountURL]">
+                <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
+                <strong class="tweetEntry-fullname">
+                  <%= post.user.nickname %>
+                </strong>
+                <span class="tweetEntry-username">
+                  @<b><%= post.user.nickname %></b>
+                </span>
+                <span class="tweetEntry-timestamp"><%= post.chat_room.movie.title %></span>
+              </a>
+              <div class="tweetEntry-text-container" >
+                <%= post.content %>
+              </div>
+            </div>
+            <% if post.photo.attached? %>
+              <div class="optionalMedia">
+                <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+              </div>
+            <% end %>
+            <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+              <%= link_to post_path(post), class:"text-decoration-none reply-btn" do %>
+                <i class="fa fa-reply mr-3" ></i>
+              <% end %>
+              <i class="fa fa-heart" ></i>
+              <%#= link_to "See Post", post_path(post), class:"btn-post-tweet text-decoration-none" %>
+              <% unless post.user == current_user %>
+                <%= link_to "Follow", post_path(post), class:"btn-post-tweet text-decoration-none" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
