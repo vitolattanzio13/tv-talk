@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import SearchController from "./search_controller"
 application.register("search", SearchController)
+
+import VotesHandlerController from "./votes_handler_controller"
+application.register("votes-handler", VotesHandlerController)
