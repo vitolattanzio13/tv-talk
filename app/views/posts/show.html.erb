@@ -1,61 +1,66 @@
 <div class="our-container pt-3">
-  <div class="tweetEntry rounded mx-3 mb-3">
-    <div class="tweetEntry-content">
-      <a class="tweetEntry-account-group" href="[accountURL]">
-        <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
-        <strong class="tweetEntry-fullname">
-          <%= @post.user.nickname %>
-        </strong>
-        <span class="tweetEntry-username">
-          @<b><%= @post.user.nickname %></b>
-        </span>
-        <span class="tweetEntry-timestamp"><%= @post.chat_room.movie.title %></span>
-      </a>
-      <div class="tweetEntry-text-container" >
-        <%= @post.content %>
+  <div class="container">
+    <div class="tweetEntry rounded mx-3 mb-3">
+      <div class="tweetEntry-content">
+        <a class="tweetEntry-account-group" href="[accountURL]">
+          <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
+          <strong class="tweetEntry-fullname">
+            <%= @post.user.nickname %>
+          </strong>
+          <span class="tweetEntry-username">
+            @<b><%= @post.user.nickname %></b>
+          </span>
+          <span class="tweetEntry-timestamp"><%= @post.chat_room.movie.title %></span>
+        </a>
+        <div class="tweetEntry-text-container" >
+          <%= @post.content %>
+        </div>
+      </div>
+      <% if @post.photo.attached? %>
+        <div class="optionalMedia">
+          <%= cl_image_tag @post.photo.key, height: 300, width: 400, crop: :fill %>
+        </div>
+      <% end %>
+      <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+        <i class="fa fa-reply" style="width: 80px;"></i>
+        <i class="fa fa-retweet" style="width: 80px"></i>
+        <i class="fa fa-heart" style="width: 80px"></i>
       </div>
     </div>
-    <%# <div class="optionalMedia">
-      <img class="optionalMedia-img" src="http://placekitten.com/500/400">
-    </div> %>
-    <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-      <i class="fa fa-reply" style="width: 80px;"></i>
-      <i class="fa fa-retweet" style="width: 80px"></i>
-      <i class="fa fa-heart" style="width: 80px"></i>
+    <div id="new-reply" class="m-3 p-3" >
+      <img class="tweetPost-avatar rounded-circle" src="http://placekitten.com/200/200">
+      <div class="form-post-new ml-3 mr-3">
+        <%= render 'shared/new_reply_form' %>
+      </div>
     </div>
-  </div>
-  <div id="new-reply" class="m-3 p-3" >
-    <img class="tweetPost-avatar rounded-circle" src="http://placekitten.com/200/200">
-    <div class="form-post-new ml-3 mr-3">
-      <%= render 'shared/new_reply_form' %>
-    </div>
-  </div>
-  <h3>Replies:</h3>
-  <div class="replies-all-container">
-    <% @post.replies.each do |reply| %>
-      <div class="tweetEntry rounded mx-3 mb-3">
-        <div class="tweetEntry-content">
-          <a class="tweetEntry-account-group" href="[accountURL]">
-            <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
+    <h3 class="replies-title">Replies:</h3>
+    <div class="replies-all-container">
+      <% @post.replies.each do |reply| %>
+        <div class="tweetEntry rounded mx-3 mb-3">
+          <div class="tweetEntry-content">
+            <a class="tweetEntry-account-group" href="[accountURL]">
+              <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
               <strong class="tweetEntry-fullname">
-              <%= reply.user.nickname %>
+                <%= reply.user.nickname %>
               </strong>
               <span class="tweetEntry-username">
-               @<b><%= reply.user.nickname %></b>
+                @<b><%= reply.user.nickname %></b>
               </span>
-          </a>
-          <div class="tweetEntry-text-container" >
-            <%= reply.content %>
+            </a>
+            <div class="tweetEntry-text-container" >
+              <%= reply.content %>
+            </div>
+          </div>
+          <% if reply.photo.attached? %>
+            <div class="optionalMedia">
+              <%= cl_image_tag reply.photo.key, height: 300, width: 400, crop: :fill %>
+            </div>
+          <% end %>
+          <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+            <i class="fa fa-heart" style="width: 80px"></i>
           </div>
         </div>
-        <%# <div class="optionalMedia">
-          <img class="optionalMedia-img" src="http://placekitten.com/500/400">
-        </div> %>
-        <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-          <i class="fa fa-heart" style="width: 80px"></i>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-
 </div>
