@@ -31,6 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_165918) do
   end
 
   create_table "followed_users", force: :cascade do |t|
+    t.bigint "follower_id"
+    t.bigint "followee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["followee_id"], name: "index_followed_users_on_followee_id"
