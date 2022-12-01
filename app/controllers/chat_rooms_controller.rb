@@ -6,6 +6,7 @@ class ChatRoomsController < ApplicationController
     @chat_room = @movie.chat_room
     @posts = @chat_room.posts
     @post_votes = PostVote.all.includes(:users)
+    @post = Post.new
   end
 
   private
