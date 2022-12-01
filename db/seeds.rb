@@ -8,30 +8,35 @@ ChatRoom.destroy_all
 Movie.destroy_all
 User.destroy_all
 
-def get_movie(title)
-  result = {}
-  result[:title] = title
-  title = title.gsub(" ", "+")
-  title = title.gsub(":", "%3A")
-  url = "http://www.omdbapi.com/?t=#{title}&plot=full&apikey=#{ENV.fetch('OMDB_API_KEY')}"
+def format_result(movie, mtitle)
+  {
+    title: mtitle, poster_url: movie["Poster"],
+    imdb_id: movie["imdbID"], media_type: movie["Type"],
+    plot_long: movie["Plot"],
+    year: movie["Year"],
+    rating: movie["imdbRating"],
+    genre: movie["Genre"],
+    director: movie["Director"],
+    actors: movie["Actors"]
+  }
+end
+
+def get_movie(mtitle)
+  title = mtitle
+  mtitle = mtitle.gsub(" ", "+")
+  mtitle = mtitle.gsub(":", "%3A")
+  url = "http://www.omdbapi.com/?t=#{mtitle}&plot=full&apikey=#{ENV.fetch('OMDB_API_KEY')}"
   movie_serialized = URI.open(url).read
   movie = JSON.parse(movie_serialized)
-  result[:poster_url] = movie["Poster"]
-  result[:imdb_id] = movie["imdbID"]
-  result[:media_type] = movie["Type"]
-  result[:plot_long] = movie["Plot"]
-  result[:year] = movie["Year"]
-  result[:rating] = movie["imdbRating"]
-  result[:genre] = movie["Genre"]
-  result[:director] = movie["Director"]
-  result[:actors] = movie["Actors"]
-  result
+  format_result(movie, title)
 end
 
 # Create users
 user1 = User.create!(email: "user1@gmail.com", password: "123456", nickname: "user1")
 user2 = User.create!(email: "user2@gmail.com", password: "123456", nickname: "user2")
 user3 = User.create!(email: "user3@gmail.com", password: "123456", nickname: "user3")
+
+# Create movies
 
 title = "Star wars: Episode IV"
 movie = get_movie(title)
@@ -61,7 +66,7 @@ movie.trailer_url = "https://www.youtube.com/embed/gcTkNV5Vg1E"
 movie.save!
 ChatRoom.create(movie_id: movie.id)
 
-
+# Create posts
 
 p1 = Post.new(content: "This is the first post of the first chat room",chat_room_id: c1.id, user_id: user1.id)
 p1.save
@@ -88,6 +93,7 @@ r3.save
 r4 = Reply.new(content: "This is the second reply of the first post of the second chat room",post_id: p3.id, user_id: user1.id)
 r4.save
 
+# News articles
 
 url = "https://www.empireonline.com/movies/news/"
 
@@ -96,9 +102,9 @@ html_doc = Nokogiri::HTML(html_file)
 titles = []
 links = []
 html_doc.search("a.jsx-2519753491.title").each do |element|
-  #title
+  # title
   titles << element.text.strip
-  #link
+  # link
   links << element.attribute("href").value
 end
 descriptions = []
@@ -108,7 +114,7 @@ html_doc.search("a.description").each do |element|
 end
 imgs = []
 html_doc.search("img.jsx-952983560.loading").each do |element|
-#   img_url
+  # img_url
   link = element.attribute("data-src").value
   img_links = link.split("?")
   imgs << img_links[0]
@@ -116,6 +122,6 @@ end
 
 link_url = "https://www.empireonline.com"
 
-titles.each_with_index do |title, index|
-  Newspaper.create(title: title, content: descriptions[index], url: link_url + links[index], image_url: "https:#{imgs[index]}")
+titles.each_with_index do |ntitle, index|
+  Newspaper.create(title: ntitle, content: descriptions[index], url: link_url + links[index], image_url: "https:#{imgs[index]}")
 end
