@@ -5,8 +5,7 @@
                           data-votes-handler-user-value=<%= current_user.id %> >
   <div class="tweetEntry rounded">
     <div class="tweetEntry__poster">
-    <div class="post-movie-poster" style="background-image:url('<%= post.chat_room.movie.poster_url %>');"></div>
-      <%# <img class="tweetEntry__poster-img" src="http://placekitten.com/200/200"> %>
+      <div class="post-movie-poster" style="background-image:url('<%= post.chat_room.movie.poster_url %>');"></div>
     </div>
     <div class="tweetEntry-content">
       <a class="tweetEntry-account-group" href="[accountURL]">
@@ -14,7 +13,7 @@
           <%= post.user.nickname %>
         </strong>
         <span class="tweetEntry-timestamp"><%= post.chat_room.movie.title %></span>
-        <div class="tweetEntry-avatar rounded-circle" style="background-image:url('<%= cl_image_path post.user.photo.key %>')"></div><%=  %>
+        <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path post.user.photo.key %>')"></div>
       </a>
       <div class="tweetEntry-text-container">
         <div class="tweetEntry-text-container-content">
@@ -35,9 +34,9 @@
       </div>
     </div>
     <%# <% if post.photo.attached? %>
-      <%# <div class="optionalMedia"> %>
-        <%#= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
-      <%# </div> %>
+    <%# <div class="optionalMedia"> %>
+    <%#= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+    <%# </div> %>
     <%# end %>
   </div>
 </div>
