@@ -46,11 +46,12 @@ $grey: #CCCCCC;
 
 /* The action list is optional. */
 .tweetEntry-action-list {
-  display: block;
-  line-height: 18px;
-  margin-left: 58px;
-  margin-top: 10px;
-  color: #292f33;
+  display: flex;
+  flex-direction: row;
+  // line-height: 18px;
+  // margin-left: 58px;
+  // margin-top: 10px;
+  // color: #292f33;
 }
 .fa-reply{
   margin-right: 1rem;
@@ -75,24 +76,33 @@ $grey: #CCCCCC;
   min-height: 51px;
   padding: 9px 12px;
   background-color: $white;
+  display: flex;
+  flex-direction: row;
 }
 .tweetEntry-content {
-  display: block;
+  // display: block;
   font-size: 14px;
-  margin-left: 58px;
+  margin-left: 1vw;
   font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 .tweetEntry-account-group {
   color: #8899a6;
   padding: 0px;
   text-decoration: none;
   line-height: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .tweetEntry-avatar {
-  float: left;
+  // float: left;
   height: 48px;
   width: 48px;
-  margin-left: -58px;
+  // margin-right: -58px;
   border-radius: 5px;
 }
 .tweetEntry-fullname {
@@ -100,22 +110,21 @@ $grey: #CCCCCC;
   font-size: 14px;
   color: #292f33;
   padding: 0px;
+  flex-grow: 1;
 }
-.tweetEntry-username {
-  font-weight: bold;
-  font-size: 14px;
-  color: #b1bbc3;
-  padding: 0px;
-}
+
 .tweetEntry-timestamp {
   font-size: 14px;
   color: #b1bbc3;
   padding: 0px;
+  flex-grow: 1;
 }
+
 .tweetEntry-text-container {
-  font-size: 14px;
-  color: #292f33;
-  line-height: 18px;
+  font-size: 18px;
+  color: #010000;
+  line-height: 3vh;
+  flex-grow: 1;
 }
 
 .optionalMedia {
@@ -141,6 +150,14 @@ $grey: #CCCCCC;
   display: none;
   overflow: hidden;
 }
+
+.tweetEntry-action-list {
+  color: $grey;
+  justify-content: right;
+  align-items: center;
+  display: flex;
+}
+
 .reply-btn  {
   color: $grey;
 }
