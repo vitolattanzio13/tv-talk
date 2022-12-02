@@ -204,14 +204,14 @@ ChatRoom.create(movie_id: m18.id)
 
 # Create posts
 
-p1 = Post.new(content: "Best movie ever", chat_room_id: c4.id, user_id: fran.id, likes: 4)
-p1.save
 p2 = Post.new(content: "I want Mia's foot massages lol", chat_room_id: c4.id, user_id: ganzo.id, likes: 17)
 p2.save
 p3 = Post.new(content: "I love this movie", chat_room_id: c4.id, user_id: maria.id, likes: 2)
 p3.save
 p4 = Post.new(content: "Team Marcellus or team Butch???", chat_room_id: c4.id, user_id: jorrit.id, likes: 1)
 p4.save
+p1 = Post.new(content: "Best movie ever", chat_room_id: c4.id, user_id: fran.id, likes: 4)
+p1.save
 
 p5 = Post.new(content: "This movie is to old for me", chat_room_id: c2.id, user_id: leo.id, likes: 10)
 p5.save
@@ -231,13 +231,11 @@ p11.save
 
 # Pulp fiction replies
 
-r1 = Reply.new(content: "This is the first reply of the first post of the first chat room",post_id: p1.id, user_id: jorrit.id)
+r1 = Reply.new(content: "I also love it",post_id: p1.id, user_id: jorrit.id)
 r1.save
-r2 = Reply.new(content: "This is the second reply of the first post of the first chat room",post_id: p1.id, user_id: fran.id)
-r2.save
-r3 = Reply.new(content: "This is the first reply of the second post of the first chat room",post_id: p2.id, user_id: maria.id)
+r3 = Reply.new(content: "Ha ha your're so funny",post_id: p2.id, user_id: maria.id)
 r3.save
-r4 = Reply.new(content: "This is the second reply of the second post of the first chat room",post_id: p2.id, user_id: ganzo.id)
+r4 = Reply.new(content: "Thank you",post_id: p2.id, user_id: ganzo.id)
 r4.save
 
 # News articles
