@@ -4,35 +4,39 @@
                           data-votes-handler-post-value=<%= post.id %>
                           data-votes-handler-user-value=<%= current_user.id %> >
   <div class="tweetEntry rounded">
+    <div class="tweetEntry__poster">
+      <img class="tweetEntry__poster-img" src="http://placekitten.com/200/200">
+    </div>
     <div class="tweetEntry-content">
       <a class="tweetEntry-account-group" href="[accountURL]">
-        <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
         <strong class="tweetEntry-fullname">
           <%= post.user.nickname %>
         </strong>
-        <span class="tweetEntry-username">
-          <b><%= post.user.nickname %></b>
-        </span>
         <span class="tweetEntry-timestamp"><%= post.chat_room.movie.title %></span>
+        <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
       </a>
       <div class="tweetEntry-text-container">
-        <%= post.content %>
+        <div class="tweetEntry-text-container-content">
+          <%= post.content %>
+        </div>
       </div>
-    </div>
-    <% if post.photo.attached? %>
-      <div class="optionalMedia">
-        <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
-      </div>
-    <% end %>
-    <div class="tweetEntry-action-list d-flex">
-      <i class="fa fa-reply"></i>
-      <div class="post-likes d-flex">
-        <% hasliked = !PostVote.find_by(user_id: current_user.id, post_id: post.id).nil? %>
-        <i class="fa fa-heart <%= 'liked-button-red' if hasliked%> "
+      <div class="tweetEntry-action-list">
+        <%= link_to post_path(post)  do %>
+          <i class="fa fa-reply"></i>
+        <% end %>
+        <div class="post-likes d-flex align-center">
+          <% hasliked = !PostVote.find_by(user_id: current_user.id, post_id: post.id).nil? %>
+          <i class="fa fa-heart <%= 'liked-button-red' if hasliked%> "
                                     data-action="click->votes-handler#like"
-          data-votes-handler-target="button" ></i>
-        <p data-votes-handler-target="count"><%= post.likes %><%= " (likes)" %></p>
+            data-votes-handler-target="button" ></i>
+          <p class="m-0" data-votes-handler-target="count"><%= post.likes %><%= " (likes)" %></p>
+        </div>
       </div>
     </div>
+    <%# <% if post.photo.attached? %>
+      <%# <div class="optionalMedia"> %>
+        <%#= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+      <%# </div> %>
+    <%# end %>
   </div>
 </div>
