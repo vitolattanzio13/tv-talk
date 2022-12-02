@@ -38,41 +38,49 @@ fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "fran")
 file = URI.open("https://avatars.githubusercontent.com/u/104527931?v=4")
 fran.photo.attach(io: file, filename: "fran.jpg", content_type: "image/jpg")
 fran.save!
+sleep(1)
 
 vito = User.new(email: "vito@gmail.com", password: "123456", nickname: "vito")
 file = URI.open("https://avatars.githubusercontent.com/u/62178588?v=4")
 vito.photo.attach(io: file, filename: "vito.jpg", content_type: "image/jpg")
 vito.save!
+sleep(1)
 
 jorrit = User.new(email: "jorrit@gmail.com", password: "123456", nickname: "jorrit")
 file = URI.open("https://avatars.githubusercontent.com/u/101260772?v=4")
 jorrit.photo.attach(io: file, filename: "jorrit.jpg", content_type: "image/jpg")
 jorrit.save!
+sleep(1)
 
 leo = User.new(email: "leo@gmail.com", password: "123456", nickname: "leo")
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1666021133/yxhif62kivyl2678wt3z.jpg")
 leo.photo.attach(io: file, filename: "leo.jpg", content_type: "image/jpg")
 leo.save!
+sleep(1)
 
 arthur = User.new(email: "arthur@gmail.com", password: "123456", nickname: "arthur")
 file = URI.open("https://avatars.githubusercontent.com/u/115401398?v=4")
 arthur.photo.attach(io: file, filename: "arthur.jpg", content_type: "image/jpg")
 arthur.save!
+sleep(1)
 
 maria = User.new(email: "maria@gmail.com", password: "123456", nickname: "maria")
 file = URI.open("https://avatars.githubusercontent.com/u/115433579?v=4")
 maria.photo.attach(io: file, filename: "maria.jpg", content_type: "image/jpg")
 maria.save!
+sleep(1)
 
 laura = User.new(email: "laura@gmail.com", password: "123456", nickname: "laura")
 file = URI.open("https://avatars.githubusercontent.com/u/107079059?v=4")
 laura.photo.attach(io: file, filename: "laura.jpg", content_type: "image/jpg")
 laura.save!
+sleep(1)
 
 ganzo = User.new(email: "ganzo@gmail.com", password: "123456", nickname: "ganzo")
 file = URI.open("https://avatars.githubusercontent.com/u/90385363?v=4")
 ganzo.photo.attach(io: file, filename: "ganzo.jpg", content_type: "image/jpg")
 ganzo.save!
+sleep(1)
 
 # Create movies
 
