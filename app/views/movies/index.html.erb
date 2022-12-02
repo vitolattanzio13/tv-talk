@@ -25,7 +25,7 @@
             <% end %>
           </div>
           <div class="movie-show-link">
-            <%= link_to "/movies/#{movie.id}/chatrooms/#{movie.id}" do %>
+            <%= link_to "/movies/#{movie.id}/chatrooms/#{movie.chat_room.id}" do %>
               <button class="movie-show-button btn-post-tweet">Chat</button>
             <% end %>
           </div>

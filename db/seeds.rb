@@ -33,9 +33,15 @@ def get_movie(mtitle)
 end
 
 # Create users
-user1 = User.create!(email: "user1@gmail.com", password: "123456", nickname: "user1")
-user2 = User.create!(email: "user2@gmail.com", password: "123456", nickname: "user2")
-user3 = User.create!(email: "user3@gmail.com", password: "123456", nickname: "user3")
+fran = User.create!(email: "fran@gmail.com", password: "123456", nickname: "fran")
+vito = User.create!(email: "vito@gmail.com", password: "123456", nickname: "vito")
+jorrit = User.create!(email: "jorrit@gmail.com", password: "123456", nickname: "jorrit")
+leo = User.create!(email: "leo@gmail.com", password: "123456", nickname: "leo")
+arthur = User.create!(email: "arthur@gmail.com", password: "123456", nickname: "arthur")
+maria = User.create!(email: "maria@gmail.com", password: "123456", nickname: "maria")
+laura = User.create!(email: "laura@gmail.com", password: "123456", nickname: "laura")
+ganzo = User.create!(email: "ganzo@gmail.com", password: "123456", nickname: "ganzo")
+
 
 # Create movies
 
@@ -65,7 +71,7 @@ movie = get_movie(title)
 m4 = Movie.new(movie)
 m4.trailer_url = "https://www.youtube.com/embed/s7EdQ4FqbhY"
 m4.save!
-ChatRoom.create(movie_id: m4.id)
+c4 = ChatRoom.create(movie_id: m4.id)
 
 title = "Kill Bill: Vol. 1"
 movie = get_movie(title)
@@ -165,45 +171,42 @@ m18.trailer_url = "https://www.youtube.com/embed/zSWdZVtXT7E"
 m18.save!
 ChatRoom.create(movie_id: m18.id)
 
-title = "The Prestige"
-movie = get_movie(title)
-m19 = Movie.new(movie)
-m19.trailer_url = "https://www.youtube.com/embed/ijXruSzfGEc"
-m19.save!
-ChatRoom.create(movie_id: m19.id)
-
-title = "Game of thrones"
-movie = get_movie(title)
-movie = Movie.new(movie)
-movie.trailer_url = "https://www.youtube.com/embed/gcTkNV5Vg1E"
-movie.save!
-ChatRoom.create(movie_id: movie.id)
-
 # Create posts
 
-p1 = Post.new(content: "This is the first post of the first chat room",chat_room_id: c1.id, user_id: user1.id)
+p1 = Post.new(content: "Best movie ever", chat_room_id: c4.id, user_id: fran.id, likes: 4)
 p1.save
-p2 = Post.new(content: "This is the second post of the first chat room",chat_room_id: c1.id, user_id: user2.id)
+p2 = Post.new(content: "I want Mia's foot massages lol", chat_room_id: c4.id, user_id: ganzo.id, likes: 17)
 p2.save
-
-p3 = Post.new(content: "This is the first post of the second chat room",chat_room_id: c2.id, user_id: user1.id)
+p3 = Post.new(content: "I love this movie", chat_room_id: c4.id, user_id: maria.id, likes: 2)
 p3.save
-p4 = Post.new(content: "This is the second post of the second chat room",chat_room_id: c2.id, user_id: user2.id)
+p4 = Post.new(content: "Team Marcellus or team Butch???", chat_room_id: c4.id, user_id: jorrit.id, likes: 1)
 p4.save
 
-p5 = Post.new(content: "This is the first post of the third chat room",chat_room_id: c3.id, user_id: user1.id)
+p5 = Post.new(content: "This movie is to old for me", chat_room_id: c2.id, user_id: leo.id, likes: 10)
 p5.save
-p6 = Post.new(content: "This is the second post of the third chat room",chat_room_id: c3.id, user_id: user2.id)
+p6 = Post.new(content: "Best time traveling trilogy in th world!", chat_room_id: c2.id, user_id: ganzo.id, likes: 0)
 p6.save
+p7 = Post.new(content: "I hate Marty McFly", chat_room_id: c2.id, user_id: laura.id, likes: 36)
+p7.save
+p8 = Post.new(content: "Greate movie", chat_room_id: c2.id, user_id: maria.id, likes: 5)
+p8.save
 
-r1 = Reply.new(content: "This is the first reply of the first post of the first chat room",post_id: p1.id, user_id: user3.id)
+p9 = Post.new(content: "Al Pacino is the best", chat_room_id: c3.id, user_id: vito.id, likes: 3)
+p9.save
+p10 = Post.new(content: "Darth Vader is the best", chat_room_id: c1.id, user_id: jorrit.id, likes: 0)
+p10.save
+p11 = Post.new(content: "Love it!!", chat_room_id: c1.id, user_id: arthur.id, likes: 1)
+p11.save
+
+# Pulp fiction replies
+
+r1 = Reply.new(content: "This is the first reply of the first post of the first chat room",post_id: p1.id, user_id: jorrit.id)
 r1.save
-r2 = Reply.new(content: "This is the second reply of the first post of the first chat room",post_id: p1.id, user_id: user1.id)
+r2 = Reply.new(content: "This is the second reply of the first post of the first chat room",post_id: p1.id, user_id: fran.id)
 r2.save
-
-r3 = Reply.new(content: "This is the first reply of the first post of the second chat room",post_id: p3.id, user_id: user3.id)
+r3 = Reply.new(content: "This is the first reply of the second post of the first chat room",post_id: p2.id, user_id: maria.id)
 r3.save
-r4 = Reply.new(content: "This is the second reply of the first post of the second chat room",post_id: p3.id, user_id: user1.id)
+r4 = Reply.new(content: "This is the second reply of the second post of the first chat room",post_id: p2.id, user_id: ganzo.id)
 r4.save
 
 # News articles
