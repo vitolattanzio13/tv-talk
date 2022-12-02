@@ -7,6 +7,47 @@
 //   left: 0;
 //   z-index: 1;
 // }
+#search-div{
+  height: 100vh;
+  width: 25vw;
+  background-color: $black;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+#search{
+  height: 5%;
+  // width: 100%;
+}
+#search-form{
+  height: fit-content;
+}
+#search-div-title{
+  color: $white;
+  font-size: 1.2vw;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1vh;
+}
+#search-field{
+  width: 100%;
+  margin: auto;
+}
+#search-results{
+  height: fit-content;
+  width: 100%;
+  margin: auto;
+  background-color: $white;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  // border-radius: 0 0 10px 10px;
+}
+.search-result-link{
+  text-decoration: none;
+  color: $black;
+}
 
 .side-nav-bar {
   margin: 0;
@@ -14,7 +55,7 @@
   width: 15vw;
   position: fixed;
   height: 100%;
-  overflow: auto;
+  // overflow: auto;
   background-color: #010000;
 }
 
@@ -43,57 +84,56 @@ span.text-brand {
 }
 
 .navbar-menu {
-  width: 15vw;
+  // width: 15vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding-top: 10%;
 }
+.fa-fw{
+  display: inline-block;
+  // border: 1px solid silver;
+  // border-radius: 0.25em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
 
 .nav-item {
-  margin-left: 10%;
   font-size: 1.5vw;
   text-decoration: none;
-  width:fill-available;
+  width: 100%;
   color: white;
   font-weight: 400;
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
 
 /* Sidebar links */
-.side-nav-bar a {
+
+.nav-link{
   display: block;
   color: white;
   padding: 16px;
   text-decoration: none;
+  z-index: 0;
+  margin-left: 10%;
+}
+.nav{
+  margin-left: 15%;
 }
 
 
 /* Links on mouse-over */
-.side-nav-bar a:hover {
+.nav-link:hover {
   color: #9A0600;
+  z-index: 0;
 }
 
-// .nav-item:hover {
-//   color: #9A0600;
-// }
-
-// a.nav-link {
-//   color: white;
-//   text-decoration: none;
-//   margin-left: 10%;
-// }
-
-// a.log-link {
-//   color: white;
-//   text-decoration: none;
-//   margin-left: 10%;
-//   font-size: 1.5vw;
-// }
-
-
-// a.log-link:hover {
-//   color: #9A0600;
-//   text-decoration: underline;
-//   text-decoration-color: #9A0600;
-// }
+#logo{
+  height: 10vh;
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
