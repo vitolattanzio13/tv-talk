@@ -1,7 +1,7 @@
 .index__cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 3%;
+  grid-gap: 2%;
   overflow-y: auto;
   scroll-behavior: smooth;
   margin-top: 2.5vw;
@@ -20,6 +20,10 @@
   border-color: #9A0600;
   border-style: solid;
   border-radius: 1%;
+  border-width: 0.1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .index__cards-card-img {
@@ -31,33 +35,35 @@
   background-position: center;
 }
 
-.index__cards-card-body {
-  height: 30%;
-  align-items: center;
-  justify-content: flex-start;
+.index__cards-card-text {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5vw;
+  justify-content: flex-start;
+  align-items: center;
   color: #FFFFFF;
 }
-
-.index__cards-card-body-title {
+.index__cards-card-text-title {
   font-size: 1.1vw;
-  justify-content: center;
+  font-weight: 500;
+  justify-content: flex-start;
   align-items: center;
+  margin: 0;
 }
 
-.index__cards-card-body-text {
+.index__cards-card-text-year {
   font-size: 1.1vw;
-  font-weight: 400;
+  font-weight: 500;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
-.index__cards-card-body-btn {
+.index__cards-card-btn {
 width: 100%;
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
+align-items: center;
+color: #FFFFFF;
 }
 
 .index-search-div{
