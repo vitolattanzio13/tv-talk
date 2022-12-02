@@ -44,7 +44,7 @@ class Api::V1::PagesController < ApplicationController
   def format_response(results)
     results.map do |result|
       if result.instance_of?(Movie)
-        { title: result.title, url: result.id, type: "movie" }
+        { title: result.title, url: result.id, chat: result.chat_room.id, type: "movie" }
       elsif result.instance_of?(User)
         { title: result.nickname, url: "", type: "user" }
       end

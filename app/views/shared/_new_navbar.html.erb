@@ -1,51 +1,66 @@
 <div class="side-nav-bar">
-  <div class="navbar-brand">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png"/>
+  <div class="navbar-brand ">
+      <div id="logo" style="background-image: url('https://res.cloudinary.com/dcgbqu8yk/image/upload/v1669978063/tv-talk-logo.jpg');"></div><%=  %>
       <span class="text-brand">tvtalk</span>
   </div>
 
-  <div class="nav-item-avatar">
-  <% if user_signed_in? %>
-    <%# <div class="user-avatar" id="user-avatar" style="background-image:url('<%= cl_image_path current_user.photo.key')"></div> %>
-  <% else %>
-    <%# <img src="http://evo-ml.com/wp-content/uploads/2019/03/Avatar.png"class="user-avatar"/> %>
-  <% end %>
-  </div>
-  <div class="navbar-menu d-flex flex-column mb-3">
+  <div class="navbar-menu d-flex flex-column">
     <div class="nav-item p-2 d-flex align-items-center">
       <%= link_to root_path, class:"nav-link d-flex align-items-center" do %>
-        <p class="fas fa-home d-flex align-items-center"></p>
-        <p class="ms-2 nav">Home</p>
+        <i class="fas fa-fw fa-home"></i>
+        <p class="nav">Home</p>
       <% end %>
     </div>
     <div class="nav-item p-2 d-flex align-items-center">
       <%= link_to movies_path, class:"nav-link d-flex align-items-center" do %>
-        <p class= "fa-solid fa-clapperboard"></p>
-        <p class="ms-2 nav">Movies</p>
+        <i class= "fa-solid fa-fw fa-clapperboard"></i>
+        <p class="nav">Movies</p>
       <% end %>
     </div>
     <div class="nav-item p-2 d-flex align-items-center">
       <%= link_to "#", class:"nav-link d-flex align-items-center" do %>
-        <p class= "fa-solid fa-user d-flex align-items-center"></p>
-        <p class="ms-2 nav">Profile</p>
+        <i class= "fa-solid fa-fw fa-user"></i>
+        <p class="nav">Profile</p>
       <% end %>
     </div>
 
     <div class="nav-item p-2 d-flex align-items-center">
       <%= link_to "#", class:"nav-link d-flex align-items-center" do %>
-        <p class= "fa-solid fa-info d-flex align-items-center"></p>
-        <p class="ms-2 nav">About</p>
+        <i class="fa-regular fa-fw fa-circle-question"></i>
+        <p class="nav">About</p>
       <% end %>
     </div>
 
-  <% if user_signed_in? %>
     <div class="nav-item p-2 d-flex align-items-center">
-      <i class="fa-solid fa-right-from-bracket d-flex align-items-center"></i>
-      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "log-link" %>
-  <% else  %>
-      <i class="fa-solid fa-right-from-bracket d-flex align-items-center"></i>
-      <%= link_to "Login", new_user_session_path, class: "log-link" %>
-  <% end  %>
+      <% if user_signed_in? %>
+          <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "d-flex align-items-center nav-link" do %>
+            <i class="fa-solid fa-fw fa-right-from-bracket "></i>
+            <p class="nav">Logout</p>
+          <% end %>
+      <% else  %>
+          <i class="fa-solid fa-fw fa-right-from-bracket d-flex align-items-center"></i>
+          <%= link_to "Login", new_user_session_path, class: "log-link" %>
+      <% end  %>
+    </div>
+
+    <div class="nav-item p-2 d-flex flex-column">
+      <% if user_signed_in? %>
+          <div id="search-div-title">Jump to</div>
+          <div id="search" data-controller="search">
+            <%= form_with data: {search_target: "form"},id:"search-form" do |f| %>
+              <% movies = Movie.all.map{ |e| e.title} %>
+              <% users = User.all.map{ |e| e.nickname} %>
+              <%= f.text_field :query, class: "form-control form-font-size", id:"search-field", autocomplete:"off", placeholder:
+                            "Go to a movie or a user profile", value: params[:query],
+                              data: {
+                                search_target: "input",
+                                action: "keyup->search#queryDb"} %>
+            <% end %>
+            <div id="search-results" class="d-none form-control" data-search-target="links">
+            </div>
+          </div>
+      <% else %>
+      <% end %>
     </div>
   </div>
 </div>
