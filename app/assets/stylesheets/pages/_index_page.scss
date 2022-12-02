@@ -150,6 +150,13 @@ $grey: #CCCCCC;
   display: none;
   overflow: hidden;
 }
+.post-movie-poster{
+  height: 20vh;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  // z-index: 0;
+}
 
 .tweetEntry-action-list {
   color: $grey;

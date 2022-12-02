@@ -14,13 +14,15 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @chat_room = ChatRoom.find(params[:id])
   end
 
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    @chat_room = ChatRoom.first if @post.chat_room_id.nil?
+    @chat_room = ChatRoom.find(params[:id])
     @post.chat_room_id = @chat_room.id
+    # raise
     if @post.save
       # redirect_to posts_path
       redirect_back(fallback_location: root_path)
