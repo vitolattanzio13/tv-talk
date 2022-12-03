@@ -2,7 +2,7 @@ class Api::V1::MoviesController < ApplicationController
   def search
     query = params[:query]
     movies = Movie.where("title ILIKE ?", "%#{query}%")
-    results = movies.first(5) if movies.size > 5
+    movies.size > 5 ? results = movies.first(5) : results = movies
     results.nil? ? json = "no results" : json = format_response(results)
     respond_to do |format|
       format.json { render json: json.to_json }
