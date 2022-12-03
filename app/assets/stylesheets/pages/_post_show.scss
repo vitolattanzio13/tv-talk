@@ -32,7 +32,6 @@
   flex-direction: row;
 }
 .replyEntry-content {
-  font-size: 14px;
   margin-left: 1vw;
   font-size: 14px;
   display: flex;
@@ -48,6 +47,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-around;
 }
 .replyEntry-avatar {
   height: 48px;

@@ -9,14 +9,14 @@
       <div class="replyEntry-text-container" >
         <%= reply.content %>
       </div>
-    </div>
-    <% if reply.photo.attached? %>
-      <div class="optionalMedia">
-        <%= cl_image_tag reply.photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="replyEntry-action-list" style="line-height:24px;color: #b1bbc3;">
+        <i class="fa fa-heart" style="width: 80px"></i>
       </div>
-    <% end %>
-    <div class="replyEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-      <i class="fa fa-heart" style="width: 80px"></i>
     </div>
+    <%# <% if reply.photo.attached? %>
+      <%# <div class="optionalMedia"> %>
+        <%#= cl_image_tag reply.photo.key, height: 300, width: 400, crop: :fill %>
+      <%# </div> %>
+    <%# end %>
   </div>
 <% end %>
