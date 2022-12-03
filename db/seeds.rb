@@ -34,47 +34,59 @@ def get_movie(mtitle)
 end
 
 # Create users
+puts "Creating users..."
 fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "fran")
 file = URI.open("https://avatars.githubusercontent.com/u/104527931?v=4")
 fran.photo.attach(io: file, filename: "fran.jpg", content_type: "image/jpg")
 fran.save!
+sleep(1)
 
 vito = User.new(email: "vito@gmail.com", password: "123456", nickname: "vito")
 file = URI.open("https://avatars.githubusercontent.com/u/62178588?v=4")
 vito.photo.attach(io: file, filename: "vito.jpg", content_type: "image/jpg")
 vito.save!
+sleep(1)
 
 jorrit = User.new(email: "jorrit@gmail.com", password: "123456", nickname: "jorrit")
 file = URI.open("https://avatars.githubusercontent.com/u/101260772?v=4")
 jorrit.photo.attach(io: file, filename: "jorrit.jpg", content_type: "image/jpg")
 jorrit.save!
+sleep(1)
 
 leo = User.new(email: "leo@gmail.com", password: "123456", nickname: "leo")
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1666021133/yxhif62kivyl2678wt3z.jpg")
 leo.photo.attach(io: file, filename: "leo.jpg", content_type: "image/jpg")
 leo.save!
+sleep(1)
 
 arthur = User.new(email: "arthur@gmail.com", password: "123456", nickname: "arthur")
 file = URI.open("https://avatars.githubusercontent.com/u/115401398?v=4")
 arthur.photo.attach(io: file, filename: "arthur.jpg", content_type: "image/jpg")
 arthur.save!
+sleep(1)
 
 maria = User.new(email: "maria@gmail.com", password: "123456", nickname: "maria")
 file = URI.open("https://avatars.githubusercontent.com/u/115433579?v=4")
 maria.photo.attach(io: file, filename: "maria.jpg", content_type: "image/jpg")
 maria.save!
+sleep(1)
 
 laura = User.new(email: "laura@gmail.com", password: "123456", nickname: "laura")
 file = URI.open("https://avatars.githubusercontent.com/u/107079059?v=4")
 laura.photo.attach(io: file, filename: "laura.jpg", content_type: "image/jpg")
 laura.save!
+sleep(1)
 
 ganzo = User.new(email: "ganzo@gmail.com", password: "123456", nickname: "ganzo")
 file = URI.open("https://avatars.githubusercontent.com/u/90385363?v=4")
 ganzo.photo.attach(io: file, filename: "ganzo.jpg", content_type: "image/jpg")
 ganzo.save!
+sleep(1)
+puts "Users created!"
 
 # Create movies
+
+puts "Creating movies..."
 
 title = "Star wars: Episode IV"
 movie = get_movie(title)
@@ -202,16 +214,20 @@ m18.trailer_url = "https://www.youtube.com/embed/zSWdZVtXT7E"
 m18.save!
 ChatRoom.create(movie_id: m18.id)
 
+puts "Movies created!"
+
 # Create posts
 
-p1 = Post.new(content: "Best movie ever", chat_room_id: c4.id, user_id: fran.id, likes: 4)
-p1.save
+puts "Creating posts..."
+
 p2 = Post.new(content: "I want Mia's foot massages lol", chat_room_id: c4.id, user_id: ganzo.id, likes: 17)
 p2.save
 p3 = Post.new(content: "I love this movie", chat_room_id: c4.id, user_id: maria.id, likes: 2)
 p3.save
 p4 = Post.new(content: "Team Marcellus or team Butch???", chat_room_id: c4.id, user_id: jorrit.id, likes: 1)
 p4.save
+p1 = Post.new(content: "Best movie ever", chat_room_id: c4.id, user_id: fran.id, likes: 4)
+p1.save
 
 p5 = Post.new(content: "This movie is to old for me", chat_room_id: c2.id, user_id: leo.id, likes: 10)
 p5.save
@@ -231,16 +247,18 @@ p11.save
 
 # Pulp fiction replies
 
-r1 = Reply.new(content: "This is the first reply of the first post of the first chat room",post_id: p1.id, user_id: jorrit.id)
+r1 = Reply.new(content: "I also love it",post_id: p1.id, user_id: jorrit.id)
 r1.save
-r2 = Reply.new(content: "This is the second reply of the first post of the first chat room",post_id: p1.id, user_id: fran.id)
-r2.save
-r3 = Reply.new(content: "This is the first reply of the second post of the first chat room",post_id: p2.id, user_id: maria.id)
+r3 = Reply.new(content: "Ha ha your're so funny",post_id: p2.id, user_id: maria.id)
 r3.save
-r4 = Reply.new(content: "This is the second reply of the second post of the first chat room",post_id: p2.id, user_id: ganzo.id)
+r4 = Reply.new(content: "Thank you",post_id: p2.id, user_id: ganzo.id)
 r4.save
 
+puts "Posts created!"
+
 # News articles
+
+puts "Scraping news articles..."
 
 url = "https://www.empireonline.com/movies/news/"
 
@@ -272,3 +290,5 @@ link_url = "https://www.empireonline.com"
 titles.each_with_index do |ntitle, index|
   Newspaper.create(title: ntitle, content: descriptions[index], url: link_url + links[index], image_url: "https:#{imgs[index]}")
 end
+
+puts "News articles created!"

@@ -38,7 +38,7 @@ export default class extends Controller {
       this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/${result.url}">${result.title}</a>`)
     } else {
       this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/movies/${result.url}">${result.title}</a>`)
-      this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/movies/${result.url}/chatrooms/${result.chat}">${result.title} discussion</a>`)
+      this.linksTarget.insertAdjacentHTML("beforeend", `<a class="search-result-link form-font-size" href="/chatrooms/${result.chat}">${result.title} discussion</a>`)
     }
   };
 }

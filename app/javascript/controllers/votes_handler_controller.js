@@ -9,7 +9,7 @@ export default class extends Controller {
      post: Number
      }
   connect() {
-    console.log(this.countTarget.innerText)
+    // console.log(this.countTarget.innerText)
   }
   like() {
     const csrfToken = document.querySelector("[name='csrf-token']").content

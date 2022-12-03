@@ -3,7 +3,7 @@
     <div class="tweetEntry rounded mx-3 mb-3">
       <div class="tweetEntry-content">
         <a class="tweetEntry-account-group" href="[accountURL]">
-          <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
+          <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path @post.user.photo.key %>')"></div>
           <strong class="tweetEntry-fullname">
             <%= @post.user.nickname %>
           </strong>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div id="new-reply" class="m-3 p-3" >
-      <img class="tweetPost-avatar rounded-circle" src="http://placekitten.com/200/200">
+      <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path current_user.photo.key %>')"></div>
       <div class="form-post-new ml-3 mr-3">
         <%= render 'shared/new_reply_form' %>
       </div>
@@ -39,7 +39,7 @@
         <div class="tweetEntry rounded mx-3 mb-3">
           <div class="tweetEntry-content">
             <a class="tweetEntry-account-group" href="[accountURL]">
-              <img class="tweetEntry-avatar rounded-circle" src="http://placekitten.com/200/200">
+              <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
               <strong class="tweetEntry-fullname">
                 <%= reply.user.nickname %>
               </strong>
