@@ -1,7 +1,40 @@
 .movie-chatroom-title{
-  font-size: 1.5vw;
+  font-size: 2vw;
   color: $white;
   margin-left: 1rem;
   margin-bottom: 1rem;
-  padding-top: 1rem;
  }
+//  #chatroom-show-poster{
+//   height: 100%;
+//   width: 35%;
+//   background-color: $black;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
+// }
+#chatroom-show-poster{
+  height: 100%;
+  background-color: $black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#chatroom-new-post-form{
+  display: flex;
+  max-height: -webkit-fill-available;
+  width: 60vw;
+  border: 3px solid $red2;
+  border-radius: 5px;
+  background-color: $white;
+  margin-left: 15vw;
+}
+.tweetEntry-movie-title {
+  font-size: 14px;
+  color: #b1bbc3;
+  padding: 0px;
+}
+.tweetEntry-fullname-post{
+  font-size: 14px;
+  color: $black;
+  padding:-left 1rem;
+}
