@@ -35,32 +35,7 @@
     </div>
     <h3 class="replies-title">Replies:</h3>
     <div class="replies-all-container">
-      <% @post.replies.each do |reply| %>
-        <div class="tweetEntry rounded mx-3 mb-3">
-          <div class="tweetEntry-content">
-            <a class="tweetEntry-account-group" href="[accountURL]">
-              <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
-              <strong class="tweetEntry-fullname">
-                <%= reply.user.nickname %>
-              </strong>
-              <span class="tweetEntry-username">
-                @<b><%= reply.user.nickname %></b>
-              </span>
-            </a>
-            <div class="tweetEntry-text-container" >
-              <%= reply.content %>
-            </div>
-          </div>
-          <% if reply.photo.attached? %>
-            <div class="optionalMedia">
-              <%= cl_image_tag reply.photo.key, height: 300, width: 400, crop: :fill %>
-            </div>
-          <% end %>
-          <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-            <i class="fa fa-heart" style="width: 80px"></i>
-          </div>
-        </div>
-      <% end %>
+      <%= render "shared/replies" %>
     </div>
   </div>
 </div>
