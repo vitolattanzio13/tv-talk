@@ -9,8 +9,8 @@
         </div>
       </div>
     </div>
-    <% @chat_room.posts.each do |post| %>
-      <%= render 'shared/posts', post: post %>
+    <% @posts.each do |post| %>
+      <%= render 'shared/posts', chat_room: @chat_room, post: post %>
     <% end %>
   </div>
 </div>

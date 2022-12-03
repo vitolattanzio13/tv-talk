@@ -13,18 +13,15 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
-    @chat_room = ChatRoom.find(params[:id])
   end
 
   def create
     @post = Post.new(post_params)
     @post.user = current_user
     @chat_room = ChatRoom.find(params[:id])
-    @post.chat_room_id = @chat_room.id
-    # raise
+    @post.chat_room = @chat_room
     if @post.save
-      # redirect_to posts_path
+      # redirect_to chatroom_path(@chat_room)
       redirect_back(fallback_location: root_path)
     else
       render :new, alert: "Post could not be created"
@@ -43,6 +40,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :photo)
+    params.require(:post).permit(:chat_room_id, :content, :photo)
   end
 end
