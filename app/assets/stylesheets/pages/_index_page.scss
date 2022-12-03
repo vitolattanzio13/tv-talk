@@ -44,30 +44,6 @@ $grey: #CCCCCC;
   border-radius: 5px;
 }
 
-/* The action list is optional. */
-.tweetEntry-action-list {
-  display: flex;
-  flex-direction: row;
-  // line-height: 18px;
-  // margin-left: 58px;
-  // margin-top: 10px;
-  // color: #292f33;
-}
-.fa-reply{
-  margin-right: 1rem;
-}
-.fa-heart{
-  margin-right: 1rem;
-}
-.liked-button-red{
-  color: $red1;
-}
-.fa-reply:hover {
-  color: $red2;
-}
-.fa-heart:hover {
-  color: $red1;
-}
 /************************/
 
 .tweetEntry {
@@ -108,7 +84,6 @@ $grey: #CCCCCC;
 .tweetEntry-fullname {
   font-weight: bold;
   font-size: 14px;
-  color: #292f33;
   padding: 0px;
   flex-grow: 1;
 }
@@ -127,16 +102,25 @@ $grey: #CCCCCC;
   flex-grow: 1;
 }
 
+.tweetEntry-action-list {
+  color: $grey;
+  justify-content: right;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
 .optionalMedia {
   margin-left: 58px;
   margin-top: 10px;
 }
+
 .optionalMedia-img {
   border-radius: 5px;
   max-width: 506px;
   max-height: 506px;
-
 }
+
 .posts-all-container{
   height: 78.22vh;
   width: 100%;
@@ -146,10 +130,12 @@ $grey: #CCCCCC;
   text-decoration: none;
   // font-size: 1.5vw;
 }
+
 .posts-all-container::-webkit-scrollbar {
   display: none;
   overflow: hidden;
 }
+
 .post-movie-poster{
   height: 20vh;
   aspect-ratio: 1;
@@ -158,11 +144,20 @@ $grey: #CCCCCC;
   // z-index: 0;
 }
 
-.tweetEntry-action-list {
-  color: $grey;
-  justify-content: right;
-  align-items: center;
-  display: flex;
+.fa-reply{
+  margin-right: 1rem;
+}
+.fa-heart{
+  margin-right: 1rem;
+}
+.liked-button-red{
+  color: $red1;
+}
+.fa-reply:hover {
+  color: $red2;
+}
+.fa-heart:hover {
+  color: $red1;
 }
 
 .reply-btn  {
