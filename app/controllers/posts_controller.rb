@@ -22,7 +22,6 @@ class PostsController < ApplicationController
     @post.user = current_user
     @chat_room = ChatRoom.find(params[:id])
     @post.chat_room_id = @chat_room.id
-    # raise
     if @post.save
       # redirect_to posts_path
       redirect_back(fallback_location: root_path)
