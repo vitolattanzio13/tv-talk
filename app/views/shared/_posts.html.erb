@@ -8,7 +8,7 @@
       <div class="post-movie-poster" style="background-image:url('<%= post.chat_room.movie.poster_url %>');"></div>
     </div>
     <div class="tweetEntry-content">
-      <a class="tweetEntry-account-group" href="[accountURL]">
+      <a class="tweetEntry-account-group" href="/chatrooms/<%= post.chat_room.id %>">
         <strong class="tweetEntry-fullname">
           <%= post.user.nickname %>
         </strong>
