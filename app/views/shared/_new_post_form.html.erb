@@ -1,5 +1,18 @@
-<%= simple_form_for([@post], html: { class: "nice-class"}) do |f| %>
-  <%= f.input :content, label: false, placeholder: "What's happening?", wrapper_html: { class: "wrapper-input" }, input_html: { class: "bg-input"} %>
-  <%= f.input :photo, as: :file, label_html: { class: "label-input" } %>
-  <%= f.button :submit, "Post", class: "btn-post-tweet" %>
-<% end %>
+<div data-search-user-value="<%= current_user.id  %>">
+  <%= simple_form_for([@post], html: { class: "main-index-post-form", data:{search_target: "postForm"}}) do |f| %>
+    <%= f.input :content, label: false, placeholder: "What's on your mind?", wrapper_html: { class: "wrapper-input" },
+                        input_html: { class: "bg-input",data: {search_target: "postContent"}}
+                         %>
+    <div class="main-index-form-search-container">
+      <div class="main-index-form-input-and-suggestions">
+        <%= f.text_field :chat_room, autocomplete:"off",
+                          placeholder:"What is it about?", label_html: { class: "label-input form-control" },
+                          value: params[:chat_room],
+                          data: {search_target: "movie_input",
+                                action: "keyup->search#queryMovieDb"}%>
+        <div id="suggestions" class="main-index-form-suggestions form-control d-none" data-search-target="suggestions"></div>
+      </div>
+      <button class="btn-post-tweet main-index-form-button" data-action="click->search#create">Post</button>
+    </div>
+  <% end %>
+</div>
