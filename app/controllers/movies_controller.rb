@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
     else
       @movies = Movie.all
     end
+    @post = Post.new
   end
 
   def show

@@ -34,6 +34,7 @@ def get_movie(mtitle)
 end
 
 # Create users
+puts "Creating users..."
 fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "fran")
 file = URI.open("https://avatars.githubusercontent.com/u/104527931?v=4")
 fran.photo.attach(io: file, filename: "fran.jpg", content_type: "image/jpg")
@@ -81,8 +82,11 @@ file = URI.open("https://avatars.githubusercontent.com/u/90385363?v=4")
 ganzo.photo.attach(io: file, filename: "ganzo.jpg", content_type: "image/jpg")
 ganzo.save!
 sleep(1)
+puts "Users created!"
 
 # Create movies
+
+puts "Creating movies..."
 
 title = "Star wars: Episode IV"
 movie = get_movie(title)
@@ -210,7 +214,11 @@ m18.trailer_url = "https://www.youtube.com/embed/zSWdZVtXT7E"
 m18.save!
 ChatRoom.create(movie_id: m18.id)
 
+puts "Movies created!"
+
 # Create posts
+
+puts "Creating posts..."
 
 p2 = Post.new(content: "I want Mia's foot massages lol", chat_room_id: c4.id, user_id: ganzo.id, likes: 17)
 p2.save
@@ -246,7 +254,11 @@ r3.save
 r4 = Reply.new(content: "Thank you",post_id: p2.id, user_id: ganzo.id)
 r4.save
 
+puts "Posts created!"
+
 # News articles
+
+puts "Scraping news articles..."
 
 url = "https://www.empireonline.com/movies/news/"
 
@@ -278,3 +290,5 @@ link_url = "https://www.empireonline.com"
 titles.each_with_index do |ntitle, index|
   Newspaper.create(title: ntitle, content: descriptions[index], url: link_url + links[index], image_url: "https:#{imgs[index]}")
 end
+
+puts "News articles created!"
