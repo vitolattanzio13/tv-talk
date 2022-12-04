@@ -1,16 +1,17 @@
 <% @post.replies.each do |reply| %>
   <div class="replyEntry mx-3 mb-3">
+    <div class="replyEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
     <div class="replyEntry-content">
       <div class="replyEntry-account-group">
-        <div class="replyEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
-        <span class="replyEntry-username"><%= reply.user.nickname %></span>
-        <span class="replyEntry-timestamp"><%= @post.chat_room.movie.title %></span>
+        @<span class="replyEntry-username"><%= reply.user.nickname %></span>
+        <span class="replyEntry-timestamp"><%= reply.created_at %></span>
       </div>
       <div class="replyEntry-text-container" >
         <%= reply.content %>
       </div>
-      <div class="replyEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-        <i class="fa fa-heart" style="width: 80px"></i>
+      <div class="replyEntry-action-list">
+        <i class="fa fa-heart m-0 p-2"></i>
+        <p class="m-0"><%= "Like" %></p>
       </div>
     </div>
     <%# <% if reply.photo.attached? %>
