@@ -1,14 +1,14 @@
 .replies-all-container{
-  height: 76.22vh;
+  // height: 76.22vh;
   overflow-y: auto;
-  font-size: 1.5vw;
+  // font-size: 1.25vw;
   width: 100%;
   scroll-behavior: smooth;
   text-decoration: none;
 }
 #new-reply {
   display: flex;
-  border: 3px solid $red2;
+  border: 0.42vh solid $red2;
   border-radius: 0.7vh;
   background-color: $white;
 }
@@ -23,66 +23,137 @@
   background-size: cover;
 }
 
-.replyEntry {
-  min-height: 3.9vw;
-  padding: 1vw 2vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #CCCCCC;
-  border-radius: 1vh;
-  margin: 0.5vw 0;
+// .replyEntry {
+//   min-height: 3.9vw;
+//   padding: 1vw 2vw;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   background-color: #CCCCCC;
+//   border-radius: 1vh;
+//   margin: 0.5vw 0;
+// }
+// .replyEntry-content {
+//   margin-left: 1vw;
+//   font-size: 1.25vw;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   flex-grow: 1;
+
+// }
+// .replyEntry-account-group {
+//   padding: 0px;
+//   text-decoration: none;
+//   line-height: 2.8vh;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+// .replyEntry-avatar {
+//   height: 3.75vw;
+//   width: 3.75vw;
+//   border-radius: 5px;
+// }
+// .replyEntry-username {
+//   font-weight: bold;
+//   font-size: 1.25vw;
+//   padding: 0px;
+//   flex-grow: 1;
+// }
+
+// .replyEntry-timestamp {
+//   font-size: 1.10vw;
+//   color: $grey;
+//   padding: 0px;
+//   color: #010000;
+// }
+
+// .replyEntry-text-container {
+//   font-size: 1.25vw;
+//   color: #010000;
+//   line-height: 0vh;
+//   flex-grow: 1;
+//   padding: 2vh;
+// }
+
+// .replyEntry-action-list {
+//   color: #010000;
+//   font-size: 1.10vw;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-end;
+//   align-items: center;
+// }
+
+// ************************************************************
+
+.tweet {
+  // display: flex;
+  // flex-direction: column;
+  border-bottom: 0.1vh solid $red2;
+  background-color: $black;
+  margin-bottom: 1vh;
 }
-.replyEntry-content {
-  margin-left: 1vw;
-  font-size: 1.25vw;
+
+.tweet-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
+  row-gap: 1vh;
+  color: $white;
+}
 
-}
-.replyEntry-account-group {
-  padding: 0px;
-  text-decoration: none;
-  line-height: 2.8vh;
+.tweet__header {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  color: $white;
 }
-.replyEntry-avatar {
+
+.tweet__author-logo {
+  border-radius: 50%;
+  background-size: cover;
   height: 3.75vw;
   width: 3.75vw;
-  border-radius: 5px;
-}
-.replyEntry-username {
-  font-weight: bold;
-  font-size: 1.25vw;
-  padding: 0px;
-  flex-grow: 1;
+  margin-right: 0.5vw;
 }
 
-.replyEntry-timestamp {
-  font-size: 1.10vw;
+.tweet__author-name {
+  font-size: 1.25vw;
+  font-weight: 700;
+  color: $white;
+  margin-right: 0.5vw;
+}
+
+.tweet__author-slug {
   color: $grey;
-  padding: 0px;
-  color: #010000;
+  font-size: 1.10vw;
+  margin-right: 0.5vw;
 }
 
-.replyEntry-text-container {
+.tweet__publish-time {
+  margin-left: 0,5vw;
+  color: $grey;
+  font-size: 1.10vw;
+}
+
+.tweet-content {
   font-size: 1.25vw;
-  color: #010000;
-  line-height: 0vh;
   flex-grow: 1;
   padding: 2vh;
 }
 
-.replyEntry-action-list {
-  color: #010000;
-  font-size: 1.10vw;
+// .tweet__image {
+//   width: 100%;
+//   border-radius: 15px;
+//   margin-top: 1.4vh;
+// }
+
+.tweet__action-list {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  color: $grey;
+  font-size: 1.10vw;
 }
