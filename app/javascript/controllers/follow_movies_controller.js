@@ -18,7 +18,7 @@ export default class extends Controller {
       body: JSON.stringify(sendData)})
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
+      // console.log(data)
       if (data.status === true) {
         if (data.job === "follow") {
           this.buttonTarget.innerText = "Unfollow"

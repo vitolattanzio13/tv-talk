@@ -10,27 +10,7 @@
   </div>
   <div class="index__cards mx-3">
     <% @movies.each do |movie| %>
-      <div class="index__cards-card">
-        <div class="index__cards-card-img" style="background-image:url('<%= movie.poster_url %>');">
-        </div>
-        <div class="index__cards-card-text m-0 mt-3">
-          <p class="index__cards-card-text-title"><%= movie.title %></p>
-        </div>
-        <div class="index__cards-card-btn">
-          <div><p class="index__cards-card-text-year"><%= movie.year %></p>
-          </div>
-          <div class="movie-show-link">
-            <%= link_to "movies/#{movie.id}" do %>
-              <button class="movie-show-button btn-post-tweet">About</button>
-            <% end %>
-          </div>
-          <div class="movie-show-link">
-            <%= link_to "/chatrooms/#{movie.chat_room.id}" do %>
-              <button class="movie-show-button btn-post-tweet">Chat</button>
-            <% end %>
-          </div>
-        </div>
-      </div>
+      <%= render 'shared/cards/movie', movie: movie %>
     <% end %>
   </div>
 </div>
