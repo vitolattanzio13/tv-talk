@@ -25,10 +25,13 @@
           <p class="movie-details-red">Plot:</p>
           <p class="movie-details-white ms-3 pe-4" ><%= @movie.plot_long.first(400) + "..." %></p>
         </div>
-        <div class="movie-show-link">
-          <%= link_to "/chatrooms/#{@movie.chat_room.id}" do %>
-            <button class="movie-show-button btn-post-tweet">Join discussion</button>
-          <% end %>
+        <div class="movie-show-links-container">
+          <%= render 'shared/buttons/follow_movie', movie: @movie %>
+          <div class="movie-show-link">
+            <%= link_to "/chatrooms/#{@movie.chat_room.id}" do %>
+              <button class="movie-show-button btn-post-tweet">Join discussion</button>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

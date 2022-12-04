@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
       sql_mquery = "title ILIKE :mquery OR year ILIKE :mquery"
       @movies = Movie.where(sql_mquery, mquery: "%#{params[:mquery]}%")
     else
-      @movies = Movie.all
+      @movies = Movie.all.includes(:chat_room)
     end
     @post = Post.new
   end

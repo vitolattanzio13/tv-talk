@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/search/:query', to: 'pages#search_query'
       post '/like/', to: 'pages#like'
+      post '/followm/', to: 'follow_movies#follow'
       get '/movies/:query', to: 'movies#search'
       post '/post/', to: 'posts#create'
     end
