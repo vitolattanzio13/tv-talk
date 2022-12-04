@@ -14,8 +14,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/new_navbar" %>
-  <%= render "shared/search" %>
+  <body><%= render "shared/sidebars/new_navbar" %>
+  <%= render "shared/sidebars/news" %>
   <%= render "shared/flashes" %>
 
     <%= yield %>
