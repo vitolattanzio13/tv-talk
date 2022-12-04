@@ -63,3 +63,11 @@
   font-size: clamp(0.5rem, 1vw, 1.5rem);
   color: $white;
 }
+.movie-show-links-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // height: 10%;
+  // width: 100%;
+  // background-color: red;
+}
