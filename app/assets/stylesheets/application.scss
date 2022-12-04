@@ -22,3 +22,16 @@
   min-height: 100vh;
   background-color: $black;
 }
+
+@media (max-width: 1080px) {
+  .our-container {
+    margin-right: 0;
+    border-left: 0;
+    border-right: 0;
+    width: 85vw;
+  }
+  #search-div{
+    display: none;
+  }
+
+}

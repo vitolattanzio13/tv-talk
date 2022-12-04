@@ -1,0 +1,30 @@
+
+
+<div class="our-container">
+  <div class="profile-banner">
+  </div>
+  <div class="profile-user-details-container">
+    <div class="profile-user-pic" style="background-image:url('<%= cl_image_path @user.photo.key %>')">
+    </div>
+
+    <div class="profile-user-details">
+      <div class="profile-user-name">
+        <%= @user.nickname %>
+      </div>
+      <div class="profile-user-email">
+        <%= @user.email %>
+      </div>
+      <div class="profile-user-bio">
+        <%#= @user.bio %>
+      </div>
+    </div>
+  </div>
+  <h1 class="profile-followed-movie-title">Followed movies:</h1>
+  <div class="profile-followed-movies-container">
+    <div class="index__cards mx-3" id="profile-movies">
+        <% @movies.each do |movie| %>
+          <%= render 'shared/cards/movie', movie: movie %>
+        <% end %>
+    </div>
+  </div>
+</div>
