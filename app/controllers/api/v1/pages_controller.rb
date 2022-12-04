@@ -5,7 +5,8 @@ class Api::V1::PagesController < ApplicationController
     users = User.where("nickname ILIKE ?", "%#{query}%")
     results = movies + users
     results = results.first(5) if results.size > 5
-    results.nil? ? json = "no results" : json = format_response(results)
+    json = format_response(results)
+    json = "no results" if json.empty?
     respond_to do |format|
       format.json { render json: json.to_json }
     end

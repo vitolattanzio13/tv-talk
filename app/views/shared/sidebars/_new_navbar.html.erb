@@ -5,6 +5,27 @@
   </div>
 
   <div class="navbar-menu d-flex flex-column">
+
+    <div class="nav-item p-2 d-flex flex-column">
+      <% if user_signed_in? %>
+          <div id="search-div-title">Jump to</div>
+          <div id="search" data-controller="search">
+            <%= form_with data: {search_target: "form"},id:"search-form" do |f| %>
+              <% movies = Movie.all.map{ |e| e.title} %>
+              <% users = User.all.map{ |e| e.nickname} %>
+              <%= f.text_field :query, class: "form-control form-font-size", id:"search-field", autocomplete:"off", placeholder:
+                            "Go to a movie or a user profile", value: params[:query],
+                              data: {
+                                search_target: "input",
+                                action: "keyup->search#queryDb"} %>
+            <% end %>
+            <div id="search-results" class="d-none form-control" data-search-target="links">
+            </div>
+          </div>
+      <% else %>
+      <% end %>
+    </div>
+
     <div class="nav-item p-2 d-flex align-items-center">
       <%= link_to root_path, class:"nav-link d-flex align-items-center" do %>
         <i class="fas fa-fw fa-home"></i>
@@ -43,24 +64,6 @@
       <% end  %>
     </div>
 
-    <div class="nav-item p-2 d-flex flex-column">
-      <% if user_signed_in? %>
-          <div id="search-div-title">Jump to</div>
-          <div id="search" data-controller="search">
-            <%= form_with data: {search_target: "form"},id:"search-form" do |f| %>
-              <% movies = Movie.all.map{ |e| e.title} %>
-              <% users = User.all.map{ |e| e.nickname} %>
-              <%= f.text_field :query, class: "form-control form-font-size", id:"search-field", autocomplete:"off", placeholder:
-                            "Go to a movie or a user profile", value: params[:query],
-                              data: {
-                                search_target: "input",
-                                action: "keyup->search#queryDb"} %>
-            <% end %>
-            <div id="search-results" class="d-none form-control" data-search-target="links">
-            </div>
-          </div>
-      <% else %>
-      <% end %>
-    </div>
+
   </div>
 </div>
