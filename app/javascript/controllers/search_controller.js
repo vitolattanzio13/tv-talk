@@ -25,13 +25,13 @@ export default class extends Controller {
           // console.log(data)
           resultsContainer.classList.remove("d-none")
           resultsContainer.innerHTML = ""
-          // if (data === "no results") {
-          //   resultsContainer.innerHTML = `<p class="form-font-size">No results found</p>`
-          // } else {
+          if (data === "no results") {
+            resultsContainer.innerHTML = `<p class="form-font-size">No results found</p>`
+          } else {
             data.forEach((result) => {
               this.#insertMovieResult(result)
             })
-          // }
+          }
         }
       });
     }
@@ -90,9 +90,13 @@ export default class extends Controller {
           // console.log(data)
           this.linksTarget.classList.remove("d-none")
           this.linksTarget.innerHTML = ""
-          data.forEach((result) => {
-            this.#insertResult(result)
-          })
+          if (data === "no results") {
+            resultsContainer.innerHTML = `<p class="form-font-size">No results found</p>`
+          } else {
+            data.forEach((result) => {
+              this.#insertResult(result)
+            })
+          }
         }
       });
     }
