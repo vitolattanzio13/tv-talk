@@ -9,7 +9,7 @@
 #new-reply {
   display: flex;
   border: 3px solid $red2;
-  border-radius: 5px;
+  border-radius: 0.7vh;
   background-color: $white;
 }
 .replies-title{
@@ -24,61 +24,65 @@
 }
 
 .replyEntry {
-  border: 3px solid $red2;
-  min-height: 51px;
-  padding: 9px 12px;
-  background-color: $white;
+  min-height: 3.9vw;
+  padding: 1vw 2vw;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  background-color: #CCCCCC;
+  border-radius: 1vh;
+  margin: 0.5vw 0;
 }
 .replyEntry-content {
   margin-left: 1vw;
-  font-size: 14px;
+  font-size: 1.25vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+
 }
 .replyEntry-account-group {
-  color: #8899a6;
   padding: 0px;
   text-decoration: none;
-  line-height: 20px;
+  line-height: 2.8vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .replyEntry-avatar {
-  height: 48px;
-  width: 48px;
+  height: 3.75vw;
+  width: 3.75vw;
   border-radius: 5px;
 }
 .replyEntry-username {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1.25vw;
   padding: 0px;
   flex-grow: 1;
 }
 
 .replyEntry-timestamp {
-  font-size: 14px;
-  color: #b1bbc3;
+  font-size: 1.10vw;
+  color: $grey;
   padding: 0px;
-  flex-grow: 1;
+  color: #010000;
 }
 
 .replyEntry-text-container {
-  font-size: 18px;
+  font-size: 1.25vw;
   color: #010000;
-  line-height: 3vh;
+  line-height: 0vh;
   flex-grow: 1;
+  padding: 2vh;
 }
 
 .replyEntry-action-list {
-  color: $grey;
-  justify-content: right;
-  align-items: center;
+  color: #010000;
+  font-size: 1.10vw;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
