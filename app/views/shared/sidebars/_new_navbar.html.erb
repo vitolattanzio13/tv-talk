@@ -45,6 +45,20 @@
       <% end %>
     </div>
 
+    <% if user_signed_in? %>
+      <div class="nav-item p-2 d-flex align-items-center" data-controller="notification-subscription"
+                                                          data-notification-subscription-notification-id-value="<%= Notification.find_by(user_id: current_user.id).id %>">
+        <%= link_to '', class:"nav-link d-flex align-items-center" do %>
+          <i class="fa-regular fa-fw fa-bell"></i>
+          <% count = 0 %>
+          <% current_user.posts.each do |post|%>
+            <% count += post.replies.where(read: false).count %>
+          <% end %>
+          <p class="nav" data-notification-subscription-target="count">Notifs(<%= count %>)</p>
+        <% end %>
+      </div>
+    <% end %>
+
     <div class="nav-item p-2 d-flex align-items-center">
       <%= link_to "#", class:"nav-link d-flex align-items-center" do %>
         <i class="fa-regular fa-fw fa-circle-question"></i>

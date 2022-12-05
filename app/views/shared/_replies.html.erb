@@ -1,5 +1,4 @@
-<% @post.replies.each do |reply| %>
-  <div class="tweet mx-4 p-2">
+<div class="tweet mx-4 p-2">
   <div class="tweet__avatar" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
   <div class="tweet__container">
     <div class="tweet__header">
@@ -15,4 +14,3 @@
     </div>
   </div>
 </div>
-<% end %>

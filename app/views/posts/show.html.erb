@@ -37,7 +37,9 @@
     </div>
     <h3 class="replies-title">Replies:</h3>
     <div class="replies-all-container">
-      <%= render "shared/replies" %>
+      <% @replies.each do |reply| %>
+        <%= render 'shared/replies', reply: reply %>
+      <% end %>
     </div>
   </div>
 </div>
