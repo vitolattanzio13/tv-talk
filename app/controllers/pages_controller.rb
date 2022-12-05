@@ -10,7 +10,5 @@ class PagesController < ApplicationController
     @followed_movies.each do |followed_movie|
       @movies << followed_movie.movie
     end
-
   end
-
 end

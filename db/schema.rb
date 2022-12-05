@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_101452) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_111650) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,6 +93,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_101452) do
     t.string "url"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "post_votes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
@@ -122,6 +129,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_101452) do
     t.integer "dislikes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "notification_id"
+    t.boolean "read", default: false, null: false
+    t.index ["notification_id"], name: "index_replies_on_notification_id"
     t.index ["post_id"], name: "index_replies_on_post_id"
     t.index ["user_id"], name: "index_replies_on_user_id"
   end
@@ -155,10 +165,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_101452) do
   add_foreign_key "followed_movies", "users"
   add_foreign_key "followed_users", "users", column: "followee_id"
   add_foreign_key "followed_users", "users", column: "follower_id"
+  add_foreign_key "notifications", "users"
   add_foreign_key "post_votes", "posts"
   add_foreign_key "post_votes", "users"
   add_foreign_key "posts", "chat_rooms"
   add_foreign_key "posts", "users"
+  add_foreign_key "replies", "notifications"
   add_foreign_key "replies", "posts"
   add_foreign_key "replies", "users"
   add_foreign_key "reply_votes", "replies"
