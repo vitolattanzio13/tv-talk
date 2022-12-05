@@ -3,31 +3,29 @@
                           data-votes-handler-poster-value=<%= post.user.id%>
                           data-votes-handler-post-value=<%= post.id %>
                           data-votes-handler-user-value=<%= current_user.id %> >
-  <div class="tweetEntry rounded mx-3">
-    <div class="tweetEntry__poster">
-      <div class="post-movie-poster" style="background-image:url('<%= post.chat_room.movie.poster_url %>');"></div>
-    </div>
+  <div class="tweetEntry mx-3">
+    <div class="post-movie-poster" style="background-image:url('<%= post.chat_room.movie.poster_url %>');"></div>
     <div class="tweetEntry-content">
-      <a class="tweetEntry-account-group" href="/chatrooms/<%= post.chat_room.id %>">
-        <strong class="tweetEntry-fullname">
-          <%= post.user.nickname %>
-        </strong>
-        <span class="tweetEntry-timestamp"><%= post.chat_room.movie.title %></span>
+      <div class="tweetEntry-header">
+        <strong class="tweetEntry-fullname"><%= post.user.nickname %></strong>
+        <%= link_to "/chatrooms/#{post.chat_room.id}" do %>
+          <%= post.chat_room.movie.title %>
+        <% end %>
         <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path post.user.photo.key %>')"></div>
-      </a>
+      </div>
       <div class="tweetEntry-text-container">
         <div class="tweetEntry-text-container-content">
           <%= post.content %>
-          <%= post.created_at %>
         </div>
       </div>
-      <div class="tweetEntry-action-list">
+      <div class="tweetEntry-footer">
+        <p class= "tweetEntry-timestamp m-0"><%= post.created_at %></p>
         <%= link_to post_path(post)  do %>
           <i class="fa fa-reply"></i>
         <% end %>
         <div class="post-likes d-flex align-center">
           <% hasliked = !PostVote.find_by(user_id: current_user.id, post_id: post.id).nil? %>
-          <i class="fa fa-heart <%= 'liked-button-red' if hasliked%> "
+          <i class="fa fa-heart p-0"<%= 'liked-button-red' if hasliked%>"
                                     data-action="click->votes-handler#like"
             data-votes-handler-target="button" ></i>
           <p class="m-0" data-votes-handler-target="count"><%= post.likes %><%= " (likes)" %></p>

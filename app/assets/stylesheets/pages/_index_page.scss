@@ -47,68 +47,72 @@ $grey: #CCCCCC;
 /************************/
 
 .tweetEntry {
-  border: 3px solid $red2;
-  // cursor: pointer;
-  min-height: 51px;
-  padding: 9px 12px;
-  background-color: $white;
+  border-bottom: 0.1vh solid $red2;
+  min-height: 15.28vh;
+  padding: 1vh 1vh;
+  background-color: $black;
   display: flex;
-  flex-direction: row;
 }
 .tweetEntry-content {
-  // display: block;
-  font-size: 14px;
+  font-size: 1.25vw;
   margin-left: 1vw;
-  font-size: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
 }
-.tweetEntry-account-group {
-  color: #8899a6;
+.tweetEntry-header {
+  color: $white;
   padding: 0px;
   text-decoration: none;
   line-height: 20px;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 .tweetEntry-avatar {
-  // float: left;
   height: 48px;
   width: 48px;
-  // margin-right: -58px;
   border-radius: 5px;
 }
 .tweetEntry-fullname {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1.25vw;
   padding: 0px;
-  flex-grow: 1;
 }
 
 .tweetEntry-timestamp {
-  font-size: 14px;
-  color: #b1bbc3;
+  color: $grey;
   padding: 0px;
-  flex-grow: 1;
 }
 
 .tweetEntry-text-container {
-  font-size: 18px;
-  color: #010000;
+  font-size: 1.25vw;
+  color: $white;
   line-height: 3vh;
   flex-grow: 1;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
-.tweetEntry-action-list {
+.tweetEntry-footer {
   color: $grey;
-  justify-content: right;
-  align-items: center;
+  font-size: 1.10vw;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
 }
+
+// .tweetEntry-action-list {
+//   color: $grey;
+//   justify-content: right;
+//   align-items: center;
+//   display: flex;
+//   flex-direction: row;
+//   font-size: 1.25vw;
+// }
 
 .optionalMedia {
   margin-left: 58px;
@@ -138,17 +142,19 @@ $grey: #CCCCCC;
 
 .post-movie-poster{
   height: 20vh;
-  aspect-ratio: 1;
-  background-size: cover;
+  aspect-ratio: 2/3;
+  background-size: contain;
   background-repeat: no-repeat;
-  // z-index: 0;
+  background-position: center;
+  border-radius: 5px;
 }
 
 .fa-reply{
   margin-right: 1rem;
 }
-.fa-heart{
-  margin-right: 1rem;
+.fa-heart {
+  margin-right: 0.4rem;
+  margin-top: 0.22rem;
 }
 .liked-button-red{
   color: $red1;
