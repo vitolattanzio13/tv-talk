@@ -10,10 +10,10 @@ class RepliesController < ApplicationController
     @reply.post = Post.find(params[:post_id])
     post_owner = @reply.post.user
     count = 0
-    post_owner.posts.each do |post|
-      count += post.replies.where(read: false).count
-    end
     if @reply.save
+      post_owner.posts.each do |post|
+        count += post.replies.where(read: false).count
+      end
       @notification = Notification.find_by(user_id: post_owner.id)
       NotificationChannel.broadcast_to(@notification, count)
       redirect_to post_path(@reply.post)

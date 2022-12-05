@@ -12,6 +12,7 @@ export default class extends Controller {
       { channel: "NotificationChannel", id: this.notificationIdValue },
       { received: data => {
         console.log(data)
+        this.countTarget.innerText = `Notifs(${data})`
       } }
     )
     // console.log(this.channel)
