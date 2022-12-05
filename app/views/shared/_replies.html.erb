@@ -1,23 +1,24 @@
 <% @post.replies.each do |reply| %>
-  <div class="replyEntry mx-3 mb-3">
-    <div class="replyEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
-    <div class="replyEntry-content">
-      <div class="replyEntry-account-group">
-        @<span class="replyEntry-username"><%= reply.user.nickname %></span>
-        <span class="replyEntry-timestamp"><%= reply.created_at %></span>
+  <div class="tweet mx-4">
+  <div class="tweet-container">
+    <div class="tweet__header">
+      <div class="tweet__author-logo" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
+      <div class="tweet__author-name">
+        <%= reply.user.nickname %>
       </div>
-      <div class="replyEntry-text-container" >
-        <%= reply.content %>
+      <div class="tweet__author-slug">
+        @<%= reply.user.nickname %>
       </div>
-      <div class="replyEntry-action-list">
-        <i class="fa fa-heart m-0 p-2"></i>
-        <p class="m-0"><%= "Like" %></p>
+      <div class="tweet__publish-time">
+        <%= reply.created_at %>
       </div>
     </div>
-    <%# <% if reply.photo.attached? %>
-      <%# <div class="optionalMedia"> %>
-        <%#= cl_image_tag reply.photo.key, height: 300, width: 400, crop: :fill %>
-      <%# </div> %>
-    <%# end %>
+    <div class="tweet__content">
+      <%= reply.content %>
+    </div>
+    <div class="tweet__action-list">
+      <i class="fa fa-heart m-0 p-2"></i>
+    </div>
   </div>
+</div>
 <% end %>
