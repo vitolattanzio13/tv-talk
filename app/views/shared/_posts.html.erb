@@ -8,7 +8,7 @@
     <div class="tweetEntry-content">
       <div class="tweetEntry-header">
         <strong class="tweetEntry-fullname"><%= post.user.nickname %></strong>
-        <%= link_to "/chatrooms/#{post.chat_room.id}" do %>
+        <%= link_to "/chatrooms/#{post.chat_room.id}", class:"tweetEntry-chatroom" do %>
           <%= post.chat_room.movie.title %>
         <% end %>
         <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path post.user.photo.key %>')"></div>
@@ -20,15 +20,15 @@
       </div>
       <div class="tweetEntry-footer">
         <p class= "tweetEntry-timestamp m-0"><%= post.created_at %></p>
-        <%= link_to post_path(post)  do %>
+        <%= link_to post_path(post), class:"tweetEntry-reply" do %>
           <i class="fa fa-reply"></i>
         <% end %>
         <div class="post-likes d-flex align-center">
           <% hasliked = !PostVote.find_by(user_id: current_user.id, post_id: post.id).nil? %>
-          <i class="fa fa-heart p-0"<%= 'liked-button-red' if hasliked%>"
+          <i class="fa fa-heart"<%= 'liked-button-red' if hasliked%>
                                     data-action="click->votes-handler#like"
             data-votes-handler-target="button" ></i>
-          <p class="m-0" data-votes-handler-target="count"><%= post.likes %><%= " (likes)" %></p>
+          <p class="m-0" data-votes-handler-target="count"><%= post.likes %></p>
         </div>
       </div>
     </div>
