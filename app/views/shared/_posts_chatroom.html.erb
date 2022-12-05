@@ -1,9 +1,9 @@
-<div class="post p-3" data-controller="votes-handler"
+<div class="post pt-3 px-3" data-controller="votes-handler"
                           data-votes-handler-target="likes"
                           data-votes-handler-poster-value=<%= post.user.id%>
                           data-votes-handler-post-value=<%= post.id %>
                           data-votes-handler-user-value=<%= current_user.id %> >
-  <div class="tweetEntry rounded">
+  <div class="tweetEntry rounded mx-3">
     <div class="tweetEntry__poster">
       <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path post.user.photo.key %>')"></div>
     </div>
