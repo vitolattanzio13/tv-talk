@@ -23,6 +23,8 @@
   background-size: cover;
 }
 
+// ******* OLD *******
+
 // .replyEntry {
 //   min-height: 3.9vw;
 //   padding: 1vw 2vw;
@@ -90,17 +92,21 @@
 // ************************************************************
 
 .tweet {
-  // display: flex;
-  // flex-direction: column;
+  display: flex;
   border-bottom: 0.1vh solid $red2;
   background-color: $black;
   margin-bottom: 1vh;
 }
 
-.tweet-container {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1vh;
+.tweet__avatar {
+  border-radius: 50%;
+  background-size: cover;
+  height: 3.75vw;
+  width: 3.75vw;
+  margin-right: 1vw;
+}
+
+.tweet__container {
   color: $white;
 }
 
@@ -110,37 +116,22 @@
   color: $white;
 }
 
-.tweet__author-logo {
-  border-radius: 50%;
-  background-size: cover;
-  height: 3.75vw;
-  width: 3.75vw;
-  margin-right: 0.5vw;
-}
 
 .tweet__author-name {
   font-size: 1.25vw;
   font-weight: 700;
   color: $white;
-  margin-right: 0.5vw;
-}
-
-.tweet__author-slug {
-  color: $grey;
-  font-size: 1.10vw;
-  margin-right: 0.5vw;
 }
 
 .tweet__publish-time {
-  margin-left: 0,5vw;
+  margin-left: 1vw;
   color: $grey;
   font-size: 1.10vw;
 }
 
-.tweet-content {
+.tweet__content {
   font-size: 1.25vw;
-  flex-grow: 1;
-  padding: 2vh;
+  width: 48vw;
 }
 
 // .tweet__image {
@@ -149,11 +140,11 @@
 //   margin-top: 1.4vh;
 // }
 
-.tweet__action-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  color: $grey;
-  font-size: 1.10vw;
-}
+// .tweet__action-list {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-end;
+//   align-items: center;
+//   color: $grey;
+//   font-size: 1.10vw;
+// }
