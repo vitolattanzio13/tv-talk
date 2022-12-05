@@ -25,8 +25,7 @@ $grey: #CCCCCC;
 .post {
   background-color: $black;
 }
-.form-post-new
-{
+.form-post-new{
   flex-grow: 1;
   background-color: $white;
   color: $black;
@@ -64,7 +63,6 @@ $grey: #CCCCCC;
 .tweetEntry-header {
   color: $white;
   padding: 0px;
-  text-decoration: none;
   line-height: 20px;
   display: flex;
   align-items: center;
@@ -79,6 +77,15 @@ $grey: #CCCCCC;
   font-weight: bold;
   font-size: 1.25vw;
   padding: 0px;
+}
+
+.tweetEntry-chatroom {
+text-decoration: none;
+color: $grey;
+}
+
+.tweetEntry-chatroom:hover {
+  color: $red1;
 }
 
 .tweetEntry-timestamp {
@@ -102,8 +109,16 @@ $grey: #CCCCCC;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
 }
+
+// .tweetEntry-reply {
+//   text-decoration: none;
+//   color: $grey;
+//   }
+
+//   .tweetEntry-reply:hover {
+//     color: $red1;
+//   }
 
 // .tweetEntry-action-list {
 //   color: $grey;
@@ -132,7 +147,6 @@ $grey: #CCCCCC;
   overflow-y: auto;
   scroll-behavior: smooth;
   text-decoration: none;
-  // font-size: 1.5vw;
 }
 
 .posts-all-container::-webkit-scrollbar {
@@ -151,33 +165,34 @@ $grey: #CCCCCC;
 
 .fa-reply{
   margin-right: 1rem;
+  color: $grey;
+  text-decoration: none;
 }
+
+.fa-reply:hover {
+  color: $red1;
+}
+
 .fa-heart {
   margin-right: 0.4rem;
   margin-top: 0.22rem;
 }
-.liked-button-red{
-  color: $red1;
-}
-.fa-reply:hover {
-  color: $red2;
-}
+
 .fa-heart:hover {
   color: $red1;
 }
 
-.reply-btn  {
-  color: $grey;
+.liked-button-red{
+  color: $red1;
 }
-.reply-btn:hover {
-  color: $red2;
-}
+
 .like-btn  {
   color: $grey;
 }
 .like-btn:hover {
   color: $red2;
 }
+
 .main-index-post-form{
   display: flex;
   flex-direction: column;
