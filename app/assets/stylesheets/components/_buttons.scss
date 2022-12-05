@@ -1,0 +1,25 @@
+.btn-post-tweet{
+  background-color: #010000;
+  color: #FFFFFF;
+  font-style: bold;
+  border: 3px solid #9A0600;
+  border-radius: 5px;
+}
+.btn-post-tweet:hover{
+  border-radius: 5px;
+  background-color: #9A0600;
+}
+.btn-movie-about{
+  background-color: #9a0600;
+  color: #FFFFFF;
+  font-style: bold;
+  border: 3px solid #9A0600;
+  border-radius: 5px;
+}
+.btn-movie-about:hover{
+  border: 3px solid #010000;
+  border-radius: 5px;
+  background-color: #010000;
+  color: #9A0600;
+  transition: 0.5s;
+}
