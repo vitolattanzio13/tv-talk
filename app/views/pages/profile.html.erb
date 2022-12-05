@@ -1,12 +1,9 @@
-
-
 <div class="our-container">
   <div class="profile-banner">
+    <div class="profile-banner-pic" style="background-image:url('https://res.cloudinary.com/dcgbqu8yk/image/upload/v1670250127/Screen_Shot_2022-12-05_at_15.20.20_qsharx.png')"></div>
   </div>
   <div class="profile-user-details-container">
-    <div class="profile-user-pic" style="background-image:url('<%= cl_image_path @user.photo.key %>')">
-    </div>
-
+    <div class="profile-user-pic" style="background-image:url('<%= cl_image_path @user.photo.key %>')"></div>
     <div class="profile-user-details">
       <div class="profile-user-name">
         <%= @user.nickname %>
@@ -14,17 +11,43 @@
       <div class="profile-user-email">
         <%= @user.email %>
       </div>
-      <div class="profile-user-bio">
+      <div class="profile-user-bio pt-3 me-3">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio natus ducimus est eos consequuntur minima, necessitatibus cum sint quasi cupiditate neque. </p>
         <%#= @user.bio %>
       </div>
     </div>
   </div>
-  <h1 class="profile-followed-movie-title">Followed movies:</h1>
-  <div class="profile-followed-movies-container">
-    <div class="index__cards mx-3" id="profile-movies">
-        <% @movies.each do |movie| %>
-          <%= render 'shared/cards/movie', movie: movie %>
-        <% end %>
+  <div class="bottom-profile-container" data-controller="profile-tabs">
+    <div class="profile-btns-container p-3 mt-3 d-flex">
+      <button class="btn-profile-tab" data-profile-tabs-target="buttonFollowedMovies" data-action="click->profile-tabs#showFollowedMovies">Followed Movies</button>
+      <button class="btn-profile-tab mx-3" data-profile-tabs-target="buttonFollowedUsers" data-action="click->profile-tabs#showFollowedUsers">Followed Users</button>
+      <button class="btn-profile-tab" data-profile-tabs-target="buttonPosts" data-action="click->profile-tabs#showPosts">Posts</button>
+    </div>
+    <div class="show-content-container p-3">
+      <div class="followed-movies-container" data-profile-tabs-target="followedMovies">
+        <%# <h1 class="profile-followed-movie-title">Followed movies:</h1> %>
+        <div class="index__cards mx-3" id="profile-movies">
+          <% @movies.each do |movie| %>
+            <%= render 'shared/cards/movie', movie: movie %>
+          <% end %>
+        </div>
+      </div>
+      <div class="followed-users-container d-none" data-profile-tabs-target="followedUsers">
+        <%# <h1 class="profile-followed-movie-title">Followed users:</h1> %>
+        <div>
+          <%# @users.each do |user| %>
+            <%= render 'shared/followed_users' %>
+          <%# end %>
+        </div>
+      </div>
+      <div class="profile-posts-container d-none" data-profile-tabs-target="posts">
+        <%# <h1 class="profile-followed-movie-title">Posts: </h1> %>
+        <div class="posts-all-container" data-search-target="postsContainer">
+          <% current_user.posts.each do |post| %>
+            <%= render 'shared/posts', post: post %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
