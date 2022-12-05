@@ -3,11 +3,14 @@
   width: 100%;
   background-color: grey;
 }
+.profile-banner-pic{
+  height: 20vh;
+}
 
 .profile-user-details-container{
   height: 20vh;
   width: 100%;
-  background-color: lightgray;
+  background-color: $black;
   display: flex;
   justify-content: end;
   position: relative;
@@ -24,8 +27,23 @@
 }
 .profile-user-details{
   color: white;
-  width: 50%;
+  width: 75%;
 }
+.profile-user-name{
+  font-size: 3vh;
+  font-weight: bold;
+  margin-top: 2%;
+}
+.profile-user-email{
+  font-size: 2vh;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.profile-user-email{
+  font-size: 2vh;
+  margin-top: 1%;
+}
+
 .profile-followed-movies-container{
   height: 54vh;
 }
@@ -37,4 +55,21 @@
 #profile-movies{
   height: 54vh;
   margin-top: 0;
+}
+.btn-profile-tab{
+  background-color: #010000;
+  color: #FFFFFF;
+  font-style: bold;
+  border: 3px solid #9A0600;
+  border-radius: 5px;
+}
+.btn-profile-tab:hover{
+  border: 3px solid #9A0600;
+  border-radius: 5px;
+  background-color: #9A0600;
+}
+.btn-profile-tab-active{
+  border: 3px solid #9A0600;
+  border-radius: 5px;
+  background-color: #9A0600;
 }
