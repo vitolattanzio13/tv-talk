@@ -10,8 +10,13 @@ application.register("follow-movies", FollowMoviesController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+
 import NotificationSubscriptionController from "./notification_subscription_controller"
 application.register("notification-subscription", NotificationSubscriptionController)
+
+import ProfileTabsController from "./profile_tabs_controller"
+application.register("profile-tabs", ProfileTabsController)
+
 
 import SearchController from "./search_controller"
 application.register("search", SearchController)

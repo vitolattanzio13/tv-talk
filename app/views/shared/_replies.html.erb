@@ -1,12 +1,9 @@
- <div class="tweet mx-4">
-  <div class="tweet-container">
+<div class="tweet mx-4 p-2">
+  <div class="tweet__avatar" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
+  <div class="tweet__container">
     <div class="tweet__header">
-      <div class="tweet__author-logo" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
       <div class="tweet__author-name">
         <%= reply.user.nickname %>
-      </div>
-      <div class="tweet__author-slug">
-        @<%= reply.user.nickname %>
       </div>
       <div class="tweet__publish-time">
         <%= reply.created_at %>
@@ -14,9 +11,6 @@
     </div>
     <div class="tweet__content">
       <%= reply.content %>
-    </div>
-    <div class="tweet__action-list">
-      <i class="fa fa-heart m-0 p-2"></i>
     </div>
   </div>
 </div>
