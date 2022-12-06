@@ -65,13 +65,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  text-decoration: none;
+  // margin-top: 2vh;
+  // margin-bottom: 2vh;
 }
 
-.navbar-brand img {
-  width: 30%;
+.tv-talk-logo {
+  margin-left: 0.5vw;
 }
 
 span.text-brand {
@@ -79,9 +78,8 @@ span.text-brand {
   color: white;
   font-weight: 700;
   font-size: 2.5vw;
-  text-align: center;
   align-items: center;
-  text-decoration: none;
+  margin-left: 1vw;
 }
 
 .navbar-menu {
