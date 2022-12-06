@@ -2,8 +2,8 @@ require "json"
 require "open-uri"
 require "nokogiri"
 
-FollowedMovie.destroy_all
 FollowedUser.destroy_all
+FollowedMovie.destroy_all
 Notification.destroy_all
 PostVote.destroy_all
 Newspaper.destroy_all
@@ -11,7 +11,9 @@ Reply.destroy_all
 Post.destroy_all
 ChatRoom.destroy_all
 Movie.destroy_all
+puts "Deleting movies..."
 User.destroy_all
+puts "Deleted movies..."
 
 def format_result(movie, mtitle)
   {
