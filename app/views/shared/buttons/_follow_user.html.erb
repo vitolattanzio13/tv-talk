@@ -1,0 +1,12 @@
+<div class="follow-button-container"  data-controller="follow-movies"
+                                      data-follow-movies-movie-value="<%=  %>"
+                                      data-follow-movies-user-value="<%= current_user.id %>">
+  <% hasfollowed = !FollowedUser.find_by(follower_id: current_user.id, followee_id: user.id).nil? %>
+  <% if hasfollowed %>
+    <button class="btn-post-tweet movie-show-button"  data-action="click->follow-movies#followMovie"
+                                                      data-follow-movies-target="button">Unfollow</button>
+  <% else %>
+    <button class="btn-post-tweet movie-show-button"  data-action="click->follow-movies#followMovie"
+                                                      data-follow-movies-target="button">Follow</button>
+  <% end %>
+</div>
