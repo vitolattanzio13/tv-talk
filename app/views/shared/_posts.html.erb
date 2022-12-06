@@ -7,11 +7,15 @@
     <div class="post-movie-poster" style="background-image:url('<%= post.chat_room.movie.poster_url %>');"></div>
     <div class="tweetEntry-content">
       <div class="tweetEntry-header">
-        <strong class="tweetEntry-fullname"><%= post.user.nickname %></strong>
+        <%= link_to "/profile/#{post.user.id}", class:"tweetEntry-fullname" do %>
+          <strong><%= post.user.nickname %></strong>
+        <% end %>
         <%= link_to "/chatrooms/#{post.chat_room.id}", class:"tweetEntry-chatroom" do %>
           <%= post.chat_room.movie.title %>
         <% end %>
-        <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path post.user.photo.key %>')"></div>
+        <%= link_to "/profile/#{post.user.id}" do %>
+          <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path post.user.photo.key %>')"></div>
+        <% end %>
       </div>
       <div class="tweetEntry-text-container">
         <div class="tweetEntry-text-container-content">
