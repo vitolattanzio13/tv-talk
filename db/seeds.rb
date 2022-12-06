@@ -36,57 +36,56 @@ end
 
 # Create users
 puts "Creating users..."
-fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "fran", bio: "A brief note about myself first: apart from being a film geek, I'm also a huge nature freak and amateur photographer"
+fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "fran", bio: "A brief note about myself first: apart from being a film geek, I'm also a huge nature freak and amateur photographer")
 file = URI.open("https://avatars.githubusercontent.com/u/104527931?v=4")
 fran.photo.attach(io: file, filename: "fran.jpg", content_type: "image/jpg")
 fran.save!
 Notification.create!(user_id: fran.id)
-
 puts "Fran created"
 
-vito = User.new(email: "vito@gmail.com", password: "123456", nickname: "vito")
+vito = User.new(email: "vito@gmail.com", password: "123456", nickname: "vito", bio: "I'm a film student and I love to watch movies and talk about them. I'm also a huge fan of the Marvel Cinematic Universe")
 file = URI.open("https://avatars.githubusercontent.com/u/62178588?v=4")
 vito.photo.attach(io: file, filename: "vito.jpg", content_type: "image/jpg")
 vito.save!
 Notification.create!(user_id: vito.id)
 puts "Vito created"
 
-jorrit = User.new(email: "jorrit@gmail.com", password: "123456", nickname: "jorrit")
+jorrit = User.new(email: "jorrit@gmail.com", password: "123456", nickname: "jorrit", bio: "Friendly alcohol advocate. Twitter enthusiast. Web junkie. Tv lover. Friend of animals everywhere. Problem solver.")
 file = URI.open("https://avatars.githubusercontent.com/u/101260772?v=4")
 jorrit.photo.attach(io: file, filename: "jorrit.jpg", content_type: "image/jpg")
 jorrit.save!
 Notification.create!(user_id: jorrit.id)
 puts "Jorrit created"
 
-leo = User.new(email: "leo@gmail.com", password: "123456", nickname: "leo")
+leo = User.new(email: "leo@gmail.com", password: "123456", nickname: "leo", bio: "Pop culture expert. Troublemaker. Web specialist. Student. Writer. Coffee junkie. Subtly charming tv maven.")
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1666021133/yxhif62kivyl2678wt3z.jpg")
 leo.photo.attach(io: file, filename: "leo.jpg", content_type: "image/jpg")
 leo.save!
 Notification.create!(user_id: leo.id)
 puts "Leo created"
 
-arthur = User.new(email: "arthur@gmail.com", password: "123456", nickname: "arthur")
+arthur = User.new(email: "arthur@gmail.com", password: "123456", nickname: "arthur", bio: "German guy living in Amsterdam. I love to watch movies and talk about them. I'm also a huge fan of the comics and the MCU.")
 file = URI.open("https://avatars.githubusercontent.com/u/115401398?v=4")
 arthur.photo.attach(io: file, filename: "arthur.jpg", content_type: "image/jpg")
 arthur.save!
 Notification.create!(user_id: arthur.id)
 puts "Arthur created"
 
-maria = User.new(email: "maria@gmail.com", password: "123456", nickname: "maria")
+maria = User.new(email: "maria@gmail.com", password: "123456", nickname: "maria", bio: "Friendly tv ninja. Twitter geek. Beer fanatic. Wannabe zombie trailblazer. Bacon junkie.")
 file = URI.open("https://avatars.githubusercontent.com/u/115433579?v=4")
 maria.photo.attach(io: file, filename: "maria.jpg", content_type: "image/jpg")
 maria.save!
 Notification.create!(user_id: maria.id)
 puts "Maria created"
 
-laura = User.new(email: "laura@gmail.com", password: "123456", nickname: "laura")
+laura = User.new(email: "laura@gmail.com", password: "123456", nickname: "laura", bio: "Twitter maven. Devoted bacon evangelist. Avid writer. Creator. Amateur social media nerd.")
 file = URI.open("https://avatars.githubusercontent.com/u/107079059?v=4")
 laura.photo.attach(io: file, filename: "laura.jpg", content_type: "image/jpg")
 laura.save!
 Notification.create!(user_id: laura.id)
 puts "Laura created"
 
-ganzo = User.new(email: "ganzo@gmail.com", password: "123456", nickname: "ganzo")
+ganzo = User.new(email: "ganzo@gmail.com", password: "123456", nickname: "ganzo", bio: "I hate summer, internet geek. Reader. Zombie expert. Award-winning web advocate. Certified beer maven. Entrepreneur. Professional pop culture ninja.")
 file = URI.open("https://avatars.githubusercontent.com/u/90385363?v=4")
 ganzo.photo.attach(io: file, filename: "ganzo.jpg", content_type: "image/jpg")
 ganzo.save!
@@ -103,7 +102,7 @@ movie = get_movie(title)
 m1 = Movie.new(movie)
 m1.trailer_url = "https://www.youtube.com/embed/vZ734NWnAHA"
 m1.save!
-c1 = ChatRoom.create(movie_id: m1.id)
+ChatRoom.create(movie_id: m1.id)
 
 title = "Back to the future"
 movie = get_movie(title)
@@ -145,7 +144,7 @@ movie = get_movie(title)
 m7 = Movie.new(movie)
 m7.trailer_url = "https://www.youtube.com/embed/V75dMMIW2B4"
 m7.save!
-ChatRoom.create(movie_id: m7.id)
+c7 = ChatRoom.create(movie_id: m7.id)
 
 title = "Django Unchained"
 movie = get_movie(title)
@@ -159,7 +158,7 @@ movie = get_movie(title)
 m9 = Movie.new(movie)
 m9.trailer_url = "https://www.youtube.com/embed/4s9a5_VqbhY"
 m9.save!
-ChatRoom.create(movie_id: m9.id)
+c9 = ChatRoom.create(movie_id: m9.id)
 
 title = "The Dark Knight"
 movie = get_movie(title)
@@ -173,7 +172,7 @@ movie = get_movie(title)
 m11 = Movie.new(movie)
 m11.trailer_url = "https://www.youtube.com/embed/m8e-FF8MsqU"
 m11.save!
-ChatRoom.create(movie_id: m11.id)
+c11 = ChatRoom.create(movie_id: m11.id)
 
 title = "The Matrix Reloaded"
 movie = get_movie(title)
@@ -227,33 +226,34 @@ ChatRoom.create(movie_id: m18.id)
 puts "Movies created!"
 
 # Create posts
+#c1  starwars // c2 back to the future // c3 godfather // c4 pulp fiction // c5 kill bill // c6 shawshank // c7 lord of the rings // c8 django unchained // c9 gran torino // c10 dark knight // c11 matrix // c12 matrix reloaded // c13 matrix revolutions // c14 lord of the rings 2 // c15 lord of the rings 3 // c16 dark knight rises // c17 inception // c18 interstellar
 
 puts "Creating posts..."
 
-p2 = Post.new(content: "I want Mia's foot massages lol", chat_room_id: c4.id, user_id: ganzo.id, likes: 17)
+p2 = Post.new(content: "I want Mia's foot massages lol. A hilariously violent and extremely well written script + a huge cast of top of the line actors combine to make this masterpiece. No more needs to be said, except: If you like your movies Pulp Fiction is a must watch!", chat_room_id: c4.id, user_id: ganzo.id, likes: 17)
 p2.save
-p3 = Post.new(content: "I love this movie", chat_room_id: c4.id, user_id: maria.id, likes: 2)
+p3 = Post.new(content: "A technologically stunning movie that furthers the genre and features crowd-pleasing performances to go with the frequent scenes of gunplay and violence.", chat_room_id: c11.id, user_id: ganzo.id, likes: 17)
 p3.save
-p4 = Post.new(content: "Team Marcellus or team Butch???", chat_room_id: c4.id, user_id: jorrit.id, likes: 1)
+p6 = Post.new(content: "Best time traveling trilogy in the world! It is perfectly 80s with its soundtrack, its fashion, and its gratuitous use of s-bombs in a PG-rated film. I imagine itll be hard for anyone who enjoys fun and mirth not to have a good time watching this movie.", chat_room_id: c2.id, user_id: ganzo.id, likes: 0)
+p6.save
+p3 = Post.new(content: "Tarantino always offers something different anytime he has a film in theaters but when Pulp Fiction premiered in 1994 audiences knew it was something special.", chat_room_id: c4.id, user_id: maria.id, likes: 2)
+p3.save
+p9 = Post.new(content: "Al Pacino is the best. Best italian mafia movie ever", chat_room_id: c3.id, user_id: vito.id, likes: 3)
+p9.save
+p7 = Post.new(content: "An enthusiastic visionary set loose on one of the biggest playgrounds ever constructed, Jackson brings more personality to the series' first installment, The Fellowship Of The Ring, than typically seeps into a franchise of this magnitude.", chat_room_id: c7.id, user_id: laura.id, likes: 36)
+p7.save
+p4 = Post.new(content: "Best. Monologue. Ever. The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of the darkness.", chat_room_id: c4.id, user_id: jorrit.id, likes: 1)
 p4.save
-p1 = Post.new(content: "Best movie ever", chat_room_id: c4.id, user_id: fran.id, likes: 4)
-p1.save
-
+p10 = Post.new(content: "The originality of the film is minute, while the story offers few surprises.", chat_room_id: c9.id, user_id: jorrit.id, likes: 0)
+p10.save
 p5 = Post.new(content: "This movie is to old for me", chat_room_id: c2.id, user_id: leo.id, likes: 10)
 p5.save
-p6 = Post.new(content: "Best time traveling trilogy in th world!", chat_room_id: c2.id, user_id: ganzo.id, likes: 0)
-p6.save
-p7 = Post.new(content: "I hate Marty McFly", chat_room_id: c2.id, user_id: laura.id, likes: 36)
-p7.save
-p8 = Post.new(content: "Greate movie", chat_room_id: c2.id, user_id: maria.id, likes: 5)
+p8 = Post.new(content: "Masterfully paced, the movie builds slowly, introducing the mythology, habitats and lifestyles of Tolkien's creatures.", chat_room_id: c7.id, user_id: maria.id, likes: 5)
 p8.save
-
-p9 = Post.new(content: "Al Pacino is the best", chat_room_id: c3.id, user_id: vito.id, likes: 3)
-p9.save
-p10 = Post.new(content: "Darth Vader is the best", chat_room_id: c1.id, user_id: jorrit.id, likes: 0)
-p10.save
-p11 = Post.new(content: "Love it!!", chat_room_id: c1.id, user_id: arthur.id, likes: 1)
+p11 = Post.new(content: "The film is clunky in places... but it is also warm, funny and moving, and genuinely thought-provoking about no end of hot-button contemporary issues, from race and class, to ageing and masculinity.", chat_room_id: c9.id, user_id: arthur.id, likes: 1)
 p11.save
+p1 = Post.new(content: "This grim scenario is enlivened by many jokes. In the midst of the violent action, the dialogue is incredible and peppered with quotations from Ezekiel", chat_room_id: c4.id, user_id: laura.id, likes: 4)
+p1.save
 
 # Create notifications for reply
 
@@ -262,12 +262,21 @@ p11.save
 # Pulp fiction replies
 
 puts "Creating replies..."
-r1 = Reply.new(content: "I also love it",post_id: p1.id, user_id: jorrit.id, read: true)
+r1 = Reply.new(content: "Oh my god!!! The Ezekiel quotations! Incredible movie ",post_id: p1.id, user_id: jorrit.id, read: true)
 r1.save
+r2 = Reply.new(content: "I don't agree, Ezekiel quotations are overated",post_id: p1.id, user_id: vito.id, read: true)
+r2.save
+r6 = Reply.new(content: "I also love the dialogues",post_id: p1.id, user_id: arthur.id, read: true)
+r6.save
 r3 = Reply.new(content: "Ha ha your're so funny",post_id: p2.id, user_id: maria.id, read: true)
 r3.save
 r4 = Reply.new(content: "Thank you",post_id: p2.id, user_id: ganzo.id, read: true)
 r4.save
+r7 = Reply.new(content: "I also want foot massages!!!",post_id: p2.id, user_id: leo.id, read: true)
+r7.save
+r5 = Reply.new(content: "I love this movie",post_id: p3.id, user_id: maria.id, read: true)
+r5.save
+
 
 puts "Posts created!"
 
@@ -307,3 +316,4 @@ titles.each_with_index do |ntitle, index|
 end
 
 puts "News articles created!"
+puts "fuckerssss!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
