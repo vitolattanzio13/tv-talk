@@ -1,9 +1,13 @@
 <div class="tweet mx-4 p-2">
-  <div class="tweet__avatar" style="background-image:url('<%= cl_image_path user.followee.photo.key %>')"></div>
+  <%= link_to "/profile/#{user.followee.id}", class:"tweetEntry-fullname" do %>
+    <div class="tweet__avatar" style="background-image:url('<%= cl_image_path user.followee.photo.key %>')"></div>
+  <% end %>
   <div class="tweet__container">
     <div class="tweet__header">
       <div class="tweet__author-name">
-        <%= user.followee.nickname %>
+        <%= link_to "/profile/#{user.followee.id}", class:"tweetEntry-fullname" do %>
+          <strong><%= user.followee.nickname %></strong>
+        <% end %>
       </div>
     </div>
     <div class="tweet__content">
