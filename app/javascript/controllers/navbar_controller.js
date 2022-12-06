@@ -19,6 +19,8 @@ export default class extends Controller {
       case "/profile/" + this.userValue:
         this.#resetAll();
         this.profileTarget.classList.add("current-page-nav");
+        this.profileTarget.children[2].children[1].classList.add("notifications-count-red");
+        this.profileTarget.children[2].children[1].classList.remove("notifications-count-white");
         break;
       case "/about":
         this.#resetAll();
@@ -34,6 +36,8 @@ export default class extends Controller {
     this.homeTarget.classList.remove("current-page-nav")
     this.moviesTarget.classList.remove("current-page-nav")
     this.profileTarget.classList.remove("current-page-nav")
+    this.profileTarget.children[2].children[1].classList.remove("notifications-count-red");
+    this.profileTarget.children[2].children[1].classList.add("notifications-count-white");
     this.aboutTarget.classList.remove("current-page-nav")
   }
 }
