@@ -3,7 +3,7 @@
                           data-votes-handler-poster-value=<%= post.user.id%>
                           data-votes-handler-post-value=<%= post.id %>
                           data-votes-handler-user-value=<%= current_user.id %> >
-  <div class="tweetEntry rounded mx-3">
+  <div class="tweetEntry mx-3">
     <div class="tweetEntry__poster">
       <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path post.user.photo.key %>')"></div>
     </div>
@@ -29,7 +29,7 @@
           <i class="fa fa-heart <%= 'liked-button-red' if hasliked%> "
                                     data-action="click->votes-handler#like"
             data-votes-handler-target="button" ></i>
-          <p class="m-0" data-votes-handler-target="count"><%= post.likes %><%= " (likes)" %></p>
+          <p class="m-0" data-votes-handler-target="count"><%= post.likes %></p>
         </div>
       </div>
     </div>
