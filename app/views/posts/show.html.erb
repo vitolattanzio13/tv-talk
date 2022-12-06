@@ -1,34 +1,6 @@
 <div class="our-container pt-3">
   <div class="container">
-    <div class="tweetEntry rounded">
-      <div class="tweetEntry__poster">
-        <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path @post.user.photo.key %>')"></div>
-      </div>
-      <div class="tweetEntry-content">
-        <a class="tweetEntry-account-group row justify-content-between" href="/chatrooms/<%= @post.chat_room.id %>">
-          <strong class="tweetEntry-fullname-post col-4 pl-3">
-            <%= @post.user.nickname %>
-          </strong>
-          <span class="tweetEntry-movie-title col-4 d-flex justify-content-end pe-3"><%= @post.chat_room.movie.title %></span>
-        </a>
-        <div class="tweetEntry-text-container">
-          <div class="tweetEntry-text-container-content">
-            <%= @post.content %>
-            <%= @post.created_at %>
-          </div>
-        </div>
-      <%# if @post.photo.attached? %>
-        <%# <div class="optionalMedia"> %>
-          <%#= cl_image_tag @post.photo.key, height: 300, width: 400, crop: :fill %>
-        <%# </div> %>
-      <%# end %>
-        <div class="tweetEntry-action-list" style="line-height:24px;color: #b1bbc3;">
-          <i class="fa fa-reply" style="width: 80px;"></i>
-          <i class="fa fa-retweet" style="width: 80px"></i>
-          <i class="fa fa-heart" style="width: 80px"></i>
-        </div>
-      </div>
-    </div>
+    <%= render 'shared/posts', post: @post %>
     <div id="new-reply" class="m-3 p-3" >
       <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path current_user.photo.key %>')"></div>
       <div class="form-post-new ml-3 mr-3">
