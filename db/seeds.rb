@@ -2,6 +2,8 @@ require "json"
 require "open-uri"
 require "nokogiri"
 
+FollowedMovie.destroy_all
+FollowedUser.destroy_all
 Notification.destroy_all
 PostVote.destroy_all
 Newspaper.destroy_all
@@ -257,9 +259,7 @@ p1.save
 
 # Create notifications for reply
 
-
-
-# Pulp fiction replies
+# Replies
 
 puts "Creating replies..."
 r1 = Reply.new(content: "Oh my god!!! The Ezekiel quotations! Incredible movie ",post_id: p1.id, user_id: jorrit.id, read: true)
@@ -279,6 +279,10 @@ r5.save
 
 
 puts "Posts created!"
+
+# Create Followed Users
+puts "Creating followed users..."
+
 
 # News articles
 
