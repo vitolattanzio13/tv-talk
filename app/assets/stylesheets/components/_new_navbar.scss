@@ -138,6 +138,15 @@ span.text-brand {
     background-color: $red2;
   }
 }
+.notifications-count-red{
+  color: white;
+  background-color: $red2;
+}
+.notifications-count-white{
+  color: $red2;
+  background-color: white;
+}
+
 
 #logo{
   height: 6.5vw;
@@ -160,9 +169,7 @@ span.text-brand {
   top: -50%;
   transition: 500ms;
   // padding: 0.2vw 0.5vw;
-  background-color: white;
   border-radius: 50%;
-  color: $red2;
   font-size: 1vw;
   font-weight: 700;
   border: 1px solid $red2;
