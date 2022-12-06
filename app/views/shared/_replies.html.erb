@@ -6,7 +6,7 @@
         <%= reply.user.nickname %>
       </div>
       <div class="tweet__publish-time">
-        <%= reply.created_at %>
+        <time data-controller="timeago" data-timeago-datetime-value="<%= reply.created_at %>"></time>
       </div>
     </div>
     <div class="tweet__content">

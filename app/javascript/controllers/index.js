@@ -4,6 +4,11 @@
 
 import { application } from "./application"
 
+
+
+import Timeago from 'stimulus-timeago'
+application.register('timeago', Timeago)
+
 import FollowsController from "./follows_controller"
 application.register("follows", FollowsController)
 
