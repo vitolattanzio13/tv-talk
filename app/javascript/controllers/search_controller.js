@@ -26,6 +26,7 @@ export default class extends Controller {
           resultsContainer.classList.remove("d-none")
           resultsContainer.innerHTML = ""
           if (data === "no results") {
+            console.log(data)
             resultsContainer.innerHTML = `<p class="form-font-size">No results found</p>`
           } else {
             data.forEach((result) => {
