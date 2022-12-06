@@ -12,8 +12,7 @@
         <%= @user.email %>
       </div>
       <div class="profile-user-bio pt-3 me-3">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio natus ducimus est eos consequuntur minima, necessitatibus cum sint quasi cupiditate neque. </p>
-        <%#= @user.bio %>
+        <%= @user.bio %>
       </div>
     </div>
   </div>
@@ -28,7 +27,6 @@
     </div>
     <div class="show-content-container p-3">
       <div class="followed-movies-container" data-profile-tabs-target="followedMovies">
-        <%# <h1 class="profile-followed-movie-title">Followed movies:</h1> %>
         <div class="index__cards mx-3" id="profile-movies">
           <% @movies.each do |movie| %>
             <%= render 'shared/cards/movie', movie: movie %>
@@ -36,7 +34,6 @@
         </div>
       </div>
       <div class="followed-users-container d-none" data-profile-tabs-target="followedUsers">
-        <%# <h1 class="profile-followed-movie-title">Followed users:</h1> %>
         <div>
           <% if @followed_users.empty? %>
             <p class="profile-followed-movie-title">You are not following anyone yet.</p>
@@ -48,9 +45,8 @@
         </div>
       </div>
       <div class="profile-posts-container d-none" data-profile-tabs-target="posts">
-        <%# <h1 class="profile-followed-movie-title">Posts: </h1> %>
         <div class="posts-all-container" data-search-target="postsContainer">
-          <% current_user.posts.each do |post| %>
+          <% @user.posts.each do |post| %>
             <%= render 'shared/posts', post: post, in_reply: false %>
           <% end %>
         </div>
