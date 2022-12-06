@@ -47,7 +47,7 @@ class Api::V1::PagesController < ApplicationController
       if result.instance_of?(Movie)
         { title: result.title, url: result.id, chat: result.chat_room.id, type: "movie" }
       elsif result.instance_of?(User)
-        { title: result.nickname, url: "", type: "user" }
+        { title: result.nickname, url: result.id, type: "user" }
       end
     end
   end
