@@ -10,7 +10,7 @@
   display: flex;
   border: 0.42vh solid $red2;
   border-radius: 0.7vh;
-  background-color: $white;
+  background-color: $black;
 }
 .replies-title{
   font-size: 1.5vw;
@@ -21,6 +21,7 @@
 }
 .user-avatar-small{
   background-size: cover;
+  aspect-ratio: 1;
 }
 
 // ******* OLD *******
