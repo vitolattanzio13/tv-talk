@@ -10,7 +10,7 @@
     </div>
     <div class="posts-all-container" data-search-target="postsContainer">
       <% @posts.each do |post| %>
-        <%= render 'shared/posts', post: post %>
+        <%= render 'shared/posts', post: post, in_reply: false%>
       <% end %>
     </div>
   </div>
