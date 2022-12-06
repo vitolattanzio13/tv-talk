@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :replies, dependent: :destroy
   has_many :followed_movies, dependent: :destroy
-  has_many :followed_users, dependent: :destroy
   has_one :notification, dependent: :destroy
   has_one_attached :photo
   has_many :followed_users_as_followee, class_name: "FollowedUser", foreign_key: :followee_id
