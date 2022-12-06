@@ -39,25 +39,23 @@
         <p class="nav">Movies</p>
       <% end %>
     </div>
-    <div class="nav-item p-2 d-flex align-items-center">
-      <%= link_to "/profile/#{current_user.id if user_signed_in?}",
-                  class:"nav-link d-flex align-items-center",
-                  data:{navbar_target: "profile"} do %>
-        <i class= "fa-solid fa-fw fa-user"></i>
-        <p class="nav">Profile</p>
-      <% end %>
-    </div>
-
     <% if user_signed_in? %>
+      <% count = 0 %>
+      <% current_user.posts.each do |post|%>
+        <% count += post.replies.where(read: false).count %>
+      <% end %>
       <div class="nav-item p-2 d-flex align-items-center" data-controller="notification-subscription"
-                                                          data-notification-subscription-notification-id-value="<%= Notification.find_by(user_id: current_user.id).id %>">
-        <%= link_to '', class:"nav-link d-flex align-items-center" do %>
-          <i class="fa-regular fa-fw fa-bell"></i>
-          <% count = 0 %>
-          <% current_user.posts.each do |post|%>
-            <% count += post.replies.where(read: false).count %>
-          <% end %>
-          <p class="nav" data-notification-subscription-target="count">Notifs(<%= count %>)</p>
+                                                          data-notification-subscription-notification-id-value="<%= Notification.find_by(user_id: current_user.id).id %>"
+                                                          >
+        <%= link_to "/profile/#{current_user.id if user_signed_in?}",
+                    class:"nav-link d-flex align-items-center",
+                    data:{navbar_target: "profile"} do %>
+          <i class= "fa-solid fa-fw fa-user"></i>
+          <p class="nav">Profile</p>
+          <div id="notifications-here" class="d-flex align-items-center">
+            <i class="fa-solid fa-envelope fa-fw"></i>
+            <div id="notifications-count" data-notification-subscription-target="count"><%= count %></div>
+          </div>
         <% end %>
       </div>
     <% end %>
