@@ -16,10 +16,10 @@
   color: #FFFFFF;
 }
 .wrapper-input{
-  border: 3px solid #9A0600;
+  // border: 3px solid #9A0600;
+  border-bottom: 0.1vh solid $red2;
   border-radius: 5px;
-  background-color: #FFFFFF;
-  color: #010000;
+  background-color: $black;
 }
 .label-input{
   color: $black;
