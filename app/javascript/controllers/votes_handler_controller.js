@@ -21,7 +21,7 @@ export default class extends Controller {
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
-      this.countTarget.innerText = data.new_count + " (likes)"
+      this.countTarget.innerText = data.new_count
       if (data.status === true) {
         this.buttonTarget.classList.add("liked-button-red")
       } else{
