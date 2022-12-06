@@ -24,12 +24,14 @@
       </div>
       <div class="tweetEntry-footer">
         <p class= "tweetEntry-timestamp m-0"><%= post.created_at %></p>
-        <%= link_to post_path(post), class:"tweetEntry-reply" do %>
-          <i class="fa fa-reply"></i>
+        <% unless in_reply %>
+          <%= link_to post_path(post), class:"tweetEntry-reply" do %>
+            <i class="fa fa-reply"></i>
+          <% end %>
         <% end %>
-        <div class="post-likes d-flex align-center">
+        <div class="post-likes d-flex align-items-center">
           <% hasliked = !PostVote.find_by(user_id: current_user.id, post_id: post.id).nil? %>
-          <i class="fa fa-heart"<%= 'liked-button-red' if hasliked%>
+          <i class="fa fa-heart mt-0<%= ' liked-button-red' if hasliked %>"
                                     data-action="click->votes-handler#like"
             data-votes-handler-target="button" ></i>
           <p class="m-0" data-votes-handler-target="count"><%= post.likes %></p>

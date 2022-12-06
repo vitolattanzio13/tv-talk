@@ -11,6 +11,11 @@
     </div>
     <div class="tweet__content">
       <%= reply.content %>
+      <% if reply.photo.attached? %>
+        <div class="optionalMedia">
+          <%= cl_image_tag reply.photo.key %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

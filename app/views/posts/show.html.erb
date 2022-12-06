@@ -1,6 +1,6 @@
 <div class="our-container pt-3">
   <div class="container">
-    <%= render 'shared/posts', post: @post %>
+    <%= render 'shared/posts', post: @post, in_reply: true  %>
     <div id="new-reply" class="m-3 p-3" >
       <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path current_user.photo.key %>')"></div>
       <div class="form-post-new ml-3 mr-3">
@@ -10,7 +10,7 @@
     <h3 class="replies-title">Replies:</h3>
     <div class="replies-all-container">
       <% @replies.each do |reply| %>
-        <%= render 'shared/replies', reply: reply %>
+        <%= render 'shared/replies', reply: reply%>
       <% end %>
     </div>
   </div>
