@@ -88,6 +88,14 @@ color: $grey;
   color: $red1;
 }
 
+.tweetEntry-fullname{
+  text-decoration: none;
+  color: $white;
+}
+.tweetEntry-fullname:hover {
+  color: $red1;
+}
+
 .tweetEntry-timestamp {
   color: $grey;
   padding: 0px;

@@ -38,9 +38,9 @@
       <div class="followed-users-container d-none" data-profile-tabs-target="followedUsers">
         <%# <h1 class="profile-followed-movie-title">Followed users:</h1> %>
         <div>
-          <%# @users.each do |user| %>
-            <%= render 'shared/followed_users' %>
-          <%# end %>
+          <% @users.each do |user| %>
+            <%= render 'shared/cards/user' %>
+          <% end %>
         </div>
       </div>
       <div class="profile-posts-container d-none" data-profile-tabs-target="posts">
