@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get '/search/:query', to: 'pages#search_query'
       post '/like/', to: 'pages#like'
       post '/followm/', to: 'follows#follow_movie'
+      post '/followu/', to: 'follows#follow_user'
       get '/movies/:query', to: 'movies#search'
       post '/post/', to: 'posts#create'
     end
