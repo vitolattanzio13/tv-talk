@@ -1,5 +1,5 @@
-class Api::V1::FollowMoviesController < ApplicationController
-  def follow
+class Api::V1::FollowsController < ApplicationController
+  def follow_movie
     movie = follow_params[:movie]
     user = follow_params[:user]
     action = {}

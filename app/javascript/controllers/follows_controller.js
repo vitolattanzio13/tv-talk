@@ -4,9 +4,13 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = [ "button" ]
   static values = { movie: Number,
+                    followee: Number,
                     user: Number }
   connect() {
     // console.log("follow-movies controller connected")
+  }
+  followUser() {
+
   }
   followMovie() {
     // console.log(this.movieValue, this.userValue)
