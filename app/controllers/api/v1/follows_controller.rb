@@ -8,7 +8,6 @@ class Api::V1::FollowsController < ApplicationController
       follow = FollowedMovie.new(user_id: user, movie_id: movie)
       action[:job] = "follow"
       action[:status] = follow.save
-      raise
     else
       follow = FollowedMovie.find_by(user_id: user, movie_id: movie)
       action[:job] = "unfollow"
