@@ -10,5 +10,6 @@ class PagesController < ApplicationController
     @followed_movies.each do |followed_movie|
       @movies << followed_movie.movie
     end
+    @followed_users = FollowedUser.where(follower_id: @user.id)
   end
 end

@@ -38,8 +38,12 @@
       <div class="followed-users-container d-none" data-profile-tabs-target="followedUsers">
         <%# <h1 class="profile-followed-movie-title">Followed users:</h1> %>
         <div>
-          <% @users.each do |user| %>
-            <%= render 'shared/cards/user' %>
+          <% if @followed_users.empty? %>
+            <p class="profile-followed-movie-title">You are not following anyone yet.</p>
+          <% else %>
+            <% @followed_users.each do |user| %>
+              <%= render 'shared/cards/user', user: user %>
+            <% end %>
           <% end %>
         </div>
       </div>
