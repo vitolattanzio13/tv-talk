@@ -10,31 +10,38 @@ export default class extends Controller {
     // console.log("follow-movies controller connected")
   }
   followUser() {
-
+    const sendData = { follow_user:{user: this.userValue, folowee: this.foloweeValue }}
+    const url = '/api/v1/followu'
+    this.#sendRequest(url, sendData)
   }
   followMovie() {
     // console.log(this.movieValue, this.userValue)
+    const sendData = { follow_movie:{user: this.userValue, movie: this.movieValue }}
+    const url = '/api/v1/followm'
+    this.#sendRequest(url, sendData)
+  }
+  #sendRequest(url, sendData) {
     const csrfToken = document.querySelector("[name='csrf-token']").content
-    const sendData = { follow:{user: this.userValue, movie: this.movieValue}}
-    fetch('/api/v1/followm', {
+    fetch(url, {
       method: 'POST',
       headers: {'Content-Type': 'application/json',"X-CSRF-Token": csrfToken},
       body: JSON.stringify(sendData)})
     .then((response) => response.json())
     .then((data) => {
       // console.log(data)
-      if (data.status === true) {
-        if (data.job === "follow") {
-          this.buttonTarget.innerText = "Unfollow"
-        } else if (data.job === "unfollow") {
-          this.buttonTarget.innerText = "Follow"
-        }
-      } else{
-        console.log("something went wrong")
-      }
+      this.#updateButton(data)
     })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  }
+  #updateButton(data) {
+    // console.log(data)
+    if (data.status === true) {
+      if (data.job === "follow") {
+        this.buttonTarget.innerText = "Unfollow"
+      } else if (data.job === "unfollow") {
+        this.buttonTarget.innerText = "Follow"
+      }
+    } else{
+      console.log("something went wrong")
+    }
   }
 }
