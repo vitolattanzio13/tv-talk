@@ -1,4 +1,5 @@
 $black: #010000;
+$black2:#191919;
 $white: #FFFFFF;
 $red1: #F73800;
 $red2: #9A0600;
@@ -17,6 +18,7 @@ $grey: #CCCCCC;
 .tweetPost-avatar{
   height: 48px;
   width: 48px;
+  aspect-ratio: 1;
 }
 .container-new-post {
   background-color: $black;
@@ -101,6 +103,7 @@ $grey: #CCCCCC;
   height: 48px;
   width: 48px;
   border-radius: 5px;
+  aspect-ratio: 1;
 }
 .tweetEntry-fullname {
   font-weight: bold;
