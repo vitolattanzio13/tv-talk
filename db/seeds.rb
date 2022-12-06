@@ -36,7 +36,7 @@ end
 
 # Create users
 puts "Creating users..."
-fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "fran")
+fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "fran", bio: "A brief note about myself first: apart from being a film geek, I'm also a huge nature freak and amateur photographer"
 file = URI.open("https://avatars.githubusercontent.com/u/104527931?v=4")
 fran.photo.attach(io: file, filename: "fran.jpg", content_type: "image/jpg")
 fran.save!
