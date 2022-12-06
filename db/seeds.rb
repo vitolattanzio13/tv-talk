@@ -283,8 +283,79 @@ r5.save
 puts "Posts created!"
 
 # Create Followed Users
-puts "Creating followed users..."
+puts "Creating Fran followed users..."
+FollowedUser.create(follower_id: fran.id, followee_id: vito.id)
+FollowedUser.create(follower_id: fran.id, followee_id: ganzo.id)
+FollowedUser.create(follower_id: fran.id, followee_id: laura.id)
+FollowedUser.create(follower_id: fran.id, followee_id: jorrit.id)
+FollowedUser.create(follower_id: fran.id, followee_id: arthur.id)
+FollowedUser.create(follower_id: fran.id, followee_id: maria.id)
+FollowedUser.create(follower_id: fran.id, followee_id: leo.id)
+puts "Creating Vito followed users..."
+FollowedUser.create(follower_id: vito.id, followee_id: fran.id)
+FollowedUser.create(follower_id: vito.id, followee_id: ganzo.id)
+FollowedUser.create(follower_id: vito.id, followee_id: laura.id)
+FollowedUser.create(follower_id: vito.id, followee_id: jorrit.id)
+FollowedUser.create(follower_id: vito.id, followee_id: maria.id)
+puts "Creating Laura followed users..."
+FollowedUser.create(follower_id: laura.id, followee_id: fran.id)
+FollowedUser.create(follower_id: laura.id, followee_id: jorrit.id)
+FollowedUser.create(follower_id: laura.id, followee_id: arthur.id)
+FollowedUser.create(follower_id: laura.id, followee_id: maria.id)
+puts "Creating Ganzo followed users..."
+FollowedUser.create(follower_id: ganzo.id, followee_id: vito.id)
+FollowedUser.create(follower_id: ganzo.id, followee_id: fran.id)
+FollowedUser.create(follower_id: ganzo.id, followee_id: laura.id)
 
+puts "Creating Jorrit followed users..."
+FollowedUser.create(follower_id: jorrit.id, followee_id: vito.id)
+FollowedUser.create(follower_id: jorrit.id, followee_id: fran.id)
+FollowedUser.create(follower_id: jorrit.id, followee_id: laura.id)
+FollowedUser.create(follower_id: jorrit.id, followee_id: maria.id)
+
+# Create Followed Movies
+puts "Creating Fran followed movies..."
+FollowedMovie.create(user_id: fran.id, movie_id: m8.id)
+FollowedMovie.create(user_id: fran.id, movie_id: m10.id)
+FollowedMovie.create(user_id: fran.id, movie_id: m3.id)
+FollowedMovie.create(user_id: fran.id, movie_id: m4.id)
+FollowedMovie.create(user_id: fran.id, movie_id: m14.id)
+FollowedMovie.create(user_id: fran.id, movie_id: m6.id)
+puts "Creating Vito followed movies..."
+FollowedMovie.create(user_id: vito.id, movie_id: m1.id)
+FollowedMovie.create(user_id: vito.id, movie_id: m2.id)
+FollowedMovie.create(user_id: vito.id, movie_id: m3.id)
+FollowedMovie.create(user_id: vito.id, movie_id: m4.id)
+puts "Creating Laura followed movies..."
+FollowedMovie.create(user_id: laura.id, movie_id: m11.id)
+FollowedMovie.create(user_id: laura.id, movie_id: m7.id)
+FollowedMovie.create(user_id: laura.id, movie_id: m5.id)
+FollowedMovie.create(user_id: laura.id, movie_id: m9.id)
+FollowedMovie.create(user_id: laura.id, movie_id: m5.id)
+puts "Creating Ganzo followed movies..."
+FollowedMovie.create(user_id: ganzo.id, movie_id: m1.id)
+FollowedMovie.create(user_id: ganzo.id, movie_id: m10.id)
+FollowedMovie.create(user_id: ganzo.id, movie_id: m11.id)
+FollowedMovie.create(user_id: ganzo.id, movie_id: m12.id)
+FollowedMovie.create(user_id: ganzo.id, movie_id: m13.id)
+puts "Creating Jorrit followed movies..."
+FollowedMovie.create(user_id: jorrit.id, movie_id: m14.id)
+FollowedMovie.create(user_id: jorrit.id, movie_id: m15.id)
+FollowedMovie.create(user_id: jorrit.id, movie_id: m16.id)
+FollowedMovie.create(user_id: jorrit.id, movie_id: m17.id)
+FollowedMovie.create(user_id: jorrit.id, movie_id: m18.id)
+puts "Creating Arthur followed movies..."
+FollowedMovie.create(user_id: arthur.id, movie_id: m1.id)
+FollowedMovie.create(user_id: arthur.id, movie_id: m5.id)
+FollowedMovie.create(user_id: arthur.id, movie_id: m4.id)
+puts "Creating Maria followed movies..."
+FollowedMovie.create(user_id: maria.id, movie_id: m3.id)
+FollowedMovie.create(user_id: maria.id, movie_id: m8.id)
+FollowedMovie.create(user_id: maria.id, movie_id: m11.id)
+puts "Creating Leo followed movies..."
+FollowedMovie.create(user_id: leo.id, movie_id: m1.id)
+FollowedMovie.create(user_id: leo.id, movie_id: m2.id)
+FollowedMovie.create(user_id: leo.id, movie_id: m3.id)
 
 # News articles
 
