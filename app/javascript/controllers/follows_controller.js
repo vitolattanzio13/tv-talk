@@ -10,7 +10,8 @@ export default class extends Controller {
     // console.log("follow-movies controller connected")
   }
   followUser() {
-    const sendData = { follow_user:{user: this.userValue, folowee: this.foloweeValue }}
+    const sendData = { follow_user:{user: this.userValue, followee: this.followeeValue }}
+    // console.log(this.followeeValue, this.userValue)
     const url = '/api/v1/followu'
     this.#sendRequest(url, sendData)
   }
@@ -41,6 +42,7 @@ export default class extends Controller {
         this.buttonTarget.innerText = "Follow"
       }
     } else{
+      console.log(data)
       console.log("something went wrong")
     }
   }

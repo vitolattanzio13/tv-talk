@@ -8,6 +8,7 @@ class Api::V1::FollowsController < ApplicationController
       follow = FollowedMovie.new(user_id: user, movie_id: movie)
       action[:job] = "follow"
       action[:status] = follow.save
+      raise
     else
       follow = FollowedMovie.find_by(user_id: user, movie_id: movie)
       action[:job] = "unfollow"
@@ -20,15 +21,16 @@ class Api::V1::FollowsController < ApplicationController
 
   def follow_user
     user = follow_user_params[:user]
-    folowee = follow_user_params[:followee]
+    followee = follow_user_params[:followee]
     action = {}
-    is_following = FollowedUser.where(follower_id: user, followee_id: folowee) || []
+    is_following = FollowedUser.where(follower_id: user, followee_id: followee) || []
     if is_following.empty?
-      follow = FollowedUser.new(follower_id: user, followee_id: folowee)
+      follow = FollowedUser.new(follower_id: user, followee_id: followee)
       action[:job] = "follow"
       action[:status] = follow.save
+      action[:followee] = follow_user_params
     else
-      follow = FollowedUser.find_by(follower_id: user, followee_id: folowee)
+      follow = FollowedUser.find_by(follower_id: user, followee_id: followee)
       action[:job] = "unfollow"
       action[:status] = true if follow.destroy
     end
