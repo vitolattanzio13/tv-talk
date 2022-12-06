@@ -123,10 +123,12 @@ span.text-brand {
   margin-left: 0.5rem;
 }
 
-
+.current-page-nav{
+  color: $red2;
+}
 /* Links on mouse-over */
 .nav-link:hover {
-  color: #9A0600;
+  color: $red2;
   z-index: 0;
 }
 

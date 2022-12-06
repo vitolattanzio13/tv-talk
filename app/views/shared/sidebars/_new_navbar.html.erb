@@ -4,7 +4,8 @@
       <span class="text-brand">tvtalk</span>
   </div>
 
-  <div class="navbar-menu d-flex flex-column">
+  <div class="navbar-menu d-flex flex-column" data-controller="navbar"
+                                              data-navbar-user-value="<%= current_user.id if user_signed_in? %>">
 
     <div class="nav-item p-2 d-flex flex-column">
       <% if user_signed_in? %>
@@ -26,20 +27,22 @@
       <% end %>
     </div>
 
-    <div class="nav-item p-2 d-flex align-items-center">
-      <%= link_to root_path, class:"nav-link d-flex align-items-center" do %>
+    <div class="nav-item p-2 d-flex align-items-center" >
+      <%= link_to root_path, class:"nav-link d-flex align-items-center",data:{navbar_target: "home"} do %>
         <i class="fas fa-fw fa-home"></i>
         <p class="nav">Home</p>
       <% end %>
     </div>
     <div class="nav-item p-2 d-flex align-items-center">
-      <%= link_to movies_path, class:"nav-link d-flex align-items-center" do %>
+      <%= link_to movies_path, class:"nav-link d-flex align-items-center",data:{navbar_target: "movies"} do %>
         <i class= "fa-solid fa-fw fa-clapperboard"></i>
         <p class="nav">Movies</p>
       <% end %>
     </div>
     <div class="nav-item p-2 d-flex align-items-center">
-      <%= link_to "/profile/#{current_user.id if user_signed_in?}", class:"nav-link d-flex align-items-center" do %>
+      <%= link_to "/profile/#{current_user.id if user_signed_in?}",
+                  class:"nav-link d-flex align-items-center",
+                  data:{navbar_target: "profile"} do %>
         <i class= "fa-solid fa-fw fa-user"></i>
         <p class="nav">Profile</p>
       <% end %>
@@ -60,7 +63,7 @@
     <% end %>
 
     <div class="nav-item p-2 d-flex align-items-center">
-      <%= link_to "#", class:"nav-link d-flex align-items-center" do %>
+      <%= link_to "#", class:"nav-link d-flex align-items-center",data:{navbar_target: "about"} do %>
         <i class="fa-regular fa-fw fa-circle-question"></i>
         <p class="nav">About</p>
       <% end %>
