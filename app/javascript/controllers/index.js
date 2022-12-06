@@ -10,13 +10,14 @@ application.register("follows", FollowsController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import NavbarController from "./navbar_controller"
+application.register("navbar", NavbarController)
 
 import NotificationSubscriptionController from "./notification_subscription_controller"
 application.register("notification-subscription", NotificationSubscriptionController)
 
 import ProfileTabsController from "./profile_tabs_controller"
 application.register("profile-tabs", ProfileTabsController)
-
 
 import SearchController from "./search_controller"
 application.register("search", SearchController)
