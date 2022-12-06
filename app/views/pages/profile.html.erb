@@ -22,6 +22,9 @@
       <button class="btn-profile-tab" data-profile-tabs-target="buttonFollowedMovies" data-action="click->profile-tabs#showFollowedMovies">Followed Movies</button>
       <button class="btn-profile-tab mx-3" data-profile-tabs-target="buttonFollowedUsers" data-action="click->profile-tabs#showFollowedUsers">Followed Users</button>
       <button class="btn-profile-tab" data-profile-tabs-target="buttonPosts" data-action="click->profile-tabs#showPosts">Posts</button>
+      <% unless @user.id == current_user.id %>
+            <%= render 'shared/buttons/follow_user', user: @user %>
+      <% end %>
     </div>
     <div class="show-content-container p-3">
       <div class="followed-movies-container" data-profile-tabs-target="followedMovies">
