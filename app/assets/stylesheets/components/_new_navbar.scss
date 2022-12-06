@@ -95,7 +95,7 @@ span.text-brand {
   display: inline-block;
   // border: 1px solid silver;
   // border-radius: 0.25em;
-  padding-left: 0.5em;
+  // padding-left: 0.5em;
   padding-right: 0.5em;
   transition: $trans;
 }
@@ -136,7 +136,6 @@ span.text-brand {
   #notifications-count{
     color: white;
     background-color: $red2;
-
   }
 }
 
@@ -147,16 +146,17 @@ span.text-brand {
   background-size: cover;
 }
 #notifications-here{
+  padding-left: 0.5em;
   position: relative;
 }
 #notifications-count{
   position: absolute;
-  height: fit-content;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
-  left: 80%;
+  width: 60%;
+  left: 60%;
   top: -50%;
   transition: 500ms;
   // padding: 0.2vw 0.5vw;
