@@ -1,5 +1,6 @@
-<div class="message-container d-flex <%= message.user == Current.user ? 'justify-content-end message-current-user' : 'justify-content-start message-other-user' %>">
-  <div class = "message-format <%= message.user == Current.user ? 'message-format-current-user' : 'message-format-other-user' %>">
+<div id="<%= dom_id message %>" class="message-container d-flex message-container-<%= message.user.id %>">
+  <div class = "message-format cont-<%= message.user.id %>">
+
     <div class="message-content">
       <div class = "message-main-body">
         <%= message.content %>

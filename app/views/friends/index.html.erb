@@ -9,9 +9,7 @@
   <div class="messages-container">
     <%= turbo_stream_from "messages" %>
     <%= turbo_frame_tag "messages" do %>
-      <% @messages.each do |message| %>
-        <%= render message %>
-      <% end %>
+      <%= render @messages %>
     <% end %>
   </div>
 

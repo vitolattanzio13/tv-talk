@@ -17,7 +17,17 @@
   <body><%= render "shared/sidebars/new_navbar" %>
   <%= render "shared/sidebars/news" %>
   <%= render "shared/flashes" %>
+  <style>
+  <%= ".message-container-#{current_user&.id}" %> {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
 
+  }
+  <%= ".cont-#{current_user&.id}" %> {
+  background-color: #2c3e50 !important;
+  }
+  </style>
     <%= yield %>
   </body>
 </html>
