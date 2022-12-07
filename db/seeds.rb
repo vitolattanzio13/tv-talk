@@ -40,14 +40,14 @@ end
 
 # Create users
 puts "Creating users..."
-fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "fran", bio: "A brief note about myself first: apart from being a film geek, I'm also a huge nature freak and amateur photographer")
+fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "fran", bio: "A brief note about myself first: apart from being a film geek, I'm also a huge nature freak and amateur photographer.")
 file = URI.open("https://avatars.githubusercontent.com/u/104527931?v=4")
 fran.photo.attach(io: file, filename: "fran.jpg", content_type: "image/jpg")
 fran.save!
 Notification.create!(user_id: fran.id)
 puts "Fran created"
 
-vito = User.new(email: "vito@gmail.com", password: "123456", nickname: "vito", bio: "I'm a film student and I love to watch movies and talk about them. I'm also a huge fan of the Marvel Cinematic Universe")
+vito = User.new(email: "vito@gmail.com", password: "123456", nickname: "vito", bio: "I'm a film student and I love to watch movies and talk about them. I'm also a huge fan of the Marvel Cinematic Universe.")
 file = URI.open("https://avatars.githubusercontent.com/u/62178588?v=4")
 vito.photo.attach(io: file, filename: "vito.jpg", content_type: "image/jpg")
 vito.save!

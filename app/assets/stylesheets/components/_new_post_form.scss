@@ -1,31 +1,34 @@
 .nice-class{
   margin-left: 1rem;
 }
-.btn-post-tweet{
-  background-color: #010000;
-  color: #FFFFFF;
-  font-style: bold;
-  border: 3px solid #9A0600;
-  border-radius: 5px;
-}
-.btn-post-tweet:hover{
-  border: 3px solid #010000;
-  border-radius: 5px;
-  background-color: #9A0600;
-  transition: 0.7s;
-  color: #FFFFFF;
-}
-.wrapper-input{
-  // border: 3px solid #9A0600;
-  border-bottom: 0.1vh solid $red2;
-  border-radius: 5px;
+.btn-post-tweet {
   background-color: $black;
+  color: $white;
+  font-style: bold;
+  border: 3px solid $red2;
+  border-radius: 5px;
+}
+
+.btn-post-tweet:hover{
+  border: 3px solid $black;
+  border-radius: 5px;
+  border-radius: 5px;
+  background-color: $red2;
+  color: $white;
+  transition: 0.3s;
+}
+
+.wrapper-input{
+  border: 3px solid $black2;
+  border-radius: 5px;
+  background-color: $black2;
 }
 .label-input{
-  color: $black;
-  background-color: $black2;
+  color: $grey;
+  background-color: $black;
 }
 .bg-input{
-  background-color: $white;
   background-color: $black2;
+  border: $black2;
+  color: $grey;
 }
