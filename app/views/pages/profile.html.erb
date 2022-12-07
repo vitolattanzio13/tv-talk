@@ -59,12 +59,11 @@
         <div class="posts-all-container" data-search-target="postsContainer">
           <% if @user.replies.where(read: false) %>
             <% @user.posts.each do |post| %>
-              <% post.replies.each do |reply| %>
+              <% post.replies.reverse_each do |reply| %>
                 <% unless @user == reply.user %>
-                <%= render 'shared/replies', reply: reply, in_reply: false %>
+                <%= render 'shared/notification_replies', reply: reply, in_reply: false %>
                 <% end %>
               <% end %>
-
             <% end %>
           <% else %>
             <p class="profile-followed-movie-title">You have no notifications yet.</p>

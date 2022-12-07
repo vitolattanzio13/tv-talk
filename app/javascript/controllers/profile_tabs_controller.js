@@ -5,13 +5,11 @@ export default class extends Controller {
   static targets = [ "followedMovies", "followedUsers", "posts", "notifications", "buttonFollowedMovies", "buttonFollowedUsers", "buttonPosts", "buttonNotifications" ]
 
   connect() {
+    console.log("ProfileTabsController connected")
     this.buttonFollowedMoviesTarget.classList.add("btn-profile-tab-active")
   }
 
   showFollowedMovies() {
-    if (this.buttonNotificationsTarget !== null) {
-      this.buttonNotificationsTarget.classList.remove("btn-profile-tab-active")
-    }
     this.buttonFollowedMoviesTarget.classList.add("btn-profile-tab-active")
     this.buttonFollowedUsersTarget.classList.remove("btn-profile-tab-active")
     this.buttonPostsTarget.classList.remove("btn-profile-tab-active")
@@ -23,9 +21,6 @@ export default class extends Controller {
   }
 
   showFollowedUsers() {
-    if (this.buttonNotificationsTarget !== null) {
-      this.buttonNotificationsTarget.classList.remove("btn-profile-tab-active")
-    }
     this.buttonFollowedMoviesTarget.classList.remove("btn-profile-tab-active")
     this.buttonFollowedUsersTarget.classList.add("btn-profile-tab-active")
     this.buttonPostsTarget.classList.remove("btn-profile-tab-active")
@@ -37,9 +32,6 @@ export default class extends Controller {
   }
 
   showPosts() {
-    if (this.buttonNotificationsTarget !== null) {
-      this.buttonNotificationsTarget.classList.remove("btn-profile-tab-active")
-    }
     this.buttonFollowedMoviesTarget.classList.remove("btn-profile-tab-active")
     this.buttonFollowedUsersTarget.classList.remove("btn-profile-tab-active")
     this.buttonPostsTarget.classList.add("btn-profile-tab-active")
@@ -51,9 +43,6 @@ export default class extends Controller {
   }
 
   showNotifications() {
-    if (this.buttonNotificationsTarget !== null) {
-      this.buttonNotificationsTarget.classList.remove("btn-profile-tab-active")
-    }
     this.buttonFollowedMoviesTarget.classList.remove("btn-profile-tab-active")
     this.buttonFollowedUsersTarget.classList.remove("btn-profile-tab-active")
     this.buttonPostsTarget.classList.remove("btn-profile-tab-active")
