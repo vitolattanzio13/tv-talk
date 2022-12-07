@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  get 'friends/show'
   devise_for :users
   root to: "posts#index"
 
   get "profile/:id", to: "pages#profile"
-
+  get "friends", to: "friends#index"
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   # resources :chat_rooms, only: %i[] do
   #   resources :posts, only: %i[create]
   # end
+  resources :messages, only: %i[create]
   resources :movies, only: %i[index show]
   resources :posts, only: %i[index show edit update] do
     resources :replies, only: %i[new create destroy]

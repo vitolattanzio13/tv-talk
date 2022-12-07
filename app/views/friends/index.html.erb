@@ -1,0 +1,17 @@
+<div class= "our-container">
+
+
+  <div class="messages-container">
+    <%= turbo_stream_from "messages" %>
+    <%= turbo_frame_tag "messages" do %>
+      <% @messages.each do |message| %>
+          <%= render message %>
+        <% end %>
+    <% end %>
+  </div>
+
+
+  <div class="message-form-container">
+    <%= render partial: "shared/chat/message_form" %>
+  </div>
+</div>
