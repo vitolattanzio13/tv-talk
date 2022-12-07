@@ -1,17 +1,32 @@
 <div class= "our-container">
-
-
+  <div class="friend-display">
+    <div class= "friend-avatar-main" style="background-image:url('<%= cl_image_path User.first(2)[1].photo.key %>');"></div>
+    <p class="friend-name-main"><%= User.first(2)[1].nickname %></p>
+    <div class="friends-descriptor">
+      <p class="friends-descriptor-text">Direct chat</p>
+    </div>
+  </div>
   <div class="messages-container">
     <%= turbo_stream_from "messages" %>
     <%= turbo_frame_tag "messages" do %>
       <% @messages.each do |message| %>
-          <%= render message %>
-        <% end %>
+        <%= render message %>
+      <% end %>
     <% end %>
   </div>
 
-
   <div class="message-form-container">
     <%= render partial: "shared/chat/message_form" %>
+  </div>
+
+  <div class="friends-list">
+    <div class="friend-list-title">
+      <p class="friend-list-title-text">Friends:</p>
+    </div>
+    <div class="friends-list-container">
+      <% @friends.each do |friend| %>
+        <%= render partial: "shared/chat/friend", locals: { friend: friend } %>
+      <% end %>
+    </div>
   </div>
 </div>
