@@ -122,6 +122,13 @@
   color: $white;
 }
 
+.tweet__author-name-followed-users {
+  font-size: 1.25vw;
+  font-weight: 700;
+  color: $white;
+  margin-right: 1vw;
+}
+
 .tweet__publish-time {
   margin-left: 1vw;
   color: $grey;
