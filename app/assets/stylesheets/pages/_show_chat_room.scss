@@ -4,14 +4,7 @@
   margin-left: 1rem;
   margin-bottom: 1rem;
  }
-//  #chatroom-show-poster{
-//   height: 100%;
-//   width: 35%;
-//   background-color: $black;
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   background-position: center;
-// }
+
 #chatroom-show-poster{
   height: 100%;
   background-color: $black;
@@ -21,11 +14,10 @@
 }
 #chatroom-new-post-form{
   display: flex;
-  max-height: -webkit-fill-available;
+  // max-height: -webkit-fill-available;
+  height: 22vh;
   width: 60vw;
-  border: 3px solid $red2;
-  border-radius: 5px;
-  background-color: $white;
+  background-color: $black;
   margin-left: 15vw;
 }
 .tweetEntry-movie-title {
