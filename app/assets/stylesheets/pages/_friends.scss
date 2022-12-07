@@ -1,6 +1,6 @@
 .messages-container{
   height: 75vh;
-  width: 95%;
+  width: 85%;
   margin: 0 auto;
   padding-top: 5vh;
   overflow-y: scroll;
@@ -13,16 +13,18 @@
   overflow: hidden;
 }
 .message-container{
-  margin-bottom: 1vh;
+  margin-bottom: 1.5vh;
 }
 .message-content{
   color: white;
-  padding-left: 1vw;
-  padding-right: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
 }
 .message-current-user{
   color: white;
-  margin-bottom: 1vh;
+  margin-bottom: 1.5vh;
   // background-color: #2c3e50;
   // align-self: flex-end;
 }
@@ -37,29 +39,27 @@
   flex-direction: column;
   height: fit-content;
   width: fit-content;
-  max-width: 80%;
-  background-color: #161e27;
+  max-width: 70%;
+  background-color: #2c3e50;
   border-radius: 10px;
+  font-size: 1vw;
 }
 .message-format-current-user{
   background-color: #2c3e50;
-  border-radius: 10px;
-}
-.message-format-other-user{
-
 }
 .message-main-body{
   display: flex;
   flex-direction: column;
 }
 .message-time{
-  font-size: 0.8em;
+  font-size: 1vw;
   color: #bdc3c7;
   align-self: flex-end;
 }
 .friend-display{
   height: 10vh;
   width: 90%;
+  border-bottom: 1px solid $red2;
   // background-color: grey;
   margin: auto;
   display: flex;
@@ -80,12 +80,14 @@
 }
 .message-form-container{
   height: 10vh;
-  width: 95%;
+  width: 85%;
   margin: 0 auto;
 
 }
 .message-form{
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 10vh;
 }
 .friends-list{
@@ -119,6 +121,10 @@
   margin-bottom: 0;
   padding-bottom: 1vh;
   border-bottom: 1px solid $red2
+}
+.friend-spacer{
+  height: 3vh;
+  background-color: black;
 }
 .friends-list-container{
   height: fit-content;
@@ -159,7 +165,7 @@
   margin-bottom: 0;
 }
 .friends-chat-input{
-  width: 100%;
+  width: 90%;
   color: white;
   background-color: $black;
 }
