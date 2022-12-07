@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="tweetEntry-footer">
-        <p class= "tweetEntry-timestamp m-0"><%= post.created_at %></p>
+        <time class="tweetEntry-timestamp m-0" data-controller="timeago" data-timeago-datetime-value="<%= post.created_at %>"></time>
         <%= link_to post_path(post), class:"tweetEntry-reply" do %>
           <i class="fa fa-reply"></i>
         <% end %>
