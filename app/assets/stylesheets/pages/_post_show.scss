@@ -8,9 +8,10 @@
 }
 #new-reply {
   display: flex;
-  border: 0.42vh solid $red2;
-  border-radius: 0.7vh;
+  // border: 0.42vh solid $red2;
+  // border-radius: 0.7vh;
   background-color: $black;
+  border-bottom: 0.1vh solid #9A0600;
 }
 .replies-title{
   font-size: 1.5vw;

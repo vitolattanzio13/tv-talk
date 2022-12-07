@@ -7,13 +7,9 @@ $grey: #CCCCCC;
 
 #new-post {
   display: flex;
-  height: 30vh;
+  height: 22vh;
   width: 60vw;
-  // border: 1px solid $red2;
-  border-bottom: 0.1vh solid $red2;
-  border-radius: 5px;
   background-color: $black;
-  margin-left: 15vw;
 }
 .tweetPost-avatar{
   height: 48px;
@@ -22,13 +18,13 @@ $grey: #CCCCCC;
 }
 .container-new-post {
   background-color: $black;
-  height: 30vh;
+  height: 25vh;
   margin-bottom: 1rem;
 }
 .post {
   background-color: $black;
 }
-.form-post-new{
+.form-post-new {
   flex-grow: 1;
   background-color: $black;
   // color: $black;
@@ -37,11 +33,13 @@ $grey: #CCCCCC;
   display: flex;
   flex-direction: column;
   margin-left: 1vw;
+  background-color: $black;
 }
 .main-index-form-button{
   width: fit-content;
   height: fit-content;
   margin-left: 0.5vw;
+  background-color: $black;
 }
 .main-index-form-search-container{
   width: 60%;
@@ -53,6 +51,7 @@ $grey: #CCCCCC;
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: fit-content;
 }
 .main-index-form-suggestions{
   display: flex;
@@ -61,10 +60,12 @@ $grey: #CCCCCC;
   height: fit-content;
   z-index: 1;
 }
-.card-horizontal {
-  display: flex;
-  flex: 1 1 auto;
-}
+
+// .card-horizontal {
+//   display: flex;
+//   flex: 1 1 auto;
+// }
+
 .tweetEntry-tweetHolder {
   // border-left: 1px solid $red2;
   // border-right: 1px solid $red2;
