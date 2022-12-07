@@ -18,8 +18,8 @@ $grey: #CCCCCC;
 }
 .container-new-post {
   background-color: $black;
-  height: 25vh;
-  margin-bottom: 1rem;
+  height: fit-content;
+  // margin-bottom: 1rem;
 }
 .post {
   background-color: $black;

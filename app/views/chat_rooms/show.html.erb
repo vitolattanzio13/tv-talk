@@ -2,10 +2,10 @@
   <div class="container">
     <div class="poster-form-container">
       <div class="post-movie-poster mt-3 col-4" id="chatroom-show-poster" style="background-image:url('<%= @post.chat_room.movie.poster_url %>');"></div>
-      <div class="chatroom-new-post-form-container mt-3 col-8 d-flex ">
+      <div class="chatroom-new-post-form-container mt-3 col-8">
         <h1 class="movie-chatroom-title"><%= @chat_room.movie.title %></h1>
-        <div class="d-flex justify-content-start container-new-post" >
-          <div id="chatroom-new-post-form" class="m-3" >
+        <div class="container-new-post" >
+          <div id="chatroom-new-post-form">
             <div class="form-post-new ml-3 mr-3">
               <%= render 'shared/new_post_chatroom_form' %>
             </div>
