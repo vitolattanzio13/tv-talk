@@ -1,22 +1,6 @@
 .nice-class{
   margin-left: 1rem;
 }
-.btn-post-tweet {
-  background-color: $black;
-  color: $white;
-  font-style: bold;
-  border: 3px solid $red2;
-  border-radius: 5px;
-}
-
-.btn-post-tweet:hover{
-  border: 3px solid $black;
-  border-radius: 5px;
-  border-radius: 5px;
-  background-color: $red2;
-  color: $white;
-  transition: 0.3s;
-}
 
 .wrapper-input{
   border: 3px solid $black2;
@@ -31,4 +15,12 @@
   background-color: $black2;
   border: $black2;
   color: $grey;
+}
+
+.form-control:focus {
+  border: 3px solid $black2 !important;
+  border-radius: 5px;
+  background-color: $black2 !important;
+  color: $white !important;
+  box-shadow: none !important;
 }

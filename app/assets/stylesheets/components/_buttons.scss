@@ -1,29 +1,30 @@
 .btn-post-tweet{
-  background-color: #010000;
+  background-color: $red2;
   color: #FFFFFF;
-  font-style: bold;
-  border: 3px solid #9A0600;
+  font-weight: 500;
   border-radius: 5px;
+  border: 3px solid $red2;
 }
 .btn-post-tweet:hover{
-  border: 3px solid $black;
+  border: 3px solid $red2;
   border-radius: 5px;
-  border-radius: 5px;
-  background-color: #9A0600;
+  background-color: $black;
   color: $white;
   transition: 0.3s;
 }
 .btn-movie-about{
-  background-color: #9a0600;
-  color: #FFFFFF;
-  font-style: bold;
-  border: 3px solid #9A0600;
+  background-color: $black;
+  color: $white;
+  font-weight: 500;
+  border: 3px solid $red2;
   border-radius: 5px;
 }
 .btn-movie-about:hover{
-  border: 3px solid #010000;
+  background-color: $black;
+  color: $white;
+  font-weight: 500;
+  border: 3px solid $black;
   border-radius: 5px;
-  background-color: #010000;
-  color: #9A0600;
+  box-shadow: $red2 0px 0px 0px 3px;
   transition: 0.3s;
 }
