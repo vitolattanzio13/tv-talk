@@ -61,6 +61,13 @@
     <% end %>
 
     <div class="nav-item p-2 d-flex align-items-center">
+      <%= link_to "/friends", class:"nav-link d-flex align-items-center",data:{navbar_target: "friends"} do %>
+        <i class="fa-solid fa-fw fa-user-group"></i>
+        <p class="nav">Friends</p>
+      <% end %>
+    </div>
+
+    <div class="nav-item p-2 d-flex align-items-center">
       <%= link_to "#", class:"nav-link d-flex align-items-center",data:{navbar_target: "about"} do %>
         <i class="fa-regular fa-fw fa-circle-question"></i>
         <p class="nav">About</p>
