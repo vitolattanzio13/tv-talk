@@ -4,10 +4,17 @@
   <% end %>
   <div class="tweet__container">
     <div class="tweet__header">
-      <div class="tweet__author-name">
-        <%= link_to "/profile/#{user.followee.id}", class:"tweetEntry-fullname" do %>
-          <strong><%= user.followee.nickname %></strong>
-        <% end %>
+      <div class="d-flex">
+        <div class="tweet__author-name-followed-users">
+          <%= link_to "/profile/#{user.followee.id}", class:"tweetEntry-fullname" do %>
+            <strong><%= user.followee.nickname %></strong>
+          <% end %>
+        </div>
+        <div class="tweet__author-name-followed-users">
+          <% unless user.followee.id == current_user.id %>
+            <%= render 'shared/buttons/follow_user', user: @user %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="tweet__content">
