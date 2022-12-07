@@ -10,6 +10,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @replies = @post.replies
     @reply = Reply.new
+    if @post.user == current_user
+      change_status(@post)
+    end
+
   end
 
   def new
@@ -38,6 +42,18 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def change_status(post)
+    @notification = Notification.find_by(user_id: current_user.id)
+    post.replies.each do |reply|
+      reply.update(read: true)
+    end
+    count = 0
+    current_user.posts.each do |post|
+      count += post.replies.where(read: false).count
+    end
+    NotificationChannel.broadcast_to(@notification, count)
+  end
 
   def post_params
     params.require(:post).permit(:chat_room_id, :content, :photo)

@@ -1,0 +1,29 @@
+<div class="tweet mx-4 p-2">
+  <div class="tweet__avatar" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
+  <div class="tweet__container">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        <%= reply.user.nickname %>
+      </div>
+      <div class="tweet__publish-time">
+        <%= reply.created_at %>
+      </div>
+    </div>
+    <div class="tweetEntry-text-container">
+      <div class="tweetEntry-text-container-content">
+        <%= reply.content %>
+        <% if reply.photo.attached? %>
+          <div class="optionalMedia">
+            <%= cl_image_tag reply.photo.key %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="tweetEntry-footer">
+      <%= link_to "../posts/#{reply.post_id}", class:"tweetEntry-reply", method: "change_status"  do %>
+        <i class="fa fa-reply">
+        </i>
+      <% end %>
+    </div>
+  </div>
+</div>
