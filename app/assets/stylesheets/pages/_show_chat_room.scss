@@ -5,13 +5,27 @@
   margin-bottom: 1rem;
  }
 
+.poster-form-container {
+  display: flex;
+  // border-bottom: 0.1vh solid $red2;
+  padding: 50px 0px;
+}
+
 #chatroom-show-poster{
   height: 100%;
   background-color: $black;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  aspect-ratio: 1;
 }
+
+.chatroom-new-post-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 #chatroom-new-post-form{
   display: flex;
   // max-height: -webkit-fill-available;
