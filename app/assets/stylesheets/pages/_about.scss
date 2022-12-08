@@ -1,0 +1,34 @@
+.about-group-photo{
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 50vw;
+  margin: auto;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.about-title{
+  text-align: center;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  color: white;
+}
+.about-names{
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin: auto;
+}
+.about-name-text{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  color: white;
+}
+.about-title-main{
+  text-align: center;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  color: white;
+  font-size: 2em;
+}
