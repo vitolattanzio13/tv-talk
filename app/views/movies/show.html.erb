@@ -1,4 +1,7 @@
 <div class="our-container">
+  <div class="back-button-container">
+    <%= render 'shared/buttons/back_button' %>
+  </div>
   <div class="movie-show-details-container">
     <div class="movie-show-details">
       <div class="movie-show-poster" style="background-image:url('<%= @movie.poster_url unless @movie.poster_url.empty? %>');">

@@ -11,9 +11,7 @@ Reply.destroy_all
 Post.destroy_all
 ChatRoom.destroy_all
 Movie.destroy_all
-puts "Deleting movies..."
 User.destroy_all
-puts "Deleted movies..."
 
 def format_result(movie, mtitle)
   {

@@ -1,6 +1,11 @@
 <div class="our-container">
+
   <div class="profile-banner">
-    <div class="profile-banner-pic" style="background-image:url('https://res.cloudinary.com/dcgbqu8yk/image/upload/v1670250127/Screen_Shot_2022-12-05_at_15.20.20_qsharx.png')"></div>
+    <div class="profile-banner-pic" style="background-image:url('https://res.cloudinary.com/dcgbqu8yk/image/upload/v1670250127/Screen_Shot_2022-12-05_at_15.20.20_qsharx.png')">
+      <div class="back-button-container">
+        <%= render 'shared/buttons/back_button' %>
+      </div>
+    </div>
   </div>
   <div class="profile-user-details-container">
     <div class="profile-user-pic" style="background-image:url('<%= cl_image_path @user.photo.key %>')"></div>

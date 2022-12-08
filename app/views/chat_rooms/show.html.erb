@@ -1,4 +1,7 @@
 <div class="our-container">
+  <div class="back-button-container">
+    <%= render 'shared/buttons/back_button' %>
+  </div>
   <div class="container">
     <div class="poster-form-container">
       <div class="post-movie-poster mt-3 col-4" id="chatroom-show-poster" style="background-image:url('<%= @post.chat_room.movie.poster_url %>');"></div>

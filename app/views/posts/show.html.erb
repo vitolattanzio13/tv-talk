@@ -1,4 +1,7 @@
 <div class="our-container pt-3">
+  <div class="back-button-container">
+    <%= render 'shared/buttons/back_button' %>
+  </div>
   <div class="container">
     <%= render 'shared/posts', post: @post, in_reply: true  %>
     <div id="new-reply" class="m-3 p-3" >
