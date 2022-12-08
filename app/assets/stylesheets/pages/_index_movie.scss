@@ -14,7 +14,9 @@
 }
 
 .index__cards-card {
-  height: 30vw;
+  // height: 30vw;
+  height: 49vh;
+  aspect-ratio: 0.7;
   padding: 1rem;
   background: #010000;
   border-color: #9A0600;
