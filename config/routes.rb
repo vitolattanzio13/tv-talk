@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get "profile/:id", to: "pages#profile"
   get "friends", to: "friends#index"
+  get "about", to: "pages#about"
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
