@@ -2,7 +2,7 @@
   <div class="index__cards-card-img" style="background-image:url('<%= movie.poster_url %>');">
   </div>
   <div class="index__cards-card-text m-0 mt-3">
-    <p class="index__cards-card-text-title"><%= movie.title %>(<%= movie.year %>)</p>
+    <p class="index__cards-card-text-title"><%= movie.title %> (<%= movie.year %>)</p>
   </div>
   <div class="index__cards-card-btn">
     <%= render 'shared/buttons/follow_movie', movie: movie %>
