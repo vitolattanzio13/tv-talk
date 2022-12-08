@@ -44,11 +44,14 @@ $trans: 50ms;
   z-index: 3;
   display: flex;
   flex-direction: column;
-  // border-radius: 0 0 10px 10px;
+  a:hover{
+    color: $red1;
+  }
 }
+
 .search-result-link{
   text-decoration: none;
-  color: $black;
+  color: $white;
 }
 
 .side-nav-bar {

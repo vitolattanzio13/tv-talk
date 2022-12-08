@@ -6,7 +6,7 @@
     <div class="main-index-form-search-container">
       <div class="main-index-form-input-and-suggestions">
         <%= f.text_field :chat_room, autocomplete:"off",
-                          placeholder:"Movie to talk about", label_html: { class: "label-input form-control" },
+                          placeholder:"Movie to talk about", class: "label-input form-control",
                           value: params[:chat_room],
                           data: {search_target: "movie_input",
                                 action: "keyup->search#queryMovieDb"}%>

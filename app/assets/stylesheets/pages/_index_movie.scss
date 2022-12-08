@@ -14,9 +14,7 @@
 }
 
 .index__cards-card {
-  // height: 30vw;
   height: 49vh;
-  aspect-ratio: 0.7;
   padding: 1rem;
   background: #010000;
   border-color: #9A0600;
@@ -50,6 +48,7 @@
   justify-content: flex-start;
   align-items: center;
   margin: 0;
+  text-align: center;
 }
 
 .index__cards-card-text-year {
