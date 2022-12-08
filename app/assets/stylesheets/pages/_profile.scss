@@ -57,19 +57,28 @@
   margin-top: 0;
 }
 .btn-profile-tab{
-  background-color: #010000;
+  background-color: $black;
   color: #FFFFFF;
   font-style: bold;
-  border: 3px solid #9A0600;
-  border-radius: 5px;
+  // border-style: $black;
+  border: 3px solid $black;
+  // border-radius: 5px;
 }
 .btn-profile-tab:hover{
-  border: 3px solid #9A0600;
-  border-radius: 5px;
-  background-color: #9A0600;
+  // border: 3px solid #9A0600;
+  // border-radius: 5px;
+  border-bottom: 3px solid #9A0600;
+  border-left-color: $black;
+  border-right-color: $black;
+  border-top-color: $black;
+  color: #FFFFFF;
+  transition: 0.5s;
 }
 .btn-profile-tab-active{
-  border: 3px solid #9A0600;
-  border-radius: 5px;
-  background-color: #9A0600;
+  border-bottom: 3px solid #9A0600;
+  border-left-color: $black;
+  border-right-color: $black;
+  border-top-color: $black;
+  // border-radius: 5px;
+  background-color: $black;
 }
