@@ -16,22 +16,21 @@
 .bg-input{
   background-color: $black2;
   border: $black2;
-  color: $grey;
+  color: $white;
 }
 
-.form-control:focus {
+.form-control {
   border: 3px solid $black2 !important;
-  border-radius: 5px;
+  border-radius: 5px !important;
   background-color: $black2 !important;
   color: $white !important;
   box-shadow: none !important;
 }
-// .form-control {
-//   border: 3px solid $black2 !important;
-//   border-radius: 5px;
-//   background-color: $black2 !important;
-//   color: $white !important;
-//   box-shadow: none !important;
-// }
 
-
+.form-control:focus {
+  border: 3px solid $black2 !important;
+  border-radius: 5px !important;
+  background-color: $black2 !important;
+  color: $white !important;
+  box-shadow: none !important;
+}

@@ -45,7 +45,7 @@ $grey: #CCCCCC;
   width: 60%;
   display: flex;
   justify-content: space-between;
-  align-items: top;
+  align-items: center;
 }
 .main-index-form-input-and-suggestions{
   display: flex;
@@ -59,6 +59,9 @@ $grey: #CCCCCC;
   width: 100%;
   height: fit-content;
   z-index: 1;
+  a:hover{
+    color: $red1;
+  }
 }
 
 // .card-horizontal {
