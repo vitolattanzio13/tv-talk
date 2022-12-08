@@ -10,10 +10,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @replies = @post.replies
     @reply = Reply.new
-    if @post.user == current_user
-      change_status(@post)
-    end
-
+    change_status(@post) if @post.user == current_user
   end
 
   def new
@@ -49,8 +46,8 @@ class PostsController < ApplicationController
       reply.update(read: true)
     end
     count = 0
-    current_user.posts.each do |post|
-      count += post.replies.where(read: false).count
+    current_user.posts.each do |postc|
+      count += postc.replies.where(read: false).count
     end
     NotificationChannel.broadcast_to(@notification, count)
   end

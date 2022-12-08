@@ -1,10 +1,12 @@
 <div class="tweet mx-4 p-2">
-  <div class="tweet__avatar" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
+  <%= link_to "/profile/#{reply.user.id}", class:"tweetEntry-fullname" do %>
+    <div class="tweet__avatar" style="background-image:url('<%= cl_image_path reply.user.photo.key %>')"></div>
+  <% end %>
   <div class="tweet__container">
     <div class="tweet__header">
-      <div class="tweet__author-name">
-        <%= reply.user.nickname %>
-      </div>
+      <%= link_to "/profile/#{reply.user.id}", class:"tweet__author-name tweetEntry-fullname" do %>
+        <strong><%= reply.user.nickname %></strong>
+      <% end %>
       <div class="tweet__publish-time">
         <time data-controller="timeago" data-timeago-datetime-value="<%= reply.created_at %>"></time>
       </div>
