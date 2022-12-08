@@ -4,10 +4,8 @@
 
 import { application } from "./application"
 
-
-
-import Timeago from 'stimulus-timeago'
-application.register('timeago', Timeago)
+import BackButtonController from "./back_button_controller"
+application.register("back-button", BackButtonController)
 
 import FollowsController from "./follows_controller"
 application.register("follows", FollowsController)
