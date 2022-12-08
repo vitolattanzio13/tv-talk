@@ -1,8 +1,9 @@
 <div class="our-container">
   <div class="index-search-div">
-    <%= form_with url: movies_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: movies_path, method: :get, class: "movie-index-search-bar" do %>
       <%= text_field_tag :mquery, params[:mquery],
       class: "form-control",
+      autocomplete:"off",
       placeholder: "Type a Title or a Year"
       %>
       <%= submit_tag "Find a movie", class: "btn-post-tweet" %>

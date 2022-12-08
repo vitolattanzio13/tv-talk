@@ -71,6 +71,10 @@ color: #FFFFFF;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #010000;
+  background-color: $black;
   padding-top: 1vw;
+}
+.movie-index-search-bar {
+  display: flex;
+  gap: 0.5rem;
 }
