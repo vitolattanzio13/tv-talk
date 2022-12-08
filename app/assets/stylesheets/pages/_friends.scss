@@ -169,3 +169,23 @@
   color: white;
   background-color: $black;
 }
+.online-friend{
+  background-color: $green;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid black;
+  height: 25%;
+  position: relative;
+  top: 70%;
+  left: 75%;
+}
+.offline-friend{
+  background-color: grey;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid black;
+  height: 25%;
+  position: relative;
+  top: 70%;
+  left: 75%;
+}

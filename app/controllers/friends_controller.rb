@@ -4,9 +4,6 @@ class FriendsController < ApplicationController
     @message = Message.new
     @friends = []
     @friends = User.all - [current_user]
-    # @friends[0] = User.all.second
-    # @friends[1] = User.all.third
-    # @friends[2] = User.all.fourth
   end
 
   def show
