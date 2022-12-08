@@ -53,14 +53,14 @@
           <% end %>
         </div>
       </div>
-      <div class="profile-posts-container d-none" data-profile-tabs-target="posts">
+      <div class="followed-users-container d-none" data-profile-tabs-target="posts">
         <div class="posts-all-container" data-search-target="postsContainer">
           <% @user.posts.each do |post| %>
             <%= render 'shared/posts', post: post, in_reply: false %>
           <% end %>
         </div>
       </div>
-      <div class="profile-notifications-container d-none" data-profile-tabs-target="notifications">
+      <div class="followed-users-container d-none" data-profile-tabs-target="notifications">
         <div class="posts-all-container" data-search-target="postsContainer">
           <% if @user.replies.where(read: false) %>
             <% @user.posts.each do |post| %>

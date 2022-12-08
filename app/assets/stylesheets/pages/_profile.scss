@@ -88,3 +88,11 @@
 .show-content-container{
   padding-bottom: 0;
 }
+.followed-users-container{
+  height: 51vh;
+  overflow-y: scroll;
+}
+.followed-users-container::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+}
