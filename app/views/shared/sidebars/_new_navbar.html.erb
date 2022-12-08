@@ -15,7 +15,7 @@
               <% movies = Movie.all.map{ |e| e.title} %>
               <% users = User.all.map{ |e| e.nickname} %>
               <%= f.text_field :query, class: "form-control form-font-size", id:"search-field", autocomplete:"off", placeholder:
-                            "Go to a movie or a user profile", value: params[:query],
+                            "Movie or user profile", value: params[:query],
                               data: {
                                 search_target: "input",
                                 action: "keyup->search#queryDb"} %>

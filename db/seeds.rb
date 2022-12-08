@@ -2,6 +2,7 @@ require "json"
 require "open-uri"
 require "nokogiri"
 
+Message.destroy_all
 FollowedUser.destroy_all
 FollowedMovie.destroy_all
 Notification.destroy_all
