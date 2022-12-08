@@ -1,4 +1,12 @@
 <div class="friend-card">
-  <div class="friend-avatar" style="background-image:url('<%= cl_image_path friend.photo.key %>');"></div>
+  <div class="friend-avatar" style="background-image:url('<%= cl_image_path friend.photo.key %>');">
+    <% if [2,3,4,7].include?(i) %>
+      <div class="online-friend">
+      </div>
+    <% else %>
+      <div class="offline-friend">
+      </div>
+    <% end %>
+  </div>
   <p class="friend-name"><%= friend.nickname %></p>
 </div>
