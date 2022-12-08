@@ -11,8 +11,8 @@
           <% end %>
         </div>
         <div class="tweet__author-name-followed-users">
-          <% unless user.followee.id == current_user.id %>
-            <%= render 'shared/buttons/follow_user', user: @user %>
+          <% unless user.followee == current_user %>
+            <%= render 'shared/buttons/follow_user', user: user.followee %>
           <% end %>
         </div>
       </div>
