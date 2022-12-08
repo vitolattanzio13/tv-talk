@@ -233,8 +233,8 @@ puts "Movies created!"
 
 puts "Creating posts..."
 
-p2 = Post.new(content: "I want Mia's foot massages lol. A hilariously violent and extremely well written script + a huge cast of top of the line actors combine to make this masterpiece. No more needs to be said, except: If you like your movies Pulp Fiction is a must watch!", chat_room_id: c4.id, user_id: ganzo.id, likes: 17)
-p2.save
+p1 = Post.new(content: "This grim scenario is enlivened by many jokes. In the midst of the violent action, the dialogue is incredible and peppered with quotations from Ezekiel", chat_room_id: c4.id, user_id: laura.id, likes: 4)
+p1.save
 p3 = Post.new(content: "A technologically stunning movie that furthers the genre and features crowd-pleasing performances to go with the frequent scenes of gunplay and violence.", chat_room_id: c11.id, user_id: ganzo.id, likes: 17)
 p3.save
 p6 = Post.new(content: "Best time traveling trilogy in the world! It is perfectly 80s with its soundtrack, its fashion, and its gratuitous use of s-bombs in a PG-rated film. I imagine itll be hard for anyone who enjoys fun and mirth not to have a good time watching this movie.", chat_room_id: c2.id, user_id: ganzo.id, likes: 0)
@@ -255,8 +255,9 @@ p8 = Post.new(content: "Masterfully paced, the movie builds slowly, introducing 
 p8.save
 p11 = Post.new(content: "The film is clunky in places... but it is also warm, funny and moving, and genuinely thought-provoking about no end of hot-button contemporary issues, from race and class, to ageing and masculinity.", chat_room_id: c9.id, user_id: arthur.id, likes: 1)
 p11.save
-p1 = Post.new(content: "This grim scenario is enlivened by many jokes. In the midst of the violent action, the dialogue is incredible and peppered with quotations from Ezekiel", chat_room_id: c4.id, user_id: laura.id, likes: 4)
-p1.save
+
+p2 = Post.new(content: "I want Mia's foot massages lol. A hilariously violent and extremely well written script + a huge cast of top of the line actors combine to make this masterpiece. No more needs to be said, except: If you like your movies Pulp Fiction is a must watch!", chat_room_id: c4.id, user_id: ganzo.id, likes: 17)
+p2.save
 
 # Create notifications for reply
 

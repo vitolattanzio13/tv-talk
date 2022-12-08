@@ -26,6 +26,9 @@
   color: $white !important;
   box-shadow: none !important;
 }
+.form-control::placeholder{
+  color: lightgrey;
+}
 
 .form-control:focus {
   border: 3px solid $black2 !important;
