@@ -2,7 +2,7 @@
   <div class="container" data-controller="search">
     <div class="d-flex justify-content-start container-new-post">
       <div id="new-post" class="m-3 p-3" >
-        <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path current_user.photo.key%>')"></div>
+        <div class="tweetEntry-avatar rounded-circle user-avatar-small" style="background-image:url('<%= cl_image_path current_user.photo.key || "" %> ')"></div>
         <div class="form-post-new ml-3 mr-3">
           <%= render 'shared/new_post_form' %>
         </div>

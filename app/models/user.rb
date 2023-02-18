@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :followed_users_as_followee, class_name: "FollowedUser", foreign_key: :followee_id
   has_many :followed_users_as_follower, class_name: "FollowedUser", foreign_key: :follower_id
+
+  after_create do
+    Notification.create!(user_id: self.id)
+  end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'friends/show'
+  # get 'friends/show'
   devise_for :users
   root to: "posts#index"
 

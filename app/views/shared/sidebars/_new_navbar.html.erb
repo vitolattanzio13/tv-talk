@@ -45,7 +45,7 @@
         <% count += post.replies.where(read: false).count %>
       <% end %>
       <div class="nav-item p-2 d-flex align-items-center" data-controller="notification-subscription"
-                                                          data-notification-subscription-notification-id-value="<%= Notification.find_by(user_id: current_user.id).id %>"
+                                                          data-notification-subscription-notification-id-value="<%= Notification.find_by(user_id: current_user.id).id || 0 %>"
                                                           >
         <%= link_to "/profile/#{current_user.id if user_signed_in?}",
                     class:"nav-link d-flex align-items-center",
@@ -81,8 +81,10 @@
             <p class="nav">Logout</p>
           <% end %>
       <% else  %>
-          <i class="fa-solid fa-fw fa-right-from-bracket d-flex align-items-center"></i>
-          <%= link_to "Login", new_user_session_path, class: "log-link" %>
+          <%= link_to new_user_session_path, class:"d-flex align-items-center nav-link" do%>
+            <i class="fa-solid fa-fw fa-right-from-bracket d-flex align-items-center"></i>
+            <p class="nav">Login</p>
+          <% end %>
       <% end  %>
     </div>
 
