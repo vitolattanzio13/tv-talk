@@ -45,7 +45,7 @@
         <% count += post.replies.where(read: false).count %>
       <% end %>
       <div class="nav-item p-2 d-flex align-items-center" data-controller="notification-subscription"
-                                                          data-notification-subscription-notification-id-value="<%= Notification.find_by(user_id: current_user.id).id %>"
+                                                          data-notification-subscription-notification-id-value="<%= Notification.find_by(user_id: current_user.id).id || 0 %>"
                                                           >
         <%= link_to "/profile/#{current_user.id if user_signed_in?}",
                     class:"nav-link d-flex align-items-center",
