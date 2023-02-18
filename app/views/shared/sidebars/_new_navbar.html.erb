@@ -81,8 +81,10 @@
             <p class="nav">Logout</p>
           <% end %>
       <% else  %>
-          <i class="fa-solid fa-fw fa-right-from-bracket d-flex align-items-center"></i>
-          <%= link_to "Login", new_user_session_path, class: "log-link" %>
+          <%= link_to new_user_session_path, class:"d-flex align-items-center nav-link" do%>
+            <i class="fa-solid fa-fw fa-right-from-bracket d-flex align-items-center"></i>
+            <p class="nav">Login</p>
+          <% end %>
       <% end  %>
     </div>
 
