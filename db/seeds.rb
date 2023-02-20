@@ -40,7 +40,7 @@ end
 # Create users
 puts "Creating users..."
 
-guest = User.new(email: "guest@gmail.com", password: "123456", nickname: "Guest", bio: "Guest biography goes here.")
+guest = User.new(email: "guest@gmail.com", password: "guest123", nickname: "Guest", bio: "Guest biography goes here.")
 file = URI.open("https://res.cloudinary.com/dcgbqu8yk/image/upload/v1676914473/development/download_3_gw8bb3.jpg")
 guest.photo.attach(io: file, filename: "guest.jpg", content_type: "image/jpg")
 guest.save!
