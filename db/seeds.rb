@@ -39,6 +39,14 @@ end
 
 # Create users
 puts "Creating users..."
+
+guest = User.new(email: "guest@gmail.com", password: "123456", nickname: "Guest", bio: "Guest biography goes here.")
+file = URI.open("https://res.cloudinary.com/dcgbqu8yk/image/upload/v1676914473/development/download_3_gw8bb3.jpg")
+guest.photo.attach(io: file, filename: "guest.jpg", content_type: "image/jpg")
+guest.save!
+# Notification.create!(user_id: guest.id)
+puts "Guest created"
+
 fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "Fran", bio: "A brief note about myself first: apart from being a film geek, I'm also a huge nature freak and amateur photographer.")
 file = URI.open("https://avatars.githubusercontent.com/u/104527931?v=4")
 fran.photo.attach(io: file, filename: "fran.jpg", content_type: "image/jpg")
