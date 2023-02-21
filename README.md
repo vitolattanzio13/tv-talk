@@ -16,16 +16,16 @@ https://www.tvtalk.me/
 
 ## Tech Stack
 
-· HTML5
-· Cascading Style Sheets (CSS)
+· Ruby on Rails
+· Rest API
 · SASS
 · Bootstrap
-· Responsive Web Design
-· Object-Oriented Programming (OOP)
-· JSON
 · PostgreSQL
-· JavaScript
-· Ruby on Rails
+· JavaScript - Stimulus
+· Action Cable
+· Devise
+· Web Scraping
+· Turbo Frames
 · Heroku
 
 ![App Screenshot](https://res.cloudinary.com/dcgbqu8yk/image/upload/v1676971853/development/Screen_Shot_2023-02-21_at_10.26.40_bslncj.png)
