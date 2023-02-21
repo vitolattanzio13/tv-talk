@@ -16,7 +16,15 @@
     <div class="form-actions">
       <%= f.button :submit, "Log in",class: "btn-post-tweet"  %>
     </div>
+    <br>
+    <div><strong class="alert-text-for-guest">If you are a guest, please log in with the following credentials:</strong>
+      <br>
+      <strong>Email: guest@gmail.com</strong>
+      <br>
+      <strong>Password: guest123</strong>
+      <br>
+    </div>
   <% end %>
-
+      <br>
   <%= render "devise/shared/links" %>
 </div>
