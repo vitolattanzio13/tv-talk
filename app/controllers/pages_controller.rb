@@ -1,10 +1,11 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[home]
+  # before_action :authenticate_user!
+
   def home
   end
 
   def profile
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) || User.all[0]
     @followed_movies = @user.followed_movies.includes(:movie)
     @movies = []
     @followed_movies.each do |followed_movie|

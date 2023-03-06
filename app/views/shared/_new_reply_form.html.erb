@@ -1,5 +1,5 @@
 <%= simple_form_for([@post, @reply], html: { class: "nice-class"}) do |f| %>
   <%= f.input :content, label: false, placeholder: "Reply post...", wrapper_html: { class: "wrapper-input" }, input_html: { class: "bg-input" } %>
-  <%#= f.input :photo, as: :file, label_html: { class: "label-input" }, input_html: { class: "bg-input" }  %>
+  <%#= f.input :photo, as: :file, label_html: { class: "label-input" }, input_html: { class: "bg-input" } %>
   <button class="btn-post-tweet main-index-form-button" data-action="click->search#create">Post</button>
 <% end %>

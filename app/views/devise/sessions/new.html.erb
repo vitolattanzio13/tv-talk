@@ -1,22 +1,31 @@
 <div class="our-container">
   <h2>Log in</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }, html: { class: "container", style: "color:white;" }) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
                   required: false,
                   autofocus: true,
-                  input_html: { autocomplete: "email" } %>
+                  input_html: { autocomplete: "email", value: "guest@gmail.com" } %>
       <%= f.input :password,
                   required: false,
-                  input_html: { autocomplete: "current-password" } %>
+                  input_html: { autocomplete: "current-password", value: "guest123" } %>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in" %>
+      <%= f.button :submit, "Log in",class: "btn-post-tweet"  %>
+    </div>
+    <br>
+    <div><strong class="alert-text-for-guest">If you are a guest, please log in with the following credentials:</strong>
+      <br>
+      <strong>Email: guest@gmail.com</strong>
+      <br>
+      <strong>Password: guest123</strong>
+      <br>
+      <%# Final Fixed Credentials %>
     </div>
   <% end %>
-
+      <br>
   <%= render "devise/shared/links" %>
 </div>

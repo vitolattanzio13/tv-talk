@@ -39,60 +39,68 @@ end
 
 # Create users
 puts "Creating users..."
+
+guest = User.new(email: "guest@gmail.com", password: "guest123", nickname: "Guest", bio: "Guest biography goes here.")
+file = URI.open("https://res.cloudinary.com/dcgbqu8yk/image/upload/v1676914473/development/download_3_gw8bb3.jpg")
+guest.photo.attach(io: file, filename: "guest.jpg", content_type: "image/jpg")
+guest.save!
+# Notification.create!(user_id: guest.id)
+puts "Guest created"
+
 fran = User.new(email: "fran@gmail.com", password: "123456", nickname: "Fran", bio: "A brief note about myself first: apart from being a film geek, I'm also a huge nature freak and amateur photographer.")
 file = URI.open("https://avatars.githubusercontent.com/u/104527931?v=4")
 fran.photo.attach(io: file, filename: "fran.jpg", content_type: "image/jpg")
 fran.save!
-Notification.create!(user_id: fran.id)
+# Notification.create!(user_id: fran.id)
 puts "Fran created"
 
 vito = User.new(email: "vito@gmail.com", password: "123456", nickname: "Vito", bio: "I'm a film student and I love to watch movies and talk about them. I'm also a huge fan of the Marvel Cinematic Universe.")
 file = URI.open("https://avatars.githubusercontent.com/u/62178588?v=4")
 vito.photo.attach(io: file, filename: "vito.jpg", content_type: "image/jpg")
 vito.save!
-Notification.create!(user_id: vito.id)
+# Notification.create!(user_id: vito.id)
 puts "Vito created"
 
 jorrit = User.new(email: "jorrit@gmail.com", password: "123456", nickname: "Jorrit", bio: "Friendly alcohol advocate. Twitter enthusiast. Web junkie. Tv lover. Friend of animals everywhere. Problem solver.")
 file = URI.open("https://avatars.githubusercontent.com/u/101260772?v=4")
 jorrit.photo.attach(io: file, filename: "jorrit.jpg", content_type: "image/jpg")
 jorrit.save!
-Notification.create!(user_id: jorrit.id)
+# Notification.create!(user_id: jorrit.id)
 puts "Jorrit created"
 
 leo = User.new(email: "leo@gmail.com", password: "123456", nickname: "Leo", bio: "Pop culture expert. Troublemaker. Web specialist. Student. Writer. Coffee junkie. Subtly charming tv maven.")
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1666021133/yxhif62kivyl2678wt3z.jpg")
 leo.photo.attach(io: file, filename: "leo.jpg", content_type: "image/jpg")
 leo.save!
-Notification.create!(user_id: leo.id)
+# Notification.create!(user_id: leo.id)
 puts "Leo created"
 
 arthur = User.new(email: "arthur@gmail.com", password: "123456", nickname: "Arthur", bio: "German guy living in Amsterdam. I love to watch movies and talk about them. I'm also a huge fan of the comics and the MCU.")
 file = URI.open("https://avatars.githubusercontent.com/u/115401398?v=4")
 arthur.photo.attach(io: file, filename: "arthur.jpg", content_type: "image/jpg")
 arthur.save!
-Notification.create!(user_id: arthur.id)
+# Notification.create!(user_id: arthur.id)
 puts "Arthur created"
 
 maria = User.new(email: "maria@gmail.com", password: "123456", nickname: "Maria", bio: "Friendly tv ninja. Twitter geek. Beer fanatic. Wannabe zombie trailblazer. Bacon junkie.")
 file = URI.open("https://avatars.githubusercontent.com/u/115433579?v=4")
 maria.photo.attach(io: file, filename: "maria.jpg", content_type: "image/jpg")
 maria.save!
-Notification.create!(user_id: maria.id)
+# Notification.create!(user_id: maria.id)
 puts "Maria created"
 
 laura = User.new(email: "laura@gmail.com", password: "123456", nickname: "Laura", bio: "Twitter maven. Devoted bacon evangelist. Avid writer. Creator. Amateur social media nerd.")
 file = URI.open("https://avatars.githubusercontent.com/u/107079059?v=4")
 laura.photo.attach(io: file, filename: "laura.jpg", content_type: "image/jpg")
 laura.save!
-Notification.create!(user_id: laura.id)
+# Notification.create!(user_id: laura.id)
 puts "Laura created"
 
 ganzo = User.new(email: "ganzo@gmail.com", password: "123456", nickname: "Ganzo", bio: "I hate summer, internet geek. Reader. Zombie expert. Award-winning web advocate. Certified beer maven. Entrepreneur. Professional pop culture ninja.")
 file = URI.open("https://avatars.githubusercontent.com/u/90385363?v=4")
 ganzo.photo.attach(io: file, filename: "ganzo.jpg", content_type: "image/jpg")
 ganzo.save!
-Notification.create!(user_id: ganzo.id)
+# Notification.create!(user_id: ganzo.id)
 puts "Ganzo created"
 puts "Users created!"
 
